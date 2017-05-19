@@ -1,9 +1,16 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import javax.xml.validation.Schema;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -30,6 +37,11 @@ public class IP {
 		
 		try {
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+			
+			SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+			Schema schema = sf.newSchema(new StreamSource(new File("xmlSchema.xml")));
+			builderFactory.setSchema(schema);
+
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 		    Document doc = builder.parse(fXmlFile);
 	    	
