@@ -13,7 +13,7 @@ public class Author {
 		this.email = email;
 		this.role = role;
 	}
-
+	//pisello
 	public void setIdAuthor(String idAuthor) {
 		this.idAuthor = idAuthor;
 	}
