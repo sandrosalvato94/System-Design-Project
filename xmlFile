@@ -1,0 +1,45 @@
+<IPs>
+    <IPCore>
+        <IPName>ADDER_8</IPName>
+        <IPId>vhdl_78f9d7s8fs7d98</IPId>
+        <IPDescription>A very simple 8 bit adder</IPDescription>
+        <ContactPoint>
+            <AuthorName>Emanuele</AuthorName>
+            <AuthorId>df89sd89f</AuthorId>
+            <AuthorCompany>PoliTO</AuthorCompany>
+            <AuthorEmail>fake</AuthorEmail>
+            <AuthorRole>fake role</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>100</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>34</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>56</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>23</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>78</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>10</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>/test/false/path</IPHdlSourcePath>
+        <IPDriverPath>/test/false/driver</IPDriverPath>
+    </IPCore>
+    <IPManager>
+        <IPName>MANAGER</IPName>
+        <IPId>vhdl_78f9d7s8fs7d98</IPId>
+        <IPDescription>A very simple 8 bit adder</IPDescription>
+        <ContactPoint>
+            <AuthorName>Emanuele</AuthorName>
+            <AuthorId>df89sd89f</AuthorId>
+            <AuthorCompany>PoliTO</AuthorCompany>
+            <AuthorEmail>fake</AuthorEmail>
+            <AuthorRole>fake role</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>100</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>34</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>30</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>23</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>20</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>/test/false/path</IPHdlSourcePath>
+    </IPManager>
+</IPs>
