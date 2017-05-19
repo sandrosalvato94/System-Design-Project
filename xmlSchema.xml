@@ -1,0 +1,75 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IPs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IPCore">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="IPName"/>
+              <xs:element type="xs:string" name="IPId"/>
+              <xs:element type="xs:string" name="IPDescription"/>
+              <xs:element name="ContactPoint">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="AuthorName"/>
+                    <xs:element type="xs:string" name="AuthorId"/>
+                    <xs:element type="xs:string" name="AuthorCompany"/>
+                    <xs:element type="xs:string" name="AuthorEmail"/>
+                    <xs:element type="xs:string" name="AuthorRole"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="HardwareProperties">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="HardwarePropertiesLUTs"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesFFs"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesLatency"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesNMemories"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesPowerConsumption"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesMaxClkFreq"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="IPHdlSourcePath"/>
+              <xs:element type="xs:string" name="IPDriverPath"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IPManager">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="IPName"/>
+              <xs:element type="xs:string" name="IPId"/>
+              <xs:element type="xs:string" name="IPDescription"/>
+              <xs:element name="ContactPoint">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="AuthorName"/>
+                    <xs:element type="xs:string" name="AuthorId"/>
+                    <xs:element type="xs:string" name="AuthorCompany"/>
+                    <xs:element type="xs:string" name="AuthorEmail"/>
+                    <xs:element type="xs:string" name="AuthorRole"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="HardwareProperties">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="HardwarePropertiesLUTs"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesFFs"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesLatency"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesNMemories"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesPowerConsumption"/>
+                    <xs:element type="xs:byte" name="HardwarePropertiesMaxClkFreq"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="IPHdlSourcePath"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,9 @@
+# IGNORE ECLIPSE FILE #
+#######################
+.project
+.classpath
+
+# IGNORE BINARIES #
+###################
+bin/
+
