@@ -20,7 +20,6 @@ public class Test01 {
 		System.out.println(a);
 		
 		//PrintMenu();
-
 	}
 	
 	public static void printMenu() {
@@ -32,8 +31,7 @@ public class Test01 {
 		System.out.println("\n");
 	}
 	
-	public static int selectChoice(Scanner scannerIO) throws IOException
-	{
+	public static int selectChoice(Scanner scannerIO) throws IOException {
 		int a;
 		
 		a = scannerIO.nextInt();
