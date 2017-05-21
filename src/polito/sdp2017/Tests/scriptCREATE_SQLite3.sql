@@ -4,7 +4,6 @@ DROP TABLE Author;
 DROP TABLE FPGAConfiguration;
 DROP TABLE MappedIP;
 
-
 CREATE TABLE IPCore(idIP 			CHAR(30) PRIMARY KEY,	
 					name		CHAR(25),
 					hdlSourcePath 	CHAR(100),

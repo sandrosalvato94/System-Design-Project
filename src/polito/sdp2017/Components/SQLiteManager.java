@@ -58,7 +58,7 @@ public class SQLiteManager implements DBManager {
 	
 	public static final String SQLScritpCreate = "scriptCREATE_SQLite3.sql";
 	
-	public static void main(String[] args) throws FileNotFoundException, SQLException
+	/*public static void main(String[] args) throws FileNotFoundException, SQLException
 	{
 		List<String> l = new LinkedList<>();
 		StringBuilder s = new StringBuilder();
@@ -95,7 +95,7 @@ public class SQLiteManager implements DBManager {
 		
 		
 
-	}
+	}*/
 	
 	
 	@Override
@@ -121,7 +121,7 @@ public class SQLiteManager implements DBManager {
 	@Override
 	public void generateNewDatabase(String path) {
 		Connection conn;
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		try
 		{
 			conn = DriverManager.getConnection(this.DBPath);
@@ -146,7 +146,7 @@ public class SQLiteManager implements DBManager {
 		LinkedList<IP> result = new LinkedList<IP>();
 		String libIP, libAuth;
 		
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -199,7 +199,7 @@ public class SQLiteManager implements DBManager {
 		StringBuilder query2 = new StringBuilder();
 		IP ip = null;
 		buildQueryInsertIP(ip, query1, query2);
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -225,7 +225,7 @@ public class SQLiteManager implements DBManager {
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteIP(name, id, isCore, query);
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -264,7 +264,7 @@ public class SQLiteManager implements DBManager {
 		LinkedList<FPGAConfiguration> result = new LinkedList<FPGAConfiguration>();
 		HashMap<String, LinkedList<MappedIP>> hmap = new HashMap<>();
 		
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -341,7 +341,7 @@ public class SQLiteManager implements DBManager {
 		LinkedList<MappedIP> result = new LinkedList<MappedIP>();
 		String libIP, libAuth;
 		
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -370,7 +370,7 @@ public class SQLiteManager implements DBManager {
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteConfiguration(name, id, query);
-		openConnectionToDB(this.driverName);
+		openConnectionToDB();
 		
 		try
 		{
@@ -406,11 +406,11 @@ public class SQLiteManager implements DBManager {
 		return false;
 	}
 	
-	void openConnectionToDB(String driverName)
+	void openConnectionToDB()
 	{
 		try
 		{
-			Class.forName(driverName);
+			Class.forName("org.sqlite.JDBC");
 		}
 		catch(Exception e)
 		{
@@ -668,7 +668,7 @@ public class SQLiteManager implements DBManager {
 	    Statement st = null;
 	    try
 	    {
-	        //st = conn.createStatement();
+	        st = conn.createStatement();
 	        while (s.hasNext())
 	        {
 	            String line = s.next();
@@ -680,9 +680,9 @@ public class SQLiteManager implements DBManager {
 
 	            if (line.trim().length() > 0)
 	            {
-	               // st.execute(line);
-	                System.out.println(line);
-	                System.out.println("Eseguito!");
+	               st.execute(line);
+	               System.out.println(line);
+	               System.out.println("Eseguito!");
 	            }
 	        }
 	    }
