@@ -13,7 +13,7 @@ public class Test01 {
 		Scanner scannerIO = new Scanner(System.in);
 		DBManager DBM = new SQLiteManager();
 		DBM.setDBName("System Design Project Database");
-		DBM.setDBPath("jdbc:sqlite:.\\src\\polito\\sdp2017\\Tests\\DB01.db");
+		DBM.setDBPath("jdbc:sqlite:./src/polito/sdp2017/Tests/DB01.db");
 		DBM.generateNewDatabase(DBM.getDBPath());
 		printMenu();
 		a = selectChoice(scannerIO);
