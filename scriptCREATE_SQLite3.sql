@@ -75,3 +75,9 @@ CREATE TABLE MappedIP(idConf		  CHAR(30),
 					  ON DELETE CASCADE
 					  ON UPDATE CASCADE);
 
+INSERT INTO Author(idAuthor, name, company, email, role)
+VALUES('cp01', 'Alessandro Salvato', 'ARM', 'myemail', 'Digital Designer');
+
+INSERT INTO Author(idAuthor, name, company, email, role)
+VALUES('cp02', 'Emaneuele Parisi', 'Illumina', 'lasuaemail', 'Chief');
+

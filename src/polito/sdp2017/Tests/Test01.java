@@ -9,7 +9,7 @@ public class Test01 {
 
 	public static void main(String[] args) throws IOException {
 		
-		int a;
+		int a; 
 		Scanner scannerIO = new Scanner(System.in);
 		DBManager DBM = new SQLiteManager();
 		DBM.setDBName("System Design Project Database");
