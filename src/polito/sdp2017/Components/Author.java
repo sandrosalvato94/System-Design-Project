@@ -103,7 +103,7 @@ public class Author {
 			return false;
 		return true;
 	}
-
+	//pisello
 	@Override
 	public String toString() {
 		return "Author: \t" + idAuthor + "\nName: \t\t" + name + "\nCompany: \t" + company + 
