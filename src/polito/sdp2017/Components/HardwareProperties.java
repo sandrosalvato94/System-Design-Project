@@ -1,3 +1,5 @@
+package polito.sdp2017.Components;
+
 public class HardwareProperties {
 
 	private int LUTs;

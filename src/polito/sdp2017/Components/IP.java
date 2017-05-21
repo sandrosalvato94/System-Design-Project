@@ -1,3 +1,5 @@
+package polito.sdp2017.Components;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;

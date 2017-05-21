@@ -1,3 +1,5 @@
+package polito.sdp2017.Components;
+
 import java.util.LinkedList;
 import java.util.List;
 

@@ -1,3 +1,5 @@
+package polito.sdp2017.Components;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -6,17 +8,16 @@ import java.util.TreeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class IPCore extends IP {
-	private String driverPath;
-    
-	static List<IP> getFromDomNodeList (NodeList coreNodes) {
-		List<IP> listOfCores = new LinkedList<IP>();
+public class IPManager extends IP {
+
+	static List<IP> getFromDomNodeList (NodeList managerNodes) {
+		List<IP> listOfManagers = new LinkedList<IP>();
 		Map<String,String> ipAttr = new TreeMap<String,String>();
 		Map<String,String> contactAttr = new TreeMap<String,String>();
 		Map<String,String> hwAttr = new TreeMap<String,String>();
 		
-		for (int i = 0; i < coreNodes.getLength(); i++) {
-			NodeList fields = coreNodes.item(i).getChildNodes();
+		for (int i = 0; i < managerNodes.getLength(); i++) {
+			NodeList fields = managerNodes.item(i).getChildNodes();
 			for (int j = 0; j < fields.getLength(); j++) {
     			if (fields.item(j).getNodeType() == Node.ELEMENT_NODE) {
     				Node current = fields.item(j);
@@ -60,64 +61,32 @@ public class IPCore extends IP {
     									Double.parseDouble(hwAttr.get("HardwarePropertiesPowerConsumption")),
     									Double.parseDouble(hwAttr.get("HardwarePropertiesMaxClkFreq")));
 
-    		IPCore core = new IPCore(
+    		IPManager core = new IPManager(
     									ipAttr.get("IPName"),
     									ipAttr.get("IPId"),
     									ipAttr.get("IPDescription"),
     									hwProperties,
     									contactPoint,
-    									ipAttr.get("IPHdlSourcePath"),
-    									ipAttr.get("IPDriverPath"));
+    									ipAttr.get("IPHdlSourcePath"));
 
-    		listOfCores.add(core);
+    		listOfManagers.add(core);
     		System.out.println(contactPoint.toString());
     		System.out.println(hwProperties.toString());
     		System.out.println(core.toString());
 		}
 		
-		return listOfCores;
+		return listOfManagers;
 	}
 	
-	public IPCore(String name, String idIP, String description, HardwareProperties hwProperties, Author contactPoint, String hdlSourcePath, String driverPath) {
-		super(name, idIP, description, hwProperties, contactPoint, hdlSourcePath);
-		this.driverPath = driverPath;
+	public IPManager(String name, String idIP, String description, HardwareProperties hwProperties,
+						Author author, String hdlSourcePath) {
+		super(name, idIP, description, hwProperties, author, hdlSourcePath);
+		// TODO Auto-generated constructor stub
 	}
-
-	public String getDriverPath() {
-		return driverPath;
-	}
-
-	public void setDriverPath(String driverPath) {
-		this.driverPath = driverPath;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "CORE:\n"+super.toString()+"\n\tdriverPath : "+driverPath+"\n";
+		return "MANAGER:\n"+super.toString();
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((driverPath == null) ? 0 : driverPath.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IPCore other = (IPCore) obj;
-		if (driverPath == null) {
-			if (other.driverPath != null)
-				return false;
-		} else if (!driverPath.equals(other.driverPath))
-			return false;
-		return true;
-	}
 }

@@ -1,3 +1,5 @@
+package polito.sdp2017.Components;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
