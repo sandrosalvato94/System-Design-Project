@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>Encoder</IPName>
+        <IPId>VHDL_Encoder</IPId>
+        <IPDescription>A description for Encoder</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>800</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>207</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>474</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>322</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>32</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>651</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./Encoder.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Encoder</IPDriverPath>
+    </IPCore>
+</IPs>

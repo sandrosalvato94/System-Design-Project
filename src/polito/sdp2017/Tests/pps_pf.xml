@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>pps_pf</IPName>
+        <IPId>VHDL_pps_pf</IPId>
+        <IPDescription>A description for pps_pf</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>44</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>974</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>667</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>424</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>938</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>630</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./pps_pf.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/pps_pf</IPDriverPath>
+    </IPCore>
+</IPs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>b1fulladder</IPName>
+        <IPId>VHDL_b1fulladder</IPId>
+        <IPDescription>A description for b1fulladder</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>337</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>603</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>846</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>214</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>51</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./b1fulladder.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/b1fulladder</IPDriverPath>
+    </IPCore>
+</IPs>

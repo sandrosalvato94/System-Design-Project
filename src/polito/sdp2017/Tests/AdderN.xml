@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>AdderN</IPName>
+        <IPId>VHDL_AdderN</IPId>
+        <IPDescription>A description for AdderN</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>947</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>352</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>451</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>119</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>485</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>245</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./AdderN.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/AdderN</IPDriverPath>
+    </IPCore>
+</IPs>

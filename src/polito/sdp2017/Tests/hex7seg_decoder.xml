@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>hex7seg_decoder</IPName>
+        <IPId>VHDL_hex7seg_decoder</IPId>
+        <IPDescription>A description for hex7seg_decoder</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>7</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>713</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>310</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>406</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>815</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>417</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./hex7seg_decoder.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/hex7seg_decoder</IPDriverPath>
+    </IPCore>
+</IPs>

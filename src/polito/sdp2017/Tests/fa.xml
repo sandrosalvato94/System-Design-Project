@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>fa</IPName>
+        <IPId>VHDL_fa</IPId>
+        <IPDescription>A description for fa</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>912</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>603</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>792</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>747</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>688</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>643</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./fa.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/fa</IPDriverPath>
+    </IPCore>
+</IPs>

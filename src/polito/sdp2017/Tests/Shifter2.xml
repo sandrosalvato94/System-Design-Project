@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>Shifter2</IPName>
+        <IPId>VHDL_Shifter2</IPId>
+        <IPDescription>A description for Shifter2</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>209</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>91</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>561</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>861</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>30</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>291</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./Shifter2.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>
+    </IPCore>
+</IPs>

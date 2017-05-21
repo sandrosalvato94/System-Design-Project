@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>ControlUnit_FSM</IPName>
+        <IPId>VHDL_ControlUnit_FSM</IPId>
+        <IPDescription>A description for ControlUnit_FSM</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>787</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>854</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>920</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>927</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>299</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>122</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./ControlUnit_FSM.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/ControlUnit_FSM</IPDriverPath>
+    </IPCore>
+</IPs>

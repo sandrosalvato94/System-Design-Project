@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>lfsr</IPName>
+        <IPId>VHDL_lfsr</IPId>
+        <IPDescription>A description for lfsr</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>831</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>908</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>178</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>999</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>243</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>411</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./lfsr.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/lfsr</IPDriverPath>
+    </IPCore>
+</IPs>

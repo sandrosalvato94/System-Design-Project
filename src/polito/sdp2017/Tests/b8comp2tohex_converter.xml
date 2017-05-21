@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>b8comp2tohex_converter</IPName>
+        <IPId>VHDL_b8comp2tohex_converter</IPId>
+        <IPDescription>A description for b8comp2tohex_converter</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>723</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>770</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>783</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>91</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>859</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>745</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./b8comp2tohex_converter.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/b8comp2tohex_converter</IPDriverPath>
+    </IPCore>
+</IPs>

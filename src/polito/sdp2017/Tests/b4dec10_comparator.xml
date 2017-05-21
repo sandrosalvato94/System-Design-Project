@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>b4dec10_comparator</IPName>
+        <IPId>VHDL_b4dec10_comparator</IPId>
+        <IPDescription>A description for b4dec10_comparator</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>503</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>700</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>240</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>162</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>690</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>905</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./b4dec10_comparator.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/b4dec10_comparator</IPDriverPath>
+    </IPCore>
+</IPs>

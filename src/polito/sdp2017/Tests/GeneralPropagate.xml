@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>GeneralPropagate</IPName>
+        <IPId>VHDL_GeneralPropagate</IPId>
+        <IPDescription>A description for GeneralPropagate</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>451</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>25</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>594</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>189</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>71</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>628</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./GeneralPropagate.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/GeneralPropagate</IPDriverPath>
+    </IPCore>
+</IPs>

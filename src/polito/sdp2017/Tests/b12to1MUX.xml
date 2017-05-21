@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>b12to1MUX</IPName>
+        <IPId>VHDL_b12to1MUX</IPId>
+        <IPDescription>A description for b12to1MUX</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>73</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>251</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>78</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>180</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>453</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>87</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./b12to1MUX.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/b12to1MUX</IPDriverPath>
+    </IPCore>
+</IPs>

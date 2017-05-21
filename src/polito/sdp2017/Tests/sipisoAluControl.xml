@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>sipisoAluControl</IPName>
+        <IPId>VHDL_sipisoAluControl</IPId>
+        <IPDescription>A description for sipisoAluControl</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>304</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>772</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>361</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>953</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>557</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>195</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./sipisoAluControl.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>
+    </IPCore>
+</IPs>

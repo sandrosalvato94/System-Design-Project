@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>registerfile</IPName>
+        <IPId>VHDL_registerfile</IPId>
+        <IPDescription>A description for registerfile</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>956</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>264</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>589</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>10</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>965</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>145</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./registerfile.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/registerfile</IPDriverPath>
+    </IPCore>
+</IPs>

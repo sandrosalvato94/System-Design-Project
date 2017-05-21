@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>ram</IPName>
+        <IPId>VHDL_ram</IPId>
+        <IPDescription>A description for ram</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>111</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>905</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>709</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>828</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>242</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>547</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./ram.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/ram</IPDriverPath>
+    </IPCore>
+</IPs>

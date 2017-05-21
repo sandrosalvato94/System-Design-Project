@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>Control_Logic</IPName>
+        <IPId>VHDL_Control_Logic</IPId>
+        <IPDescription>A description for Control_Logic</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>957</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>657</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>361</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>239</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>672</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>186</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./Control_Logic.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>
+    </IPCore>
+</IPs>

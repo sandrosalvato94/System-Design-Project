@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>GeneralGenerate</IPName>
+        <IPId>VHDL_GeneralGenerate</IPId>
+        <IPDescription>A description for GeneralGenerate</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>679</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>207</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>676</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>262</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>642</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>834</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./GeneralGenerate.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/GeneralGenerate</IPDriverPath>
+    </IPCore>
+</IPs>

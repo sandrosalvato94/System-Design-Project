@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>profiler</IPName>
+        <IPId>VHDL_profiler</IPId>
+        <IPDescription>A description for profiler</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>754</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>859</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>846</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>912</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>16</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>634</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./profiler.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/profiler</IPDriverPath>
+    </IPCore>
+</IPs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>b14BCD</IPName>
+        <IPId>VHDL_b14BCD</IPId>
+        <IPDescription>A description for b14BCD</IPDescription>
+        <ContactPoint>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>631</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>729</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>50</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>827</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>440</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>965</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./b14BCD.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/b14BCD</IPDriverPath>
+    </IPCore>
+</IPs>

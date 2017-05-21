@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>Instr_decoder</IPName>
+        <IPId>VHDL_Instr_decoder</IPId>
+        <IPDescription>A description for Instr_decoder</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>277</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>989</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>49</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>329</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>199</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClockFreq>345</HardwarePropertiesMaxClockFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>./Instr_decoder.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Instr_decoder</IPDriverPath>
+    </IPCore>
+</IPs>
