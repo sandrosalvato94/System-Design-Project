@@ -13,7 +13,6 @@ import java.sql.*;
 
 
 public class SQLiteManager implements DBManager {
-
 	private String DBPath;
 	private String DBName;
 	private String driverName;
@@ -757,15 +756,11 @@ public class SQLiteManager implements DBManager {
 										     " <= " + listOfParameters.get(i));
 							}
 						}
-						flag = false;
-						
+						flag = false;		
 					}
-				}
-				
+				}	
 			}
-			
 		}
-		
 		query.append("\nORDER BY " + confLib + ".name ASC;");
 	}
 }

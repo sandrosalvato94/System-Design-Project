@@ -1,7 +1,6 @@
 package polito.sdp2017.Components;
 
 public class Author {
-
 	private String idAuthor;
 	private String name;
 	private String company;
@@ -15,7 +14,7 @@ public class Author {
 		this.email = email;
 		this.role = role;
 	}
-	//pisello
+
 	public void setIdAuthor(String idAuthor) {
 		this.idAuthor = idAuthor;
 	}
@@ -110,20 +109,4 @@ public class Author {
 		return "Author: \t" + idAuthor + "\nName: \t\t" + name + "\nCompany: \t" + company + 
 				"\nEmail: \t\t" + email + "\nRole: \t\t" + role ;
 	}
-	
-	public static void main(String[] args) {
-		Author a1, a2, a3;
-		
-		a1 = new Author("1a3","Alessandro Salvato", "ARM", "sandrosalvato94@live.it",
-				        "Digital Designer at RTL");
-		a2 = new Author("2e7","Emanuele Parisi", "Bionformatics", "ema_par93@yahoo.it",
-		        "PhD");
-		a3 = new Author("8a0","Giacomo Vitantonio", "ARM", "giacomino@live.it",
-		        "PhD");
-		
-		System.out.println(a1.toString());
-		System.out.println(a2.toString());
-		System.out.println(a3.toString());
-	}
-
 }

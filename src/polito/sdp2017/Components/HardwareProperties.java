@@ -9,18 +9,6 @@ public class HardwareProperties {
 	private double powerConsumption;
 	private double maxClkFreq;
 
-	public static void main(String[] args)
-	{
-		HardwareProperties hp1, hp2;
-		
-		hp1 = new HardwareProperties(44, 88, 2.0, 0, 0.006, 650000);
-		hp2 = new HardwareProperties(126, 7, 29.0, 4, 0.106, 650000);
-		
-		System.out.println(hp1.toString());
-		System.out.println(hp2.toString());
-		
-	}
-
 	public HardwareProperties(int lUTs, int fFs, double latency, int nMemories, double powerConsumption,
 			double maxClkFreq) {
 		this.LUTs = lUTs;

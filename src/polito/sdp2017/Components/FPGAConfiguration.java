@@ -177,10 +177,4 @@ public class FPGAConfiguration {
 				+ manager + ", bitstreamPath=" + bitstreamPath + ", hwProperties=" + hwProperties + ", contactPoint="
 				+ contactPoint + ", additionalDriverSource=" + additionalDriverSource + "]";
 	}
-
-	
-	
-	/*public List getAllDriverPaths() {
-		return null;
-	}*/
 }
