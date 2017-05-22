@@ -2,7 +2,7 @@
   <xs:element name="IPs">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="IPCore">
+        <xs:element name="IPCore" minOccurs="0" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
               <xs:element type="xs:string" name="IPName"/>
@@ -36,7 +36,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IPManager">
+        <xs:element name="IPManager" minOccurs="0" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
               <xs:element type="xs:string" name="IPName"/>
@@ -64,7 +64,6 @@
                     <xs:element type="xs:decimal" name="HardwarePropertiesMaxClkFreq"/>
                   </xs:sequence>
                 </xs:complexType>
-              </xs:element>
               </xs:element>
               <xs:element type="xs:string" name="IPHdlSourcePath"/>
             </xs:sequence>

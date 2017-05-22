@@ -141,11 +141,20 @@ public class VhdlInterface implements HardwareInterface {
 					.collect(Collectors.joining("\n\t\t")));
 			strb.append(");\n");
 		}
+		
+		System.out.println(pins.size());
+		
+		/*for(Pin p : pins)
+		{
+			System.out.println(p.toString());
+		}*/
 		strb.append("\tport (\n\t\t");
+		Pin tmp = pins.remove(pins.size()-1);
 		strb.append(pins.stream()
-				.map(p->p.toString())
+				.map(p->p.toString() + ";")
 				.collect(Collectors.joining("\n\t\t")));
-		strb.append(");\nend entity "+entityName+";\n");
+		strb.append("\n\t\t" + tmp.toString() + ");\n");
+		strb.append(" end entity "+entityName+";\n");
 			
 		return strb.toString();
 	}

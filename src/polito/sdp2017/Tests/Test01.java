@@ -35,6 +35,7 @@ public class Test01 {
 			//System.out.println(nameFile);
 			listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/AdderN.xml");
 			System.out.println(listIP.getFirst().toString());
+			
 			break;
 		case 2:
 			

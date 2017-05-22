@@ -72,9 +72,9 @@ public class IPCore extends IP {
     									ipAttr.get("IPDriverPath"));
 
     		listOfCores.add(core);
-    		System.out.println(contactPoint.toString());
-    		System.out.println(hwProperties.toString());
-    		System.out.println(core.toString());
+    		//System.out.println(contactPoint.toString());
+    		//System.out.println(hwProperties.toString());
+    		//System.out.println(core.toString());
 		}
 		
 		return listOfCores;

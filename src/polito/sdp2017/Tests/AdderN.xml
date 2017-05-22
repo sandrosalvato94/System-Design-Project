@@ -19,7 +19,7 @@
             <HardwarePropertiesPowerConsumption>8.56297834343</HardwarePropertiesPowerConsumption>
             <HardwarePropertiesMaxClkFreq>1.67072311526</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./AdderN.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/AdderN.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/AdderN</IPDriverPath>
     </IPCore>
 </IPs>
