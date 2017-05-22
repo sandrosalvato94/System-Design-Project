@@ -34,13 +34,13 @@ if __name__ == "__main__":
         HardwarePropertiesFFs = SubElement(HardwareProperties,'HardwarePropertiesFFs')
         HardwarePropertiesFFs.text = str(random.randint(0,1000))
         HardwarePropertiesLatency = SubElement(HardwareProperties,'HardwarePropertiesLatency')
-        HardwarePropertiesLatency.text = str(random.uniform(0,10))
+        HardwarePropertiesLatency.text = str(random.uniform(0,10))[0:5]
         HardwarePropertiesNMemories = SubElement(HardwareProperties,'HardwarePropertiesNMemories')
         HardwarePropertiesNMemories.text = str(random.randint(0,10000))
         HardwarePropertiesPowerConsumption = SubElement(HardwareProperties,'HardwarePropertiesPowerConsumption')
-        HardwarePropertiesPowerConsumption.text = str(random.uniform(0,10))
+        HardwarePropertiesPowerConsumption.text = str(random.uniform(0,10))[0:5]
         HardwarePropertiesMaxClkFreq = SubElement(HardwareProperties,'HardwarePropertiesMaxClkFreq')
-        HardwarePropertiesMaxClkFreq.text = str(random.uniform(0,10))
+        HardwarePropertiesMaxClkFreq.text = str(random.uniform(0,10))[0:5]
 
     def generateFakeXml(path,name):
         print('generating XML for : '+name)

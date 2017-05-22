@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>53</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>342</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.2902662626</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>2111</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.16818431598</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>9.59138358411</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>737</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>889</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>7.550</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1456</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.965</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.392</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>

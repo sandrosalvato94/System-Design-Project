@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>862</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>338</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>7.14563435505</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6983</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.98008630026</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>9.89848398258</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>124</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>761</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.547</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1345</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.814</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.903</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/sipisoAluControl.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>

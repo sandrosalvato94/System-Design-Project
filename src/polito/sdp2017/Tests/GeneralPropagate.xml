@@ -5,19 +5,19 @@
         <IPId>VHDL_GeneralPropagate</IPId>
         <IPDescription>A description for GeneralPropagate</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>290</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>346</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.03918905165</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>7471</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>0.903309533542</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.14503214111</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>409</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>892</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.362</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4759</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.459</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.405</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/GeneralPropagate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralPropagate</IPDriverPath>

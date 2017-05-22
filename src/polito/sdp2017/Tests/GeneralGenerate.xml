@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>907</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>456</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.75765226527</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1668</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.87172556474</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>1.48109744154</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>222</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>628</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.800</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>7835</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.188</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.562</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/GeneralGenerate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralGenerate</IPDriverPath>

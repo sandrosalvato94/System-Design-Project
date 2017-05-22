@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>35</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>272</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.6405370193</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>740</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.69198331421</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.03868326756</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>237</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>470</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>7.403</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6907</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.002</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.735</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/AdderN.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/AdderN</IPDriverPath>

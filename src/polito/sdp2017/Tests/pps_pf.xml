@@ -5,19 +5,19 @@
         <IPId>VHDL_pps_pf</IPId>
         <IPDescription>A description for pps_pf</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>638</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>179</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.23235791618</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8120</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>6.5138201151</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>5.12570285863</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>962</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>513</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>8.618</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4960</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>7.557</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.698</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/pps_pf.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/pps_pf</IPDriverPath>

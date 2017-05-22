@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>56</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>337</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>0.376949152121</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1119</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.24621047107</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.90676691862</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>327</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>948</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.250</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>8902</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>1.160</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.857</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Mux5x1.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Mux5x1</IPDriverPath>

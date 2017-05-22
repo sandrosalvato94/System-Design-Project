@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>141</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>981</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.26308052749</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>604</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>9.07165287611</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.65897462915</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>999</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>969</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.286</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2060</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.268</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.065</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b4dec10_comparator.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b4dec10_comparator</IPDriverPath>

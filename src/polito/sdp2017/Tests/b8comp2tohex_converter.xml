@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>810</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>912</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.056413583</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6324</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.23673001835</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>5.323081661</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>240</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>815</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.895</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1553</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.846</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.516</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b8comp2tohex_converter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b8comp2tohex_converter</IPDriverPath>

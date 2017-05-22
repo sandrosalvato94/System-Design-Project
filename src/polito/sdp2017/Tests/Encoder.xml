@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>960</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>876</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>7.07758076545</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>4060</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.30475391043</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>0.682923269404</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>856</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>666</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.622</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6472</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>3.544</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.510</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Encoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Encoder</IPDriverPath>
