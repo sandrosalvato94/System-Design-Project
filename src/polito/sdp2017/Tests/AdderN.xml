@@ -19,7 +19,7 @@
             <HardwarePropertiesPowerConsumption>485</HardwarePropertiesPowerConsumption>
             <HardwarePropertiesMaxClockFreq>245</HardwarePropertiesMaxClockFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./AdderN.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/AdderN</IPDriverPath>
+        <IPHdlSourcePath>Tests/AdderN.vhd</IPHdlSourcePath>
+        <IPDriverPath>.</IPDriverPath>
     </IPCore>
 </IPs>
