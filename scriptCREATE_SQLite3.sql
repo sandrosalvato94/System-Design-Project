@@ -1,4 +1,8 @@
-
+DROP TABLE IPCore;
+DROP TABLE IPManager;
+DROP TABLE Author;
+DROP TABLE FPGAConfiguration;
+DROP TABLE MappedIP;
 
 CREATE TABLE IPCore(idIP 			CHAR(30) PRIMARY KEY,	
 					name		CHAR(25),

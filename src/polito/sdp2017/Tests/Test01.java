@@ -33,7 +33,7 @@ public class Test01 {
 			System.out.println("Please type the name of the XML file");
 			//nameFile = getStringFromStdin();
 			//System.out.println(nameFile);
-			listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/lfsr.xml");
+			listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/b12to1MUX.xml");
 			//System.out.println(listIP.getFirst().toString());
 			DBM.addIP(listIP.getFirst());
 			

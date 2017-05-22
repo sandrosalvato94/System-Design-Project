@@ -5,11 +5,11 @@
         <IPId>VHDL_b12to1MUX</IPId>
         <IPDescription>A description for b12to1MUX</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Paolo Prinetto</AuthorName>
+            <AuthorId>cp03</AuthorId>
+            <AuthorCompany>CINI</AuthorCompany>
+            <AuthorEmail>paolo.prinetto@polito.it</AuthorEmail>
+            <AuthorRole>Professor</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>23</HardwarePropertiesLUTs>

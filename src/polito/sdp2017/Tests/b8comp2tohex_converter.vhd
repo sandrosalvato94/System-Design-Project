@@ -4,7 +4,8 @@ use ieee.numeric_std.all;
 
 entity b8comp2tohex_converter is
 	port( in_string: IN std_logic_vector(7 downto 0);
-			out1, out0: OUT std_logic_vector(3 downto 0));
+		 out1: OUT std_logic_vector(3 downto 0);
+            out0: OUT std_logic_vector(3 downto 0));
 end b8comp2tohex_converter;
 
 architecture behavior of b8comp2tohex_converter is

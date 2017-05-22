@@ -2,7 +2,9 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY b12to1MUX IS
-	PORT(S, IN1, IN2: IN STD_LOGIC;
+	PORT(S : IN STD_LOGIC;
+          IN1: IN STD_LOGIC;
+          IN2: IN STD_LOGIC;
 			M   : OUT STD_LOGIC);
 END b12to1MUX;
 

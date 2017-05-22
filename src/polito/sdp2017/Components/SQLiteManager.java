@@ -204,11 +204,22 @@ public class SQLiteManager implements DBManager {
 		{
 			conn = DriverManager.getConnection(this.DBPath);
 			state = conn.createStatement();
-			state.executeUpdate(query1.toString());
-			System.out.println(query1.toString());
-			state.executeUpdate(query2.toString());
-			System.out.println(query2.toString());
-			System.out.println("Query eseguite");
+			try
+			{
+				state.executeUpdate(query1.toString());
+			}
+			catch(SQLException se)
+			{
+				System.out.println(ipToBeAdded.getContactPoint().getIdAuthor() + " already exists inside Author");
+			}
+			try
+			{
+				state.executeUpdate(query2.toString());
+			}
+			catch(SQLException se)
+			{
+				System.out.println(ipToBeAdded.getIdIP() + " already exits one IP with the same id");
+			}
 			conn.close();
 		}
 		catch(Exception e)
