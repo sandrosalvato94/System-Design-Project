@@ -5,19 +5,19 @@
         <IPId>VHDL_Control_Logic</IPId>
         <IPDescription>A description for Control_Logic</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>957</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>657</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>361</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>239</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>672</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>186</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>141</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>488</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.40629992829</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>528</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.90996780376</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.28066991164</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./Control_Logic.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>

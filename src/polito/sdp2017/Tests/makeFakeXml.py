@@ -30,17 +30,17 @@ if __name__ == "__main__":
     def generateFakeHwProp(top):
         HardwareProperties = SubElement(top,'HardwareProperties')
         HardwarePropertiesLUTs = SubElement(HardwareProperties,'HardwarePropertiesLUTs')
-        HardwarePropertiesLUTs.text = str(random.randint(0,127))
+        HardwarePropertiesLUTs.text = str(random.randint(0,1000))
         HardwarePropertiesFFs = SubElement(HardwareProperties,'HardwarePropertiesFFs')
-        HardwarePropertiesFFs.text = str(random.randint(0,127))
+        HardwarePropertiesFFs.text = str(random.randint(0,1000))
         HardwarePropertiesLatency = SubElement(HardwareProperties,'HardwarePropertiesLatency')
-        HardwarePropertiesLatency.text = str(random.randint(0,127))
+        HardwarePropertiesLatency.text = str(random.uniform(0,10))
         HardwarePropertiesNMemories = SubElement(HardwareProperties,'HardwarePropertiesNMemories')
-        HardwarePropertiesNMemories.text = str(random.randint(0,127))
+        HardwarePropertiesNMemories.text = str(random.randint(0,10000))
         HardwarePropertiesPowerConsumption = SubElement(HardwareProperties,'HardwarePropertiesPowerConsumption')
-        HardwarePropertiesPowerConsumption.text = str(random.randint(0,127))
+        HardwarePropertiesPowerConsumption.text = str(random.uniform(0,10))
         HardwarePropertiesMaxClkFreq = SubElement(HardwareProperties,'HardwarePropertiesMaxClkFreq')
-        HardwarePropertiesMaxClkFreq.text = str(random.randint(0,127))
+        HardwarePropertiesMaxClkFreq.text = str(random.uniform(0,10))
 
     def generateFakeXml(path,name):
         print('generating XML for : '+name)

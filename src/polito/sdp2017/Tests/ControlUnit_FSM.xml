@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>787</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>854</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>920</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>927</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>299</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>122</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>773</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>110</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>2.17093780049</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1203</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>7.06177584131</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.26110120093</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./ControlUnit_FSM.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ControlUnit_FSM</IPDriverPath>

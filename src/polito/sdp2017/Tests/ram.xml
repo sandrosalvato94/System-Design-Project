@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>111</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>905</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>709</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>828</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>242</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>547</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>306</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>847</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.15873842461</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2727</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.121366083462</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.76538894212</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./ram.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ram</IPDriverPath>

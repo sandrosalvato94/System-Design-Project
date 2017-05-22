@@ -5,19 +5,19 @@
         <IPId>VHDL_GeneralPropagate</IPId>
         <IPDescription>A description for GeneralPropagate</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>451</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>25</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>594</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>189</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>71</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>628</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>579</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>838</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.28909443927</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6039</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>4.55553426894</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.72698024545</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./GeneralPropagate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralPropagate</IPDriverPath>

@@ -12,12 +12,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>333</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>324</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>712</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>680</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>786</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>845</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>965</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>431</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>2.09175319357</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6446</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>4.28357675311</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.32255536262</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./Shifter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter</IPDriverPath>

@@ -5,19 +5,19 @@
         <IPId>VHDL_b12to1MUX</IPId>
         <IPDescription>A description for b12to1MUX</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>73</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>251</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>78</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>180</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>453</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>87</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>576</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>958</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.05492139394</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>9634</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.71876143384</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.37197270403</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./b12to1MUX.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b12to1MUX</IPDriverPath>

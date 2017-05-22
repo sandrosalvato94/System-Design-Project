@@ -5,19 +5,19 @@
         <IPId>VHDL_Extender</IPId>
         <IPDescription>A description for Extender</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>308</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>528</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>443</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>227</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>384</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>741</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>134</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>257</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.9683641981</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5993</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.54714722115</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.36558889906</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./Extender.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Extender</IPDriverPath>

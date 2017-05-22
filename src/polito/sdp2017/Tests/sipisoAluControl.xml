@@ -5,19 +5,19 @@
         <IPId>VHDL_sipisoAluControl</IPId>
         <IPDescription>A description for sipisoAluControl</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>304</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>772</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>361</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>953</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>557</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>195</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>431</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>724</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.61381592237</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4329</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.72403752196</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.59157729475</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./sipisoAluControl.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>

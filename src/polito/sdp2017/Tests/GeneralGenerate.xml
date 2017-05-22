@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>679</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>207</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>676</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>262</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>642</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>834</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>173</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>556</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.93660979857</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2698</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.25622020554</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.7580546276</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./GeneralGenerate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralGenerate</IPDriverPath>

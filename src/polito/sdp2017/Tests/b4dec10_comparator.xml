@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>503</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>700</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>240</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>162</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>690</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>905</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>964</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>688</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.47656361687</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1764</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>4.4543963747</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.25582288742</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./b4dec10_comparator.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b4dec10_comparator</IPDriverPath>

@@ -5,21 +5,21 @@
         <IPId>VHDL_AdderN</IPId>
         <IPDescription>A description for AdderN</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>947</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>352</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>451</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>119</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>485</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>245</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>307</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>797</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.17794703728</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6262</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.56297834343</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.67072311526</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>Tests/AdderN.vhd</IPHdlSourcePath>
-        <IPDriverPath>.</IPDriverPath>
+        <IPHdlSourcePath>./AdderN.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/AdderN</IPDriverPath>
     </IPCore>
 </IPs>

@@ -12,12 +12,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>7</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>713</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>310</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>406</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>815</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>417</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>793</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>213</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.88177277444</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>3009</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.67806783489</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>2.91259819894</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./hex7seg_decoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/hex7seg_decoder</IPDriverPath>

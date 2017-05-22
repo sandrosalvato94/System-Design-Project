@@ -5,19 +5,19 @@
         <IPId>VHDL_profiler</IPId>
         <IPDescription>A description for profiler</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>754</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>859</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>846</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>912</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>16</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>634</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>972</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>179</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.71315946969</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5349</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>3.43685276691</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.76808047639</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./profiler.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/profiler</IPDriverPath>

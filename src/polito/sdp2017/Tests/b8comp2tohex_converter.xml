@@ -5,19 +5,19 @@
         <IPId>VHDL_b8comp2tohex_converter</IPId>
         <IPDescription>A description for b8comp2tohex_converter</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>723</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>770</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>783</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>91</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>859</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClockFreq>745</HardwarePropertiesMaxClockFreq>
+            <HardwarePropertiesLUTs>853</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>986</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.24955867884</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4549</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.20302047805</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>0.990892642192</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>./b8comp2tohex_converter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b8comp2tohex_converter</IPDriverPath>
