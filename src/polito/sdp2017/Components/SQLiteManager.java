@@ -197,8 +197,7 @@ public class SQLiteManager implements DBManager {
 		Statement state;
 		StringBuilder query1 = new StringBuilder();
 		StringBuilder query2 = new StringBuilder();
-		IP ip = null;
-		buildQueryInsertIP(ip, query1, query2);
+		buildQueryInsertIP(ipToBeAdded, query1, query2);
 		openConnectionToDB();
 		
 		try
@@ -206,7 +205,10 @@ public class SQLiteManager implements DBManager {
 			conn = DriverManager.getConnection(this.DBPath);
 			state = conn.createStatement();
 			state.executeUpdate(query1.toString());
+			System.out.println(query1.toString());
 			state.executeUpdate(query2.toString());
+			System.out.println(query2.toString());
+			System.out.println("Query eseguite");
 			conn.close();
 		}
 		catch(Exception e)
@@ -466,7 +468,7 @@ public class SQLiteManager implements DBManager {
 	
 	private static void buildQueryInsertIP(IP ip, StringBuilder query1, StringBuilder query2)
 	{
-		if(ip.getClass().getName().equals("IPCore"))
+		if(ip.getClass().getName().equals("polito.sdp2017.Components.IPCore"))
 		{
 			query1.append("INSERT INTO Author (idAuthor, name, company, email, role)\n" +
 					  "VALUES (" +
@@ -488,8 +490,9 @@ public class SQLiteManager implements DBManager {
 					         + ip.getHwProperties().getMaxClkFreq() + ", " +
 					     "'" + ((IPCore) ip).getDriverPath() + "', " +
 					     "'" + ip.getContactPoint().getIdAuthor() +"');");
+			System.out.println("Sono entrato nella build query IPCOre");
 		}
-		if(ip.getClass().getName().equals("IPManager"))
+		if(ip.getClass().getName().equals("polito.sdp2017.Components.IPManager"))
 		{
 			query1.append("INSERT INTO Author (idAuthor, name, company, email, role)\n" +
 					  "VALUES (" +
@@ -509,6 +512,7 @@ public class SQLiteManager implements DBManager {
 					         + ip.getHwProperties().getPowerConsumption() + ", " +
 					         + ip.getHwProperties().getMaxClkFreq() + ", " +
 					     "'" + ip.getContactPoint().getIdAuthor() +"');");
+			System.out.println("Sono entrato nella build query IPManager");
 		}
 	}
 	

@@ -2,8 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all; 
 
 entity FA is 
-        generic ( DFAS: time := 0 ns;
-		  DFAC: time := 0 ns);
+        generic (DFAS: time := 0;
+		  DFAC: time := 0);
 	Port (	A:	In	std_logic;
 		B:	In	std_logic;
 		Ci:	In	std_logic;

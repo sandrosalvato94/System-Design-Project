@@ -25,7 +25,7 @@ public class VhdlGeneric implements Generic {
 	 */
 	static List<Generic> parseFromSource(String txt) {		
 		List<Generic> list = new LinkedList<Generic>();
-		String regex = "\\s*(\\w+)\\s*:\\s*(\\w+)\\s*((:=\\s*(\\w+))?)\\s*";	//	regular expression used
+		String regex = "\\s*(\\w+)\\s*:\\s*(\\w+)\\s*(\\s*(:=\\s*(\\w+)\\s*)?)\\s*";	//	regular expression used
 																				//	for parsing a single 
 																				//	generic line, in the
 																				//	generic clause of a VHDL

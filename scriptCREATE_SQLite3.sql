@@ -1,18 +1,15 @@
-DROP TABLE IPCore;
-DROP TABLE IPManager;
-DROP TABLE Author;
-DROP TABLE FPGAConfiguration;
-DROP TABLE MappedIP;
+
 
 CREATE TABLE IPCore(idIP 			CHAR(30) PRIMARY KEY,	
 					name		CHAR(25),
 					hdlSourcePath 	CHAR(100),
 					description		CHAR(2000),
-					LUT				INTEGER CHECK(LUT>=0),
+					LUTs			INTEGER CHECK(LUTs>=0),
+					FFs				INTEGER CHECK(FFs>=0),
 					latency 		DOUBLE CHECK(latency>=0.0),
 					nMemories 		SMALLINT CHECK(nMemories>=0),
 					powerConsuption DOUBLE CHECK(powerConsuption>=0.0),
-					maxClkFrequency DOUBLE CHECK(maxClkFrequency>=0.0),
+					maxClockFrequency DOUBLE CHECK(maxClockFrequency>=0.0),
 					driverPath 		CHAR(100),
 					contactPoint	CHAR(30),
 					FOREIGN KEY(contactPoint)
@@ -24,11 +21,12 @@ CREATE TABLE IPManager(idIP 			CHAR(30) PRIMARY KEY,
 					   name				CHAR(25),
 					   hdlSourcePath 	CHAR(100),
 					   description		CHAR(2000),
-					   LUT				INTEGER CHECK(LUT>=0),
+					   LUTs		    	INTEGER CHECK(LUTs>=0),
+					   FFs				INTEGER CHECK(FFs>=0),
 					   latency 			DOUBLE CHECK(latency>=0.0),
 					   nMemories 		SMALLINT CHECK(nMemories>=0),
 					   powerConsuption 	DOUBLE CHECK(powerConsuption>=0.0),
-					   maxClkFrequency 	DOUBLE CHECK(maxClkFrequency>=0.0),
+					   maxClockFrequency 	DOUBLE CHECK(maxClockFrequency>=0.0),
 					   contactPoint		CHAR(30),
 					   FOREIGN KEY(contactPoint)
 									REFERENCES Author(idAuthor)
@@ -44,11 +42,12 @@ CREATE TABLE Author(idAuthor CHAR(30) PRIMARY KEY,
 CREATE TABLE FPGAConfiguration(idConf			CHAR(30) PRIMARY KEY,
 							   name				CHAR(30),
 							   bitstreamPath	CHAR(100),
-							   LUT				INTEGER CHECK(LUT>=0),
+							   LUTs			    INTEGER CHECK(LUTs>=0),
+							   FFs				INTEGER CHECK(FFs>=0),
 							   latency 			DOUBLE CHECK(latency>=0.0),
 							   nMemories 		SMALLINT CHECK(nMemories>=0),
 							   powerConsuption 	DOUBLE CHECK(powerConsuption>=0.0),
-							   maxClkFrequency 	DOUBLE CHECK(maxClkFrequency>=0.0),
+							   maxClockFrequency 	DOUBLE CHECK(maxClockFrequency>=0.0),
 							   contactPoint 	CHAR(30),
 							   idIP				CHAR(30),
 							   FOREIGN KEY(contactPoint)

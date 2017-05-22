@@ -22,8 +22,8 @@ public class Test01 {
 		DBM.setDBPath("jdbc:sqlite:./src/polito/sdp2017/Tests/DB01.db");
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		printMenu();
-		a = selectChoice(scannerIO);
-		
+		//a = selectChoice(scannerIO);
+		a = 1;
 		
 		switch (a) {
 		case 1:
@@ -31,10 +31,11 @@ public class Test01 {
 			String nameFile = new String();
 			
 			System.out.println("Please type the name of the XML file");
-			nameFile = getStringFromStdin();
+			//nameFile = getStringFromStdin();
 			//System.out.println(nameFile);
-			listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/AdderN.xml");
-			System.out.println(listIP.getFirst().toString());
+			listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/lfsr.xml");
+			//System.out.println(listIP.getFirst().toString());
+			DBM.addIP(listIP.getFirst());
 			
 			break;
 		case 2:
