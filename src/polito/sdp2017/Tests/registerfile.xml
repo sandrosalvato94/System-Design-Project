@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>728</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>776</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.13437823625</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>4063</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.90448807427</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.91830229584</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>3</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>122</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.2814359164</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2478</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.35740710893</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.96024014232</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/registerfile.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/registerfile.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/registerfile</IPDriverPath>
     </IPCore>
 </IPs>

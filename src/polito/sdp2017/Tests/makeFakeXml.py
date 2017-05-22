@@ -62,7 +62,7 @@ if __name__ == "__main__":
         generateFakeHwProp(core)
 
         IPHdlSourcePath = SubElement(core,'IPHdlSourcePath')
-        IPHdlSourcePath.text = 'scr/polito/sdp2017/Tests/'+path
+        IPHdlSourcePath.text = 'src/polito/sdp2017/Tests/'+path
         IPDriverPath = SubElement(core,'IPDriverPath')
         IPDriverPath.text = '/path/to/driver/'+name
 

@@ -5,21 +5,21 @@
         <IPId>VHDL_Shifter2</IPId>
         <IPDescription>A description for Shifter2</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>640</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>371</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.82943969968</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>3672</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>7.04992643147</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>6.97603404195</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>53</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>342</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>2.2902662626</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2111</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.16818431598</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>9.59138358411</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>
     </IPCore>
 </IPs>

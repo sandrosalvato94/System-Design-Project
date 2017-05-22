@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>773</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>679</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.46192405139</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>5789</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>1.66065433075</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.91566210652</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>400</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>431</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.92536590129</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5682</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.605327432544</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>9.63285292457</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/b12to1MUX.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/b12to1MUX.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b12to1MUX</IPDriverPath>
     </IPCore>
 </IPs>

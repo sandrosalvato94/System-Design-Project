@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>343</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>696</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>0.0619271895475</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>575</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>9.99372290566</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>6.01335312941</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>74</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>777</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.98952812632</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6160</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.1942181206</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.61302811696</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/Extender.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/Extender.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Extender</IPDriverPath>
     </IPCore>
 </IPs>

@@ -5,21 +5,21 @@
         <IPId>VHDL_fa</IPId>
         <IPDescription>A description for fa</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>52</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>698</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.1644756953</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>3143</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.13438823416</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.704986226</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>279</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>140</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.77823246429</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5876</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.07085042841</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.54033873431</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/fa.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/fa.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/fa</IPDriverPath>
     </IPCore>
 </IPs>

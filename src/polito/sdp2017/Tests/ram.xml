@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>962</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>253</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.18583718422</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8792</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>0.738528935549</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.4625518273</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>123</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>407</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.46026302702</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5303</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.91528903463</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.81783643329</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/ram.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/ram.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ram</IPDriverPath>
     </IPCore>
 </IPs>

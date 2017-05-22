@@ -5,21 +5,21 @@
         <IPId>VHDL_ControlUnit_FSM</IPId>
         <IPDescription>A description for ControlUnit_FSM</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>953</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>195</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>5.30037541148</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6078</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.40402434812</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>3.70587337792</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>278</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>723</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.08668194263</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>297</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>4.34499576126</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.55807567218</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>scr/polito/sdp2017/Tests/ControlUnit_FSM.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/ControlUnit_FSM.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ControlUnit_FSM</IPDriverPath>
     </IPCore>
 </IPs>
