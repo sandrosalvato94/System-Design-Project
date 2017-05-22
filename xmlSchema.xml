@@ -22,12 +22,12 @@
               <xs:element name="HardwareProperties">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:byte" name="HardwarePropertiesLUTs"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesFFs"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesLatency"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesNMemories"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesPowerConsumption"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesMaxClkFreq"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesLUTs"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesFFs"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesLatency"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesNMemories"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesPowerConsumption"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesMaxClkFreq"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -56,14 +56,15 @@
               <xs:element name="HardwareProperties">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:byte" name="HardwarePropertiesLUTs"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesFFs"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesLatency"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesNMemories"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesPowerConsumption"/>
-                    <xs:element type="xs:byte" name="HardwarePropertiesMaxClkFreq"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesLUTs"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesFFs"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesLatency"/>
+                    <xs:element type="xs:nonNegativeInteger" name="HardwarePropertiesNMemories"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesPowerConsumption"/>
+                    <xs:element type="xs:decimal" name="HardwarePropertiesMaxClkFreq"/>
                   </xs:sequence>
                 </xs:complexType>
+              </xs:element>
               </xs:element>
               <xs:element type="xs:string" name="IPHdlSourcePath"/>
             </xs:sequence>
