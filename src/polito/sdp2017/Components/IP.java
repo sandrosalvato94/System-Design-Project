@@ -50,9 +50,6 @@ public class IP {
 		    doc.getDocumentElement().normalize();
 		    Element root = doc.getDocumentElement();
 		    // Here validate XML document TODO
-
-	    	System.out.println("Root element :" + root.getNodeName());
-	    	System.out.println("----------------------------");
 	    	
 	    	NodeList cores = doc.getElementsByTagName("IPCore");
 	    	NodeList managers = doc.getElementsByTagName("IPManager");
