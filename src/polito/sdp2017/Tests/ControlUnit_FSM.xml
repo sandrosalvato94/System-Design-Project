@@ -12,14 +12,14 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>773</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>110</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.17093780049</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1203</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>7.06177584131</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>3.26110120093</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>953</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>195</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.30037541148</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6078</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.40402434812</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.70587337792</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./ControlUnit_FSM.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/ControlUnit_FSM.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ControlUnit_FSM</IPDriverPath>
     </IPCore>
 </IPs>

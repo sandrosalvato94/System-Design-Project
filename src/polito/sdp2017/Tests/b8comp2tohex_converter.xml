@@ -5,21 +5,21 @@
         <IPId>VHDL_b8comp2tohex_converter</IPId>
         <IPDescription>A description for b8comp2tohex_converter</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>853</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>986</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.24955867884</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>4549</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>9.20302047805</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>0.990892642192</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>906</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>470</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.30405286798</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2509</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.813453387208</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.35464470857</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./b8comp2tohex_converter.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/b8comp2tohex_converter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b8comp2tohex_converter</IPDriverPath>
     </IPCore>
 </IPs>

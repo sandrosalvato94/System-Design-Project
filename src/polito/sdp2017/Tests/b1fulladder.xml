@@ -5,21 +5,21 @@
         <IPId>VHDL_b1fulladder</IPId>
         <IPDescription>A description for b1fulladder</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>464</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>231</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.42230568201</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8794</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.37989984119</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>6.13749143971</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>812</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>745</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>7.15623783796</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1918</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>7.95772828266</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.05108397455</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./b1fulladder.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/b1fulladder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b1fulladder</IPDriverPath>
     </IPCore>
 </IPs>

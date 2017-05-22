@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>5</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>768</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>8.77920718667</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6750</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.09414593543</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.40847957901</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>167</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>539</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.81060672663</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2712</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.24188327825</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.32448500115</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./b14BCD.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/b14BCD.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b14BCD</IPDriverPath>
     </IPCore>
 </IPs>

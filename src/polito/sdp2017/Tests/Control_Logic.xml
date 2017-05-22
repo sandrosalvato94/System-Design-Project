@@ -12,14 +12,14 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>141</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>488</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.40629992829</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>528</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.90996780376</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.28066991164</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>293</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>650</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.78056902838</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5148</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.20500410903</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.42958629561</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./Control_Logic.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/Control_Logic.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>
     </IPCore>
 </IPs>

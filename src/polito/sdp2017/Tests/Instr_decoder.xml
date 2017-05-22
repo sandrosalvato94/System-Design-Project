@@ -5,21 +5,21 @@
         <IPId>VHDL_Instr_decoder</IPId>
         <IPDescription>A description for Instr_decoder</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>332</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>885</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.70710357578</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6841</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>6.27661964134</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>0.332326470906</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>680</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>38</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.41457397622</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2300</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>7.11400774868</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>2.4961353205</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./Instr_decoder.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/Instr_decoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Instr_decoder</IPDriverPath>
     </IPCore>
 </IPs>

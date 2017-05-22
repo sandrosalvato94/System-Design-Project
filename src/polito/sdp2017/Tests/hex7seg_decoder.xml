@@ -5,21 +5,21 @@
         <IPId>VHDL_hex7seg_decoder</IPId>
         <IPDescription>A description for hex7seg_decoder</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>793</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>213</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.88177277444</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>3009</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.67806783489</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.91259819894</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>894</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>387</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>1.80299572502</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>9775</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.61213009863</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>0.204789918709</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./hex7seg_decoder.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/hex7seg_decoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/hex7seg_decoder</IPDriverPath>
     </IPCore>
 </IPs>

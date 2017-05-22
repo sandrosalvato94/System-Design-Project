@@ -12,14 +12,14 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>972</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>179</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.71315946969</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>5349</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.43685276691</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>6.76808047639</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>257</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>293</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.15938351504</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4754</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.20920073652</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>9.10711379775</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./profiler.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/profiler.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/profiler</IPDriverPath>
     </IPCore>
 </IPs>

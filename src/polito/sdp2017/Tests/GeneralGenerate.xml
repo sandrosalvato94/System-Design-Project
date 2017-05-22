@@ -5,21 +5,21 @@
         <IPId>VHDL_GeneralGenerate</IPId>
         <IPDescription>A description for GeneralGenerate</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>173</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>556</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.93660979857</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>2698</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>9.25622020554</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.7580546276</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>677</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>998</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>2.93189113058</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>688</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.7183114644</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.67144466092</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./GeneralGenerate.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/GeneralGenerate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralGenerate</IPDriverPath>
     </IPCore>
 </IPs>

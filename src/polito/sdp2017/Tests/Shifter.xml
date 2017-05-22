@@ -5,21 +5,21 @@
         <IPId>VHDL_Shifter</IPId>
         <IPDescription>A description for Shifter</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>965</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>431</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.09175319357</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6446</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.28357675311</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>1.32255536262</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>406</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>32</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.05865118457</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>52</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.56080658947</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.0960202</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./Shifter.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/Shifter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter</IPDriverPath>
     </IPCore>
 </IPs>

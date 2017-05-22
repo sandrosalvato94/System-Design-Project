@@ -5,21 +5,21 @@
         <IPId>VHDL_ram</IPId>
         <IPDescription>A description for ram</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>306</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>847</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.15873842461</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>2727</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>0.121366083462</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.76538894212</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>962</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>253</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.18583718422</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>8792</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.738528935549</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>7.4625518273</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./ram.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/ram.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ram</IPDriverPath>
     </IPCore>
 </IPs>

@@ -12,14 +12,14 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>579</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>838</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.28909443927</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6039</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.55553426894</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>6.72698024545</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>803</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>434</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.69103964592</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1895</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>1.41457611345</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.35112478084</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>./GeneralPropagate.vhd</IPHdlSourcePath>
+        <IPHdlSourcePath>scr/polito/sdp2017/Tests/GeneralPropagate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralPropagate</IPDriverPath>
     </IPCore>
 </IPs>
