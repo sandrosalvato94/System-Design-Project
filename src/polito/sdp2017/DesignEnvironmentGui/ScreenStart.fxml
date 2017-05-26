@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.DesignEnvironmentGui.ScreenStartController">
+   <children>
+      <HBox prefHeight="500.0" prefWidth="240.0">
+         <children>
+            <VBox prefHeight="500.0" prefWidth="240.0">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="20.0">
+                     <image>
+                        <Image url="@polito_logo.gif" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Add/Remove IP" translateX="20.0" translateY="40.0" />
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Create new configuration" translateX="20.0" translateY="60.0" />
+                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Load configuration" translateX="20.0" translateY="80.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="232.0" prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <HBox prefHeight="70.0" prefWidth="500.0">
+               <children>
+                  <TextField prefHeight="30.0" prefWidth="360.0" promptText="IP database path..." translateY="20.0" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Load..." translateX="20.0" translateY="20.0" />
+               </children>
+            </HBox>
+            <TextField alignment="TOP_LEFT" editable="false" prefHeight="400.0" prefWidth="500.0">
+               <font>
+                  <Font name="Courier" size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

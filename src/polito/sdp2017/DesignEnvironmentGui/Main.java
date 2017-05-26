@@ -1,27 +1,39 @@
 package polito.sdp2017.DesignEnvironmentGui;
-	
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.fxml.FXMLLoader;
 
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class Main extends Application {
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("DesignEnvironmentGui.fxml"));
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+    public static final String screenStartID = "start";
+    public static final String screenManageIPID = "manageIP";
+    public static final String screenCreateConfigID = "createConfig";
+    public static final String screenLoadConfigID = "loadConfig.fxml";
+    public static final String screenStartFile = "ScreenStart.fxml";
+    public static final String screenManageIPFile = "ScreenManageIP.fxml";
+    public static final String screenCreateConfigFile = "ScreenCreateConfig.fxml";
+    public static final String screenLoadConfigFile = "ScreenLoadConfig.fxml";
+    
+    @Override
+    public void start(Stage primaryStage) {     
+        ScreensController mainContainer = new ScreensController();
+        mainContainer.loadScreen(Main.screenStartID, Main.screenStartFile);
+        mainContainer.loadScreen(Main.screenManageIPID, Main.screenManageIPFile);
+        mainContainer.loadScreen(Main.screenCreateConfigID, Main.screenCreateConfigFile);
+        mainContainer.loadScreen(Main.screenLoadConfigID, Main.screenLoadConfigFile);
+        
+        mainContainer.setScreen(Main.screenStartID);
+        
+        Group root = new Group();
+        root.getChildren().addAll(mainContainer);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Design environment for LATTICE based FPGA boards");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
