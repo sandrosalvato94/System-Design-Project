@@ -2,6 +2,6 @@
 	
 <?import javafx.scene.layout.BorderPane?>
 	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.Gui.DesignEnvironmentGuiController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.DesignEnvironmentGui.DesignEnvironmentGuiController">
 	<!-- TODO Add Nodes -->
 </BorderPane>
