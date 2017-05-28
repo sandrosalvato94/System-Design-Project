@@ -6,15 +6,22 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class ScreenStartController implements ControlledScreen {
+	ApplicationModel applicationModel;
     ScreensController myController;
 
     @FXML private TextField databasePath;
     @FXML private TextArea logTextArea;
 
+    @Override
     public void setScreenParent(ScreensController screenParent){
     	myController = screenParent;
     }
-    
+
+	@Override
+	public void setApplicationModel(ApplicationModel applicationModel) {
+		this.applicationModel = applicationModel;
+	}
+	
     @FXML
     private void openDatabaseConnection(ActionEvent event){
     	logTextArea.appendText("Enstablish connection to :\n\t"+databasePath.getText()+"\n");

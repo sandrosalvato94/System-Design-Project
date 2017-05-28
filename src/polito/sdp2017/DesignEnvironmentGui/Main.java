@@ -16,12 +16,14 @@ public class Main extends Application {
     public static final String screenLoadConfigFile = "ScreenLoadConfig.fxml";
     
     @Override
-    public void start(Stage primaryStage) {     
+    public void start(Stage primaryStage) {
+    	ApplicationModel appModel = new ApplicationModel();
         ScreensController mainContainer = new ScreensController();
-        mainContainer.loadScreen(Main.screenStartID, Main.screenStartFile);
-        mainContainer.loadScreen(Main.screenManageIPID, Main.screenManageIPFile);
-        mainContainer.loadScreen(Main.screenCreateConfigID, Main.screenCreateConfigFile);
-        mainContainer.loadScreen(Main.screenLoadConfigID, Main.screenLoadConfigFile);
+        
+        mainContainer.loadScreen(Main.screenStartID, Main.screenStartFile, appModel);
+        mainContainer.loadScreen(Main.screenManageIPID, Main.screenManageIPFile, appModel);
+        mainContainer.loadScreen(Main.screenCreateConfigID, Main.screenCreateConfigFile, appModel);
+        mainContainer.loadScreen(Main.screenLoadConfigID, Main.screenLoadConfigFile, appModel);
         
         mainContainer.setScreen(Main.screenStartID);
         
