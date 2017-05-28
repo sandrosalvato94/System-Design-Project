@@ -2,6 +2,7 @@ package polito.sdp2017.Tests;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -18,8 +19,14 @@ public class Test01 {
 		
 		Scanner scannerIO = new Scanner(System.in);
 		DBManager DBM = new SQLiteManager();
+		
+		try {
+			DBM.openConnection("jdbc:sqlite:./src/polito/sdp2017/Tests/DB01.db");
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		DBM.setDBName("System Design Project Database");
-		DBM.setDBPath("jdbc:sqlite:./src/polito/sdp2017/Tests/DB01.db");
+
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		printMenu();
 		//a = selectChoice(scannerIO);
@@ -78,7 +85,7 @@ public class Test01 {
 				str = myInput.readLine();
 				return str;
 		} catch (IOException e) {
-				System.out.println ("Si è verificato un errore: " + e);
+				System.out.println ("Si ï¿½ verificato un errore: " + e);
 				System.exit(-1);
 		}
 		return str;
