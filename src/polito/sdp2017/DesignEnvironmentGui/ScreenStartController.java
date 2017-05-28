@@ -1,5 +1,7 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -23,8 +25,13 @@ public class ScreenStartController implements ControlledScreen {
 	}
 	
     @FXML
-    private void openDatabaseConnection(ActionEvent event){
+    private void connectDB(ActionEvent event){
     	logTextArea.appendText("Enstablish connection to :\n\t"+databasePath.getText()+"\n");
+    	try {
+			applicationModel.openDatabaseConnection(databasePath.getText());
+		} catch (ClassNotFoundException | SQLException e) {
+			logTextArea.appendText("Unable to connect to database...\n");
+		}
     }
     
     @FXML
