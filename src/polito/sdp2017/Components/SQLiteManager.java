@@ -319,12 +319,16 @@ public class SQLiteManager implements DBManager {
 
 	@Override
 	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
-		if (DBConn.isValid(0)) {
+		if (DBConn != null && DBConn.isValid(0)) {
 			DBConn.close();
 		}
 		Class.forName("org.sqlite.JDBC");
-		DBPath = dbPath;
+		DBPath = "jdbc:sqlite:"+dbPath;
+		System.out.println(DBPath);
 		DBConn = DriverManager.getConnection(DBPath);
+
+		Statement state = DBConn.createStatement();
+		ResultSet rs = state.executeQuery("SELECT * FROM Author"); // test if connection is active
 	}
 	
 	@Override

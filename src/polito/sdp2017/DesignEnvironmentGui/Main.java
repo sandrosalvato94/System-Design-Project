@@ -17,8 +17,8 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-    	ApplicationModel appModel = new ApplicationModel();
         ScreensController mainContainer = new ScreensController();
+    	ApplicationModel appModel = new ApplicationModel();
         
         mainContainer.loadScreen(Main.screenStartID, Main.screenStartFile, appModel);
         mainContainer.loadScreen(Main.screenManageIPID, Main.screenManageIPFile, appModel);

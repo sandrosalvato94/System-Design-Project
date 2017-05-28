@@ -15,10 +15,9 @@ public class ApplicationModel {
 		databaseConnectionUp = false;
 	}
 	
-	public boolean openDatabaseConnection(String dbPath) throws ClassNotFoundException, SQLException {
+	public void openDatabaseConnection(String dbPath) throws ClassNotFoundException, SQLException {
 		database.openConnection(dbPath);
 		databaseConnectionUp = true;
-		return databaseConnectionUp;
 	}
 	
 	public void closeDatabaseConnection(String dbPath) throws SQLException {

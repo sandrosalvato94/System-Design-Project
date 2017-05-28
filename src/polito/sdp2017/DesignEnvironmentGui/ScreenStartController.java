@@ -26,9 +26,10 @@ public class ScreenStartController implements ControlledScreen {
 	
     @FXML
     private void connectDB(ActionEvent event){
-    	logTextArea.appendText("Enstablish connection to :\n\t"+databasePath.getText()+"\n");
+    	logTextArea.appendText("Starting connection to :\n\t"+databasePath.getText()+"\n");
     	try {
 			applicationModel.openDatabaseConnection(databasePath.getText());
+			logTextArea.appendText("Connection enstablished, database ready...");
 		} catch (ClassNotFoundException | SQLException e) {
 			logTextArea.appendText("Unable to connect to database...\n");
 		}
@@ -36,16 +37,16 @@ public class ScreenStartController implements ControlledScreen {
     
     @FXML
     private void goToAddRemoveIP(ActionEvent event){
-
+    	myController.setScreen(Main.screenManageIPID);
     }
     
     @FXML
     private void goToCreateConfig(ActionEvent event){
-
+    	myController.setScreen(Main.screenCreateConfigID);
     }
     
     @FXML
     private void goToLoadConfig(ActionEvent event){
-
+    	myController.setScreen(Main.screenLoadConfigID);
     }
 }
