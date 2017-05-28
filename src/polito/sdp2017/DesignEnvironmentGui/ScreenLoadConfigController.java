@@ -1,14 +1,16 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
 public class ScreenLoadConfigController implements ControlledScreen {
-	public ScreenLoadConfigController() {
-		// TODO Auto-generated constructor stub
-	}
+	ApplicationModel applicationModel;
+    ScreensController myController;
+
+    @Override
+    public void setScreenParent(ScreensController screenParent){
+    	myController = screenParent;
+    }
 
 	@Override
-	public void setScreenParent(ScreensController screenPage) {
-		// TODO Auto-generated method stub
-
+	public void setApplicationModel(ApplicationModel applicationModel) {
+		this.applicationModel = applicationModel;
 	}
-
 }
