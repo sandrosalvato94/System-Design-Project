@@ -319,6 +319,9 @@ public class SQLiteManager implements DBManager {
 
 	@Override
 	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
+		if (DBConn.isValid(0)) {
+			DBConn.close();
+		}
 		Class.forName("org.sqlite.JDBC");
 		DBPath = dbPath;
 		DBConn = DriverManager.getConnection(DBPath);
