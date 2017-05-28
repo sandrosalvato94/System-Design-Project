@@ -1,10 +1,13 @@
 package polito.sdp2017.Components;
 
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
 public interface DBManager {
-	public void setDBPath(String DBPath);
+	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException;
+	public void closeConnection() throws SQLException;
+	
 	public String getDBPath();
 	public void setDBName(String DBName);
 	public String getDBName();
@@ -15,7 +18,5 @@ public interface DBManager {
 	public LinkedList<FPGAConfiguration> searchConfiguration(List<String> listOfParameters);
 	public boolean removeConfiguration(String name, String id);
 	public String toString();
-	public boolean compareTo(Object o);
-	public int hashCode();
 	void addConfiguration(FPGAConfiguration conf);
 }

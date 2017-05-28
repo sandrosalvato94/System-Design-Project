@@ -13,9 +13,9 @@ import java.sql.*;
 
 
 public class SQLiteManager implements DBManager {
+	private Connection DBConn;
 	private String DBPath;
 	private String DBName;
-	private String driverName;
 	
 	//*********************TABLE NAMES**********************//
 	private final static String IPCoreLib = "IPCore";
@@ -97,12 +97,6 @@ public class SQLiteManager implements DBManager {
 
 	}*/
 	
-	
-	@Override
-	public void setDBPath(String DBPath) {
-		this.DBPath = DBPath;
-	}
-
 	@Override
 	public String getDBPath() {
 		return this.DBPath;
@@ -120,53 +114,34 @@ public class SQLiteManager implements DBManager {
 
 	@Override
 	public void generateNewDatabase(String path) {
-		Connection conn;
-		openConnectionToDB();
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			importSQL(conn, SQLScritpCreate);
-			conn.close();
-		}
-		catch(Exception e)
-		{
+		try {
+			importSQL(DBConn, SQLScritpCreate);
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
 	}
 
 	@Override
 	public LinkedList<IP> searchIP(List<String> listOfParameters) {
-		
-		Connection conn;
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		LinkedList<IP> result = new LinkedList<IP>();
 		String libIP, libAuth;
 		
-		openConnectionToDB();
-		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
+		try {
+			state = DBConn.createStatement();
 			buildQuerySelectIP(listOfParameters, query);
 			RS = state.executeQuery(query.toString());
-			if(listOfParameters.get(0).equals("true"))
-			{
+			if(listOfParameters.get(0).equals("true")) {
 				libIP = IPCoreLib;
 				libAuth = authorLib;
-			}
-			else
-			{
+			} else {
 				libIP = IPManagerLib;
 				libAuth = authorLib;
 			}
 			
-			while(RS.next())
-			{ 
+			while(RS.next()) { 
 				result.add(new IP(RS.getString(libIP + ".name"), RS.getString(libIP + ".idIP"), 
 						   RS.getString(libIP + ".description"), 
 						   new HardwareProperties(RS.getInt(libIP + ".FFs"), 
@@ -177,13 +152,9 @@ public class SQLiteManager implements DBManager {
 						   RS.getString(libAuth + ".role")), 
 						   RS.getString(libIP + ".hdlSourcePath")));
 			}
-			
 			RS.close();
-			conn.close();
-			
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
 		
@@ -193,100 +164,66 @@ public class SQLiteManager implements DBManager {
 
 	@Override
 	public void addIP(IP ipToBeAdded) {
-		Connection conn;
 		Statement state;
 		StringBuilder query1 = new StringBuilder();
 		StringBuilder query2 = new StringBuilder();
 		buildQueryInsertIP(ipToBeAdded, query1, query2);
-		openConnectionToDB();
 		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
-			try
-			{
+		try {
+			state = DBConn.createStatement();
+			try {
 				state.executeUpdate(query1.toString());
-			}
-			catch(SQLException se)
-			{
+			} catch(SQLException se) {
 				System.out.println(ipToBeAdded.getContactPoint().getIdAuthor() + " already exists inside Author");
 			}
-			try
-			{
+
+			try {
 				state.executeUpdate(query2.toString());
-			}
-			catch(SQLException se)
-			{
+			} catch(SQLException se) {
 				System.out.println(ipToBeAdded.getIdIP() + " already exits one IP with the same id");
 			}
-			conn.close();
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
 	}
 
 	@Override
 	public boolean removeIP(String name, String id, boolean isCore) {
-		
-		Connection conn;
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteIP(name, id, isCore, query);
-		openConnectionToDB();
 		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
+		try {
+			state = DBConn.createStatement();
 			RS = state.executeQuery(query.toString());
 			
-			if(RS.wasNull())
-			{
+			if(RS.wasNull()) {
 				RS.close();
-				conn.close();
 				return false;
-			}
-			else
-			{
+			} else {
 				RS.close();
-				conn.close();
 				return true;
 			}
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
 		return false;
 	}
 
 	@Override
 	public LinkedList<FPGAConfiguration> searchConfiguration(List<String> listOfParameters) {
-		Connection conn;
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		LinkedList<FPGAConfiguration> result = new LinkedList<FPGAConfiguration>();
 		HashMap<String, LinkedList<MappedIP>> hmap = new HashMap<>();
 		
-		openConnectionToDB();
-		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
+		try {
+			state = DBConn.createStatement();
 			buildQuerySelectFPGAConf(listOfParameters, query);
 			RS = state.executeQuery(query.toString());
-			while(RS.next())
-			{
+			while(RS.next()) {
 				String tmpIdConf = RS.getString(confLib + ".idConf");
 				MappedIP tmpMappedIP = new MappedIP(RS.getString(mappedIPLib + ".idMappedIP"), 
 						               new IPCore(RS.getString(IPCoreLib + ".name"), 
@@ -304,10 +241,8 @@ public class SQLiteManager implements DBManager {
 			
 			RS.first();
 			
-			while(RS.next())
-			{ 
-				if(hmap.containsKey(RS.getString(confLib + ".idConf")))
-				{
+			while(RS.next()) { 
+				if(hmap.containsKey(RS.getString(confLib + ".idConf"))) {
 					LinkedList<MappedIP> tmpList = new LinkedList<>(hmap.get(RS.getString(confLib + ".idConf")));
 					result.add(new FPGAConfiguration(RS.getString(confLib + ".name"), 
 							   RS.getString(confLib + ".idConf"), tmpList, 
@@ -326,19 +261,12 @@ public class SQLiteManager implements DBManager {
 							   RS.getString("A1.role")), RS.getString(confLib + ".additionalDriverSource")));
 					hmap.remove(RS.getString(confLib + ".idConf"));
 				}
-				
 			}
-			
 			RS.close();
-			conn.close();
-			
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
+
 		return result;
 	}
 
@@ -346,7 +274,6 @@ public class SQLiteManager implements DBManager {
 	public void addConfiguration(FPGAConfiguration conf) {
 		//devo fare l'insert dell'autor, l'insert dei mapped IP, NO l'insert dell'IPManager
 		//NO l'insert degli author degli IP
-		Connection conn;
 		Statement state;
 		StringBuilder query1 = new StringBuilder();
 		StringBuilder query2 = new StringBuilder();
@@ -354,82 +281,52 @@ public class SQLiteManager implements DBManager {
 		LinkedList<MappedIP> result = new LinkedList<MappedIP>();
 		String libIP, libAuth;
 		
-		openConnectionToDB();
-		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
+		try {
+			state = DBConn.createStatement();
 			buildQueryInsertConfiguration(conf, query1, query2, query3);
 			state.executeUpdate(query1.toString());
 			state.executeUpdate(query2.toString());
-			state.executeUpdate(query3.toString());
-			
-			conn.close();
-			
-		}
-		catch(Exception e)
-		{
+			state.executeUpdate(query3.toString());			
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
 	}
 
 	@Override
 	public boolean removeConfiguration(String name, String id) {
-		Connection conn;
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteConfiguration(name, id, query);
-		openConnectionToDB();
 		
-		try
-		{
-			conn = DriverManager.getConnection(this.DBPath);
-			state = conn.createStatement();
+		try {
+			state = DBConn.createStatement();
 			RS = state.executeQuery(query.toString());
 			
-			if(RS.wasNull())
-			{
+			if(RS.wasNull()) {
 				RS.close();
-				conn.close();
 				return false;
-			}
-			else
-			{
+			} else {
 				RS.close();
-				conn.close();
 				return true;
 			}
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
-		
-		
+
 		return false;
 	}
 
 	@Override
-	public boolean compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
+		Class.forName("org.sqlite.JDBC");
+		DBPath = dbPath;
+		DBConn = DriverManager.getConnection(DBPath);
 	}
 	
-	void openConnectionToDB()
-	{
-		try
-		{
-			Class.forName("org.sqlite.JDBC");
-		}
-		catch(Exception e)
-		{
-			System.out.println("Driver not available  + e");
-		}
-		
+	@Override
+	public void closeConnection() throws SQLException {
+		DBConn.close();
 	}
 	
 	private static void buildQueryInsertConfiguration(FPGAConfiguration conf, StringBuilder query1, StringBuilder query2, StringBuilder query3)
