@@ -32,7 +32,7 @@
             <HBox prefHeight="70.0" prefWidth="500.0">
                <children>
                   <TextField fx:id="databasePath" prefHeight="30.0" prefWidth="360.0" promptText="IP database path..." translateY="20.0" />
-                  <Button mnemonicParsing="false" onAction="#openDatabaseConnection" prefHeight="30.0" prefWidth="120.0" text="Connect..." translateX="20.0" translateY="20.0" />
+                  <Button mnemonicParsing="false" onAction="#connectDB" prefHeight="30.0" prefWidth="120.0" text="Connect..." translateX="20.0" translateY="20.0" />
                </children>
             </HBox>
             <TextArea fx:id="logTextArea" editable="false" prefHeight="410.0" prefWidth="500.0" />
