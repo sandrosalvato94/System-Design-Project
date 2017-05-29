@@ -56,6 +56,7 @@ public class Test01 {
 				}
 			break;
 		case 3:
+			fillDatabase(DBM);
 			LinkedList<IP> lip = new LinkedList<IP>();
 			String isIPCore = new String("true");
 			String idIP = new String("$");

@@ -14,7 +14,7 @@ public interface DBManager {
 	public void generateNewDatabase(String path);
 	public LinkedList<IP> searchIP(LinkedList<String> listOfParameters);
 	public void addIP(IP ipToBeAdded) throws SQLException;
-	public boolean removeIP(String name, String id, boolean isCore) throws SQLException;
+	public boolean removeIP(String name, String id, boolean isCore);
 	public LinkedList<FPGAConfiguration> searchConfiguration(List<String> listOfParameters);
 	public boolean removeConfiguration(String name, String id);
 	public String toString();
