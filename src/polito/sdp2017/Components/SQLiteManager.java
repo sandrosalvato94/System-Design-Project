@@ -233,27 +233,22 @@ public class SQLiteManager implements DBManager {
 	}
 
 	@Override
-	public boolean removeIP(String name, String id, boolean isCore) {
+	public boolean removeIP(String name, String id, boolean isCore) throws SQLException {
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteIP(name, id, isCore, query);
 		
-		try {
-			state = DBConn.createStatement();
-			RS = state.executeQuery(query.toString());
-			
-			if(RS.wasNull()) {
-				RS.close();
-				return false;
-			} else {
-				RS.close();
-				return true;
-			}
-		} catch(Exception e) {
-			System.out.println("Error: " + e);
+
+		state = DBConn.createStatement();
+		if(state.executeUpdate(query.toString()) == 0)
+		{
+			return false;
 		}
-		return false;
+		else
+		{
+			return true;
+		}
 	}
 
 	@Override

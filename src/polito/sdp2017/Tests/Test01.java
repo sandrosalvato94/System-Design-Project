@@ -31,30 +31,28 @@ public class Test01 {
 		DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 1;
+		a = 2;
 		
 		switch (a) {
 		case 1:	//addIP
-			LinkedList<IP> listIP = new LinkedList<IP>();
-			String nameFile = new String();
-			File file = new File("./src/polito/sdp2017/Tests");
-			        if(file.isDirectory())
-			        {
-			            File[] filesInDir = file.listFiles();
-			            for(File f : filesInDir)
-			            {
-			            	if(f.getName().contains(".xml"))
-			            	{
-			            		listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/" + f.getName());
-			            		DBM.addIP(listIP.getFirst());
-			            		//System.out.println(f.getName());
-			            	}
-			            }
-			        }
-			
+			fillDatabase(DBM);
 			break;
 		case 2:	//removeIP
+				boolean tmp;
+				fillDatabase(DBM);
+				//DBM.removeIP("Encoder", "$", true);
+				tmp = DBM.removeIP("$", "VHDL_lfsr", true);
+				//tmp = DBM.removeIP("$", "VHDL_lfsr", false); //it doesn't exist in IPManager Lib
+				//DBM.removeIP("", "", true);
 				
+				if(tmp ==true)
+				{
+					System.out.println("Rimosso con successo");
+				}
+				else
+				{
+					System.out.println("Oggetto non presente oppure non rimosso");
+				}
 			break;
 		case 3:
 			
@@ -103,6 +101,26 @@ public class Test01 {
 	{
 		String s = getStringFromStdin();
 		return s;
+	}
+	
+	public static void fillDatabase(DBManager DBM) throws SAXException, ParserConfigurationException, IOException, SQLException
+	{
+		LinkedList<IP> listIP = new LinkedList<IP>();
+		String nameFile = new String();
+		File file = new File("./src/polito/sdp2017/Tests");
+		        if(file.isDirectory())
+		        {
+		            File[] filesInDir = file.listFiles();
+		            for(File f : filesInDir)
+		            {
+		            	if(f.getName().contains(".xml"))
+		            	{
+		            		listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/" + f.getName());
+		            		DBM.addIP(listIP.getFirst());
+		            		//System.out.println(f.getName());
+		            	}
+		            }
+		        }
 	}
 	
 }
