@@ -20,7 +20,7 @@ public class ScreenManageIPController implements ControlledScreen {
     @FXML private TextField IPName;
     @FXML private TextArea logTextAreaAdd;
     @FXML private TextArea logTextAreaRemove;
-    @FXML private CheckBox isManager;
+    @FXML private CheckBox isCore;
     
     @Override
     public void setScreenParent(ScreensController screenParent){
@@ -52,6 +52,30 @@ public class ScreenManageIPController implements ControlledScreen {
 	
 	@FXML
 	public void removeIP (ActionEvent event) {
+		String id = new String("$");
+		String name = new String("$");
+		boolean core = false;
+		logTextAreaRemove.appendText("Removing IP:\n");
+		if (IPIdentifier.getText() != "") {
+			id = IPIdentifier.getText();
+			logTextAreaRemove.appendText("\tIP identifier : "+id+"\n");
+		}
+		if (IPName.getText() != "") {
+			name = IPName.getText();
+			logTextAreaRemove.appendText("\tIP name : "+name+"\n");
+		}
+		if (isCore.isSelected()) {
+			core = true;
+			logTextAreaRemove.appendText("\tlooking for IP core...\n");
+		} else {
+			core = false;
+			logTextAreaRemove.appendText("\tlooking for IP manager...\n");
+		}
 		
+		if (applicationModel.removeIP(id, name, core)) {
+			logTextAreaRemove.appendText("[OK] removed...\n");
+		} else {
+			logTextAreaRemove.appendText("[ERROR] not removed...\n");
+		}
 	}
 }

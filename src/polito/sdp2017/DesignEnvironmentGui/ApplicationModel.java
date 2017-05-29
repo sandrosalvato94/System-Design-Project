@@ -53,4 +53,8 @@ public class ApplicationModel {
 		return logs;
 	}
 
+	public boolean removeIP(String id, String name, boolean isCore) {
+		return false;
+	}
+
 }
