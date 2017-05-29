@@ -4,7 +4,10 @@ USE ieee.numeric_std.all;
 
 ENTITY b14BCD IS
 PORT ( in_bin: IN STD_LOGIC_VECTOR(13 downto 0);
-	   out_migl, out_cent, out_dec, out_unit: OUT STD_LOGIC_VECTOR (3 downto 0));
+	   out_migl: OUT STD_LOGIC_VECTOR (3 downto 0); 
+	   out_cent: OUT STD_LOGIC_VECTOR (3 downto 0);
+	   out_dec : OUT STD_LOGIC_VECTOR (3 downto 0);
+	   out_unit: OUT STD_LOGIC_VECTOR (3 downto 0));
 END b14BCD;
 
 ARCHITECTURE behavior OF b14BCD IS

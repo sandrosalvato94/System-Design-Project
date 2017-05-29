@@ -3,8 +3,15 @@ use IEEE.std_logic_1164.all;
 
 entity sipisoAluControl is
 port (
-	clk, rst, strobeA, strobeB: in std_logic;
-	shiftA, loadB, loadC, shiftC, startC: out std_logic
+	clk : in std_logic;
+	rst : in std_logic;
+	strobeA : in std_logic;
+	strobeB: in std_logic;
+	shiftA : out std_logic;
+	loadB : out std_logic;
+	loadC : out std_logic;
+	shiftC  : out std_logic;
+	startC: out std_logic
 );
 end	sipisoAluControl;
 

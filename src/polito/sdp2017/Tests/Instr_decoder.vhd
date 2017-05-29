@@ -2,8 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Instr_decoder is
-    Port ( instruction : in  STD_LOGIC_VECTOR (31 downto 0);				-- from fetch stage
-           --op_code : out  STD_LOGIC_VECTOR (5 downto 0);					-- to exectution logic
+    Port ( instruction : in  STD_LOGIC_VECTOR (31 downto 0);				
+          				
 		   index : out  STD_LOGIC_VECTOR (5 downto 0)
 		   );
 end Instr_decoder;

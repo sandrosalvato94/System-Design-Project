@@ -328,7 +328,8 @@ public class SQLiteManager implements DBManager {
 		DBConn = DriverManager.getConnection(DBPath);
 
 		Statement state = DBConn.createStatement();
-		ResultSet rs = state.executeQuery("SELECT * FROM Author"); // test if connection is active
+		ResultSet rs = state.executeQuery("SELECT * FROM IPCore;"); // test if connection is active
+		
 	}
 	
 	@Override

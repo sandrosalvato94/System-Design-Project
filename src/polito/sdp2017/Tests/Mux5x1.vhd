@@ -4,7 +4,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Mux5x1 is
 	generic (N : integer := 16);
-	port (B, C, D, E : in std_logic_vector(N-1 downto 0);
+	port (B : in std_logic_vector(N-1 downto 0);
+	      C : in std_logic_vector(N-1 downto 0); 
+		  D: in std_logic_vector(N-1 downto 0);
+		  E : in std_logic_vector(N-1 downto 0); 
 			sel : in std_logic_vector(2 downto 0);
 			O : out std_logic_vector(N-1 downto 0)
 			);

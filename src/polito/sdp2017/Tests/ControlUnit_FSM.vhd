@@ -31,38 +31,41 @@ use work.myTypes.all;
 --use UNISIM.VComponents.all;
 
 entity ControlUnit_FSM is
+--trs iofk
 generic (
-    	MICROCODE_MEM_SIZE : integer := 19;  -- Microcode Memory Size
-	--IR_SIZE : integer := 32;  -- Instruction Register Size    
-    	CW_SIZE : integer := 13;  -- Control Word Size for 13 outputu signal
-	ALU_nWIRE_OP : integer := 2); --number of control wires for alu operation
+    	MICROCODE_MEM_LENGHT : integer := 19;  
+	
+    	CW_SIZE : integer := 13;  --ciao emanuele
+		--questa riga essere bastarda
+	ALU_nWIRE_OP : integer := 2); --malvagita al massimo
+	-- non ne parliamo proprio
+	--cena
   port (
-	--INPUT
-    	Clk : in std_logic;  -- Clock
-    	Rst : in std_logic;  -- Reset:Active-Low
+	
+    	Clk : in std_logic;  
+    	Rst : in std_logic;  
           OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
           FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0);
 
-    	-- ID Control Signals
-	EN1 : out std_logic;  -- Register File and pipeline reg Enable
-	RF1 : out std_logic;  -- Register File read port 1 Enable
-	RF2 : out std_logic;  -- Register File read port 2 Enable		
-	WF1 : out std_logic;  -- Register File write port Enable
-    	-- EX Control Signals
-    	EN2 : out std_logic;  -- pipe register Enable
-    	S1 : out std_logic;  -- input selector first multiplexer
-    	S2 : out std_logic;  -- input selector second multiplexer
-    	ALU : out std_logic_vector(ALU_nWIRE_OP -1 downto 0);  -- ALU Control bit
-		-- 00 addition 
-    		-- 01 subtraction
-		-- 10 AND
-		-- 11 OR
     
-    	-- MEM Control Signals
-    	EN3 : out std_logic;  -- memory and pipeline register Enable
-    	RM : out std_logic;   -- read out of memory enable
+	EN1 : out std_logic;  
+	RF1 : out std_logic;  
+	RF2 : out std_logic;  		--sono felice
+	-- che rumore fa la happiness 
+	--terza riga di commento
+	WF1 : out std_logic;  		--NO
+    	
+    	EN2 : out std_logic;  
+    	S1 : out std_logic; 
+    	S2 : out std_logic; 
+    	
+    	EN3 : out std_logic; 
+    	RM : out std_logic;   
     	WM : out std_logic;  -- write in of memory enable
-    	S3 : out std_logic);  -- input selctor of multiplexer
+    	S3 : out std_logic;
+		ALU : out std_logic_vector(ALU_nWIRE_OP -1 downto 0)  );  -- ma se io scrivo qui?
+		--e poi qui?
+		--ALESSANDRO
 
 end ControlUnit_FSM;
 

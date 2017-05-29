@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>sipisoAluControl</IPName>
         <IPId>VHDL_sipisoAluControl</IPId>
         <IPDescription>A description for sipisoAluControl</IPDescription>
@@ -20,6 +20,5 @@
             <HardwarePropertiesMaxClkFreq>7.903</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/sipisoAluControl.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

@@ -5,11 +5,11 @@
         <IPId>VHDL_Encoder</IPId>
         <IPDescription>A description for Encoder</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>Michele Simili</AuthorName>
+            <AuthorId>cp05</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>michele.simili@studenti.polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>856</HardwarePropertiesLUTs>
