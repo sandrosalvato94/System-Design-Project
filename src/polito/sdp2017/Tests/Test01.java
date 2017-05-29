@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import com.sun.javafx.geom.transform.GeneralTransform3D;
 
 import  polito.sdp2017.Components.*;
@@ -14,7 +18,7 @@ import  polito.sdp2017.HardwareInterface.*;
 
 public class Test01 {
 
-	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException, SAXException, ParserConfigurationException {
 		
 		final String dbpath = "./src/polito/sdp2017/Tests/DB01.db";
 		
