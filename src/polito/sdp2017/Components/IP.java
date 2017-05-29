@@ -36,6 +36,10 @@ public class IP {
 	
 	public static List<IP> getFromXML(String xmlPath) throws SAXException, ParserConfigurationException, IOException {
     	File fXmlFile = new File(xmlPath);
+    	if (!fXmlFile.exists() || !fXmlFile.isFile()) {
+    		throw new FileNotFoundException();
+    	}
+
     	List<IP> listIPs = new LinkedList<IP>();
 		List<IP> listCores;
 		List<IP> listManagers;

@@ -48,12 +48,8 @@ public class ScreenManageIPController implements ControlledScreen {
 			logTextAreaAdd.appendText("[ERROR] XML file does not exists...\n");
 		} catch (SAXException e) {
 			logTextAreaAdd.appendText("[ERROR] Provided XML does not match the requested schema...\n");
-		} catch (IOException e) {
-			logTextAreaAdd.appendText("[ERROR] Unable to parse provided XML file...\n");
-		} catch (ParserConfigurationException e) {
-			logTextAreaAdd.appendText("[ERROR] ParserConfigurationException...\n");
 		} catch (Exception e) {
-			logTextAreaAdd.appendText("[ERROR] Unable to retrieve IPs from XML file...\n");
+			logTextAreaAdd.appendText("[ERROR] Unable to retrieve IPs from XML file... "+e.toString()+"\n");
 		}
 	}
 	

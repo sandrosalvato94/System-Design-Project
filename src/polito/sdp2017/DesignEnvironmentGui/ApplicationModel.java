@@ -45,9 +45,9 @@ public class ApplicationModel {
 		for (IP i : l) {
 			try {
 				database.addIP(i);
-				logs.add("[OK] IP "+i.getName()+"inserted\n");
+				logs.add("[OK] IP "+i.getName()+" inserted\n");
 			} catch (SQLException e) {
-				logs.add("[ERROR] Unable to add IP "+i.getName());
+				logs.add("[ERROR] Unable to add IP "+i.getName()+", already exists...\n");
 			}
 		}
 		
