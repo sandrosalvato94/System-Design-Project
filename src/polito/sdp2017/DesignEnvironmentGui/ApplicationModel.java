@@ -1,8 +1,17 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import polito.sdp2017.Components.DBManager;
+import polito.sdp2017.Components.IP;
 import polito.sdp2017.Components.SQLiteManager;
 
 public class ApplicationModel {
@@ -27,6 +36,22 @@ public class ApplicationModel {
 	
 	public boolean isConnected() {
 		return databaseConnectionUp;
+	}
+
+	public List<String> insertIPByXml(String text) throws SAXException, ParserConfigurationException, IOException {
+		List<String> logs = new LinkedList<String>();
+		List<IP> l = IP.getFromXML(text);
+		
+		for (IP i : l) {
+			try {
+				database.addIP(i);
+				logs.add("[OK] IP "+i.getName()+"inserted\n");
+			} catch (SQLException e) {
+				logs.add("[ERROR] Unable to add IP "+i.getName());
+			}
+		}
+		
+		return logs;
 	}
 
 }

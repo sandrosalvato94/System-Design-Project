@@ -23,7 +23,7 @@ public class ScreenStartController implements ControlledScreen {
 	public void setApplicationModel(ApplicationModel applicationModel) {
 		this.applicationModel = applicationModel;
 	}
-	
+		
     @FXML
     private void connectDB(ActionEvent event){
     	logTextArea.appendText("Starting connection to :\n\t"+databasePath.getText()+"\n");
