@@ -6,8 +6,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 
@@ -92,10 +94,53 @@ public class SQLiteManager implements DBManager {
 		
 		//buildQueryInsertIP(ip, i_ip);
 		//System.out.println(i_ip);
-		
-		
-
 	}*/
+	
+	static public boolean isSQLite3 (String dbPath) {
+		byte[] buffer = new byte[16];
+		File dbFile = new File(dbPath);
+		
+		if (!dbFile.exists() || !dbFile.isFile()) {
+			return false;
+		}
+		
+		if (dbFile.length() < 16) {
+			return false;
+		}
+		
+		try {
+			InputStream is = new FileInputStream(dbPath);
+			is.read(buffer);
+			is.close();
+		} catch (IOException e) {
+			return false;
+		}
+
+		return buffer.equals("SQLite format 3"+'\0');
+	}
+	
+	@Override
+	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
+		File dbFilePath = new File(dbPath);
+	
+		if (!isSQLite3(dbPath)) {
+			throw new IllegalArgumentException("path do not belong to an SQLite3 database");
+		}
+
+		Class.forName("org.sqlite.JDBC");
+		DBPath = "jdbc:sqlite:"+dbPath;
+		System.out.println(DBPath);
+		DBConn = DriverManager.getConnection(DBPath);
+
+		Statement state = DBConn.createStatement();
+		ResultSet rs = state.executeQuery("SELECT * FROM Author"); // tests if connection is active
+		rs.close();
+	}
+	
+	@Override
+	public void closeConnection() throws SQLException {
+		DBConn.close();
+	}
 	
 	@Override
 	public String getDBPath() {
@@ -315,25 +360,6 @@ public class SQLiteManager implements DBManager {
 		}
 
 		return false;
-	}
-
-	@Override
-	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
-		if (DBConn != null && DBConn.isValid(0)) {
-			DBConn.close();
-		}
-		Class.forName("org.sqlite.JDBC");
-		DBPath = "jdbc:sqlite:"+dbPath;
-		System.out.println(DBPath);
-		DBConn = DriverManager.getConnection(DBPath);
-
-		Statement state = DBConn.createStatement();
-		ResultSet rs = state.executeQuery("SELECT * FROM Author"); // test if connection is active
-	}
-	
-	@Override
-	public void closeConnection() throws SQLException {
-		DBConn.close();
 	}
 	
 	private static void buildQueryInsertConfiguration(FPGAConfiguration conf, StringBuilder query1, StringBuilder query2, StringBuilder query3)
