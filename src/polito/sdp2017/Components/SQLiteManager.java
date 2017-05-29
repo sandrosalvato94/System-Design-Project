@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+
+import org.sqlite.SQLiteConfig;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -130,10 +133,14 @@ public class SQLiteManager implements DBManager {
 		Class.forName("org.sqlite.JDBC");
 		DBPath = "jdbc:sqlite:"+dbPath;
 		System.out.println(DBPath);
+		//SQLiteConfig config = new SQLiteConfig();  
+        //config.enforceForeignKeys(true);
+		//DBConn = DriverManager.getConnection(DBPath/*, config.toProperties()*/);
+		
 		DBConn = DriverManager.getConnection(DBPath);
 
 		Statement state = DBConn.createStatement();
-		ResultSet rs = state.executeQuery("SELECT * FROM Author"); // tests if connection is active
+		ResultSet rs = state.executeQuery("SELECT * FROM IPCore"); // tests if connection is active
 		rs.close();
 	}
 	
@@ -208,7 +215,7 @@ public class SQLiteManager implements DBManager {
 	}
 
 	@Override
-	public void addIP(IP ipToBeAdded) {
+	public void addIP(IP ipToBeAdded) throws SQLException {
 		Statement state;
 		StringBuilder query1 = new StringBuilder();
 		StringBuilder query2 = new StringBuilder();
@@ -222,11 +229,8 @@ public class SQLiteManager implements DBManager {
 				System.out.println(ipToBeAdded.getContactPoint().getIdAuthor() + " already exists inside Author");
 			}
 
-			try {
-				state.executeUpdate(query2.toString());
-			} catch(SQLException se) {
-				System.out.println(ipToBeAdded.getIdIP() + " already exits one IP with the same id");
-			}
+			state.executeUpdate(query2.toString());
+			
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}

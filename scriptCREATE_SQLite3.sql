@@ -3,6 +3,8 @@ DROP TABLE IPManager;
 DROP TABLE Author;
 DROP TABLE FPGAConfiguration;
 DROP TABLE MappedIP;
+PRAGMA foreign_keys = ON;
+PRAGMA foreign_keys ;
 
 CREATE TABLE IPCore(idIP 			CHAR(30) PRIMARY KEY,	
 					name		CHAR(25),

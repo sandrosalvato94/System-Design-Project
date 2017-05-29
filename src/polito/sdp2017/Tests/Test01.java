@@ -25,7 +25,7 @@ public class Test01 {
 		DBM.setDBName("System Design Project Database");
 		DBM.openConnection(dbpath);
 		DBM.generateNewDatabase(DBM.getDBPath());
-		printMenu();
+		//printMenu();
 		//a = selectChoice(scannerIO);
 		a = 1;
 		
