@@ -34,7 +34,7 @@ public class Test01 {
 		a = 1;
 		
 		switch (a) {
-		case 1:
+		case 1:	//addIP
 			LinkedList<IP> listIP = new LinkedList<IP>();
 			String nameFile = new String();
 			File file = new File("./src/polito/sdp2017/Tests");
@@ -47,22 +47,14 @@ public class Test01 {
 			            	{
 			            		listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/" + f.getName());
 			            		DBM.addIP(listIP.getFirst());
-			            		System.out.println(f.getName());
+			            		//System.out.println(f.getName());
 			            	}
 			            }
 			        }
-			 
-
-			//System.out.println("Please type the name of the XML file");
-			//nameFile = getStringFromStdin();
-			//System.out.println(nameFile);
-			//listIP = (LinkedList<IP>) IP.getFromXML("src/polito/sdp2017/Tests/Control_Logic.xml");
-			//System.out.println(listIP.getFirst().toString());
-			//DBM.addIP(listIP.getFirst());
 			
 			break;
-		case 2:
-			
+		case 2:	//removeIP
+				
 			break;
 		case 3:
 			

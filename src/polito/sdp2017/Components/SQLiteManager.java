@@ -221,7 +221,7 @@ public class SQLiteManager implements DBManager {
 		StringBuilder query2 = new StringBuilder();
 		buildQueryInsertIP(ipToBeAdded, query1, query2);
 		
-		try {
+		
 			state = DBConn.createStatement();
 			try {
 				state.executeUpdate(query1.toString());
@@ -230,10 +230,6 @@ public class SQLiteManager implements DBManager {
 			}
 
 			state.executeUpdate(query2.toString());
-			
-		} catch(Exception e) {
-			System.out.println("Error: " + e);
-		}
 	}
 
 	@Override

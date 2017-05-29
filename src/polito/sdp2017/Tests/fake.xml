@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>fake</IPName>
+        <IPId>VHDL_fake</IPId>
+        <IPDescription>A description for Shifter2</IPDescription>
+        <ContactPoint>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>cp12</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>737</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>889</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>7.550</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1456</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.965</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.392</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>
+    </IPCore>
+</IPs>
