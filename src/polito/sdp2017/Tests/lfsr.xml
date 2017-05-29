@@ -5,11 +5,11 @@
         <IPId>VHDL_lfsr</IPId>
         <IPDescription>A description for lfsr</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Mariagrazia Graziano</AuthorName>
+            <AuthorId>cp07</AuthorId>
+            <AuthorCompany>Everywher</AuthorCompany>
+            <AuthorEmail>A lot of emails</AuthorEmail>
+            <AuthorRole>Master of everything</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>162</HardwarePropertiesLUTs>

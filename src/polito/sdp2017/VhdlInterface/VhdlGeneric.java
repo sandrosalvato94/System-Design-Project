@@ -25,23 +25,27 @@ public class VhdlGeneric implements Generic {
 	 */
 	static List<Generic> parseFromSource(String txt) {		
 		List<Generic> list = new LinkedList<Generic>();
-		String regex = "\\s*(\\w+)\\s*:\\s*(\\w+)\\s*(\\s*(:=\\s*(\\w+)\\s*)?)\\s*";	//	regular expression used
+		String regex = "\\(?\\s*(([\\-\\-[\\s|\\w|?|,|!|;|\\^|\\(|\\)]*\\n]*\n)?)\\s*(\\w+)\\s*:\\s*(\\w+)\\s*(\\s*(:=\\s*(\\w+)\\s*)?)\\s*\\)?\\s*";	//	regular expression used
 																				//	for parsing a single 
 																				//	generic line, in the
 																				//	generic clause of a VHDL
 																				//	entity
-		
 		Pattern p = Pattern.compile(regex);
 		for (String genericLine : txt.split(";")) {		//	in VHDL entities the generic clause is a list of
 														//	generic parameter, separated by ";"
 			genericLine = genericLine.trim();			//	delete leading and trailing spaces for simpler
 														//	parsing
+			
+			if(genericLine.equals(""))
+			{
+				continue;
+			}
 			Matcher m = p.matcher(genericLine);
 			if (m.matches()) {
-				String name = m.group(1);
-				String type = m.group(2);				//	no check is performed on the type, which is
+				String name = m.group(3);
+				String type = m.group(4);				//	no check is performed on the type, which is
 														//	supposed to be correct
-				String dflValue = m.group(5);			//	TODO maybe check if it is null ??
+				String dflValue = m.group(7);			//	TODO maybe check if it is null ??
 								
 				list.add(new VhdlGeneric(name,type,dflValue));
 			} else {

@@ -26,23 +26,27 @@ public class VhdlPin implements Pin {
 	 */
 	static List<Pin> parseFromSource(String txt) {
 		List<Pin> list = new LinkedList<Pin>();
-		String regex = "\\s*(\\w+)\\s*:\\s*(\\w+)\\s+(\\w+)\\s*((\\((.*)\\))?)";	//	regular expression
+		String regex = "\\(?\\s*(([\\-\\-[\\s|\\w|?|,|!|;|\\^|\\(|\\)]*\\n]*\n)?)\\s*(\\w+)\\s*:\\s*(\\w+)\\s+(\\w+)\\s*((\\((.*)\\)\\s*.*)?)\\s*\\)?\\s*";	//	regular expression
 																					//	used for parsing a
 																					//	single pin line,
 																					//	in the port clause
 																					//	of a VHDL entity
+		//String regex = "\\s*\\w+\\s*:\\s*\\w+\\s*\\w+\\s*;\\s*.*";
 		Pattern p = Pattern.compile(regex);
 		for (String genericLine : txt.split(";")) {		//	in VHDL entities the port clause is a list of
 														//	pins, separated by ";"
 			genericLine = genericLine.trim();			//	delete leading and trailing spaces for simpler
-														//	parsing
+			if(genericLine.equals(""))
+			{
+				continue;
+			}											//	parsing
 			Matcher m = p.matcher(genericLine);
 			if (m.matches()) {
-				String name = m.group(1);
-				String direction = m.group(2);
-				String type = m.group(3);				//	no check is performed on the type, which is
+				String name = m.group(3);
+				String direction = m.group(4);
+				String type = m.group(5);				//	no check is performed on the type, which is
 														//	supposed to be correct
-				String dimension = m.group(6);
+				String dimension = m.group(7);
 				
 				VhdlPinDirection pinDirection = VhdlPinDirection.vhdlPinDirectionFromString(direction);
 				

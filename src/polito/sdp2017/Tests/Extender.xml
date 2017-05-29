@@ -5,11 +5,11 @@
         <IPId>VHDL_Extender</IPId>
         <IPDescription>A description for Extender</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Simone Machetti</AuthorName>
+            <AuthorId>cp06</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>simone.machetti@studenti.polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>838</HardwarePropertiesLUTs>

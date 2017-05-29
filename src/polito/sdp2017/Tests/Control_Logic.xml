@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>Control_Logic</IPName>
         <IPId>VHDL_Control_Logic</IPId>
         <IPDescription>A description for Control_Logic</IPDescription>
         <ContactPoint>
             <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorId>cp01</AuthorId>
             <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
             <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
@@ -20,6 +20,5 @@
             <HardwarePropertiesMaxClkFreq>8.708</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Control_Logic.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

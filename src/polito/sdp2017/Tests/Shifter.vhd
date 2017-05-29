@@ -6,7 +6,10 @@ use ieee.std_logic_unsigned.all;
 entity Shifter is	
 		generic (N : integer := 16);
 		port (A : in std_logic_vector(N-1 downto 0);
-				B, C, D, E : out std_logic_vector(N-1 downto 0)
+				B : out std_logic_vector(N-1 downto 0);
+				C : out std_logic_vector(N-1 downto 0);
+				D : out std_logic_vector(N-1 downto 0);
+				E : out std_logic_vector(N-1 downto 0)
 				);
 end Shifter;
 

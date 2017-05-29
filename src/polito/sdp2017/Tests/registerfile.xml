@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>registerfile</IPName>
         <IPId>VHDL_registerfile</IPId>
         <IPDescription>A description for registerfile</IPDescription>
         <ContactPoint>
             <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorId>cp01</AuthorId>
             <AuthorCompany>company of EmanueleParisi</AuthorCompany>
             <AuthorEmail>email of EmanueleParisi</AuthorEmail>
             <AuthorRole>role of EmanueleParisi</AuthorRole>
@@ -20,6 +20,5 @@
             <HardwarePropertiesMaxClkFreq>4.718</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/registerfile.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/registerfile</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

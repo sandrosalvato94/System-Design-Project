@@ -1,15 +1,15 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>b14BCD</IPName>
         <IPId>VHDL_b14BCD</IPId>
         <IPDescription>A description for b14BCD</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>Federica De Blasio</AuthorName>
+            <AuthorId>cp04</AuthorId>
+            <AuthorCompany>Università degli studi di Foggia</AuthorCompany>
+            <AuthorEmail>federica.deblasio@unifg.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>192</HardwarePropertiesLUTs>
@@ -20,6 +20,5 @@
             <HardwarePropertiesMaxClkFreq>5.541</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b14BCD.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/b14BCD</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

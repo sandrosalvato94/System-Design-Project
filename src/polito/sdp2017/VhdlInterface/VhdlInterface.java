@@ -68,32 +68,53 @@ public class VhdlInterface implements HardwareInterface {
 	public VhdlInterface(String vhdlSourcePath) {
 		String entitySource = extractEntityFromSource(vhdlSourcePath);	//	first of all the entity block
 																		//	is extracted from the source
-		String reStartEnt = "\\s*entity\\s+(.*)\\s+is\\s*";				//	regex matching the entity name
-		String reGeneric = "((generic\\s*\\((.*)\\);)?)\\s*";			//	regex matching the generics
-																		//	if they are present
-		String rePort = "port\\s*\\((.*)\\);\\s*";						//	regex matching the ports
-		String reEndEnt = "\\s*end\\s+(.*);\\s*";						//	regex matchig the entity end
-		String reFinal = reStartEnt+reGeneric+rePort+reEndEnt;			//	the final regex is got by the
-																		//	concatenation of all the
-																		//	previous ones
-		entitySource = entitySource.toLowerCase();	// TODO is this toLowerCase() necessary ???
-
-		Pattern p = Pattern.compile(reFinal, Pattern.DOTALL);
-		Matcher m = p.matcher(entitySource);
+		entitySource = entitySource.toLowerCase();	
 		
-		if (m.matches()) {
-			this.entityName = m.group(1);
-			if (m.group(3) == null) {		//	if group 3 is null, the entity do not contains generics
-				this.generics = null;
-			} else {
-				this.generics = VhdlGeneric.parseFromSource(m.group(4));	//	parse generics
-			}
-			this.pins = VhdlPin.parseFromSource(m.group(5));				//	parse pins
-		} else {
-			throw new RuntimeException("entity format is not recognised");	//	the VHDL source is supposed
-																			//	to be correct, so no error
-																			//	is managed
+		String s_ent, s_gen = null, s_port, s_end;
+		String[] splitted_entity;
+		boolean is_gen = true;
+		
+		splitted_entity = entitySource.split("\\Wend\\s+");
+		s_end = splitted_entity[1];
+		splitted_entity = splitted_entity[0].split("\\s*port\\s*");
+		s_port = splitted_entity[1];
+		Pattern p2 = Pattern.compile("(.*)\\)\\s*;\\s*(([\\-\\-[\\s|\\w|?|,|!|;|\\^|\\(|\\)]*\\s*]*\n*)?)", Pattern.DOTALL);
+		Matcher m2 = p2.matcher(s_port);
+		m2.matches();
+		s_port = new String(m2.group(1));
+		System.out.println(s_port);
+		try
+		{
+			splitted_entity = splitted_entity[0].split("\\s*generic\\s*");
+			s_gen = splitted_entity[1];
+			Pattern p1 = Pattern.compile("(.*)\\)\\s*;\\s*(([\\-\\-[\\s|\\w|?|,|!|;|\\^|\\(|\\)]*\\s*]*\n*)?)", Pattern.DOTALL);
+			Matcher m1 = p1.matcher(s_gen);
+			m1.matches();
+			s_gen = new String(m1.group(1));
+			System.out.println(s_gen);
 		}
+		catch (ArrayIndexOutOfBoundsException e) //exception if generic is not declared in the entity
+		{
+			is_gen = false;
+		}
+		
+		splitted_entity = splitted_entity[0].split("entity\\s+");
+		s_ent = splitted_entity[1];
+		
+		
+		Pattern p = Pattern.compile("\\s*(\\w+)\\s*is.*", Pattern.DOTALL);
+		Matcher m = p.matcher(s_ent);
+		m.matches();
+		System.out.println(m.group(1));
+		this.entityName = m.group(1);
+		if(is_gen) {
+			this.generics = VhdlGeneric.parseFromSource(s_gen);
+		}
+		else
+		{
+			this.generics = null;
+		}
+		this.pins = VhdlPin.parseFromSource(s_port);
 	}
 
 	/**
@@ -142,7 +163,7 @@ public class VhdlInterface implements HardwareInterface {
 			strb.append(");\n");
 		}
 		
-		System.out.println(pins.size());
+		//System.out.println(pins.size());
 		
 		/*for(Pin p : pins)
 		{
@@ -209,12 +230,11 @@ public class VhdlInterface implements HardwareInterface {
 	 * @param args : arguments parsed from command line
 	 */
 	public static void main(String[] args) {
-		System.out.println("TEST MAIN FOR VhdlInterface");
 		
-		String testFilePath = "/Users/emanueleparisi/Desktop/acc.vhd";
+		String testFilePath = "src/polito/sdp2017/Tests/Control_Logic.vhd";
 		
 		VhdlInterface i = new VhdlInterface(testFilePath);
 		
-		System.out.println(i);
+		//System.out.println(i);
 	}
 }

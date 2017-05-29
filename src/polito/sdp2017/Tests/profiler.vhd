@@ -23,7 +23,7 @@ use IEEE.NUMERIC_STD.ALL;
 use ieee.std_logic_unsigned.all;
 
 entity profiler is
-    Port ( instruction_code : in  STD_LOGIC_VECTOR (5 downto 0); 			--from execution_logic
+    port ( instruction_code : in  STD_LOGIC_VECTOR (5 downto 0); 			--from execution_logic
            count_max : in  STD_LOGIC_VECTOR (9 downto 0);					--from control logic
            target_instr : in  STD_LOGIC_VECTOR (5 downto 0);				--from control logic
            Reset : in  STD_LOGIC;													--from control logic, it works in asyncronous way

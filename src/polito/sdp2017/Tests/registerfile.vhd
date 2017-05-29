@@ -19,7 +19,7 @@ entity register_file is
 	 RD1: 		IN std_logic;
 	 RD2: 		IN std_logic;
 	 WR: 		IN std_logic;
-	 ADD_WR: 	IN std_logic_vector(K-1 downto 0); -- 32 registers
+	 ADD_WR: 	IN std_logic_vector(K-1 downto 0); 
 	 ADD_RD1: 	IN std_logic_vector(K-1 downto 0);
 	 ADD_RD2: 	IN std_logic_vector(K-1 downto 0);
 	 DATAIN: 	IN std_logic_vector(M-1 downto 0);
