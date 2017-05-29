@@ -54,7 +54,7 @@ public class ApplicationModel {
 	}
 
 	public boolean removeIP(String id, String name, boolean isCore) {
-		return false;
+		return database.removeIP(name, id, isCore);
 	}
 
 }

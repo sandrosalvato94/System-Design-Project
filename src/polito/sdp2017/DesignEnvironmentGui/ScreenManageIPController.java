@@ -56,11 +56,11 @@ public class ScreenManageIPController implements ControlledScreen {
 		String name = new String("$");
 		boolean core = false;
 		logTextAreaRemove.appendText("Removing IP:\n");
-		if (IPIdentifier.getText() != "") {
+		if (!IPIdentifier.getText().trim().equals("")) {
 			id = IPIdentifier.getText();
 			logTextAreaRemove.appendText("\tIP identifier : "+id+"\n");
 		}
-		if (IPName.getText() != "") {
+		if (!IPName.getText().trim().equals("")) {
 			name = IPName.getText();
 			logTextAreaRemove.appendText("\tIP name : "+name+"\n");
 		}
