@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 
 
@@ -97,6 +98,7 @@ public class SQLiteManager implements DBManager {
 	}*/
 	
 	static public boolean isSQLite3 (String dbPath) {
+		final String SQLite3Signature = "SQLite format 3"+'\0';
 		byte[] buffer = new byte[16];
 		File dbFile = new File(dbPath);
 		
@@ -116,13 +118,11 @@ public class SQLiteManager implements DBManager {
 			return false;
 		}
 
-		return buffer.equals("SQLite format 3"+'\0');
+		return SQLite3Signature.equals(new String(buffer, StandardCharsets.UTF_8));
 	}
 	
 	@Override
 	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
-		File dbFilePath = new File(dbPath);
-	
 		if (!isSQLite3(dbPath)) {
 			throw new IllegalArgumentException("path do not belong to an SQLite3 database");
 		}
