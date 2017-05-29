@@ -32,6 +32,8 @@ public class ScreenStartController implements ControlledScreen {
 			logTextArea.appendText("[OK] Connection enstablished, database ready...");
 		} catch (ClassNotFoundException | SQLException e) {
 			logTextArea.appendText("[ERROR] Unable to connect to database...\n");
+		} catch (IllegalArgumentException e) {
+			logTextArea.appendText("[ERROR] Specified path is not an SQLite3 database...\n");
 		}
     }
     
