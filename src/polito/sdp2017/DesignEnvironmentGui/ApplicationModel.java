@@ -37,9 +37,9 @@ public class ApplicationModel {
 		return databaseConnectionUp;
 	}
 
-	public List<String> insertIPByXml(String text) throws SAXException, ParserConfigurationException, IOException {
+	public List<String> insertIPByXml(String xmlPath) throws SAXException, ParserConfigurationException, IOException {
 		List<String> logs = new LinkedList<String>();
-		List<IP> l = IP.getFromXML(text);
+		List<IP> l = IP.getFromXML(xmlPath);
 		
 		for (IP i : l) {
 			try {
