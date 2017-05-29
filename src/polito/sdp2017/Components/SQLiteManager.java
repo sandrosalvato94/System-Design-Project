@@ -52,9 +52,9 @@ public class SQLiteManager implements DBManager {
 		    "idConf", "idMappedIP", "idIP", "priority", "physicalAddress"));
 	
 	public static final List<String> searchingParametersIP = Collections.unmodifiableList(Arrays.asList(
-		    "isIPCore", "idIP", "name", "maxLUTs", "minLUTs", "maxFFs", "minFFs", "maxLatency", 
-		    "minLatency","maxNMemories", "minNMemories", "maxPowerConsuption",
-		    "minPowerConsuption", "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
+		    "isIPCore", "idIP", "name", "LUTs", "LUTs", "FFs", "FFs", "latency", 
+		    "latency","nMemories", "nMemories", "powerConsuption",
+		    "powerConsuption", "maxClockFrequency", "contactPoint", "name", "company"));
 	
 	public static final List<String> searchingParametersFPGAConf = Collections.unmodifiableList(Arrays.asList(
 		    "nIPs", "idConf", "name", "maxLUTs", "minLUTs", "maxFFs", "minFFs", "maxLatency", 
@@ -174,7 +174,7 @@ public class SQLiteManager implements DBManager {
 	}
 
 	@Override
-	public LinkedList<IP> searchIP(List<String> listOfParameters) {
+	public LinkedList<IP> searchIP(LinkedList<String> listOfParameters) {
 		Statement state;
 		ResultSet RS;
 		StringBuilder query = new StringBuilder();
@@ -452,7 +452,7 @@ public class SQLiteManager implements DBManager {
 		}
 	}
 	
-	private static void buildQuerySelectIP(List<String> listOfParameters, StringBuilder query)
+	private static void buildQuerySelectIP(LinkedList<String> listOfParameters, StringBuilder query)
 	{
 		String libIP;
 		String libAuth;

@@ -12,7 +12,7 @@ public interface DBManager {
 	public void setDBName(String DBName);
 	public String getDBName();
 	public void generateNewDatabase(String path);
-	public LinkedList<IP> searchIP(List<String> listOfParameters);
+	public LinkedList<IP> searchIP(LinkedList<String> listOfParameters);
 	public void addIP(IP ipToBeAdded) throws SQLException;
 	public boolean removeIP(String name, String id, boolean isCore) throws SQLException;
 	public LinkedList<FPGAConfiguration> searchConfiguration(List<String> listOfParameters);

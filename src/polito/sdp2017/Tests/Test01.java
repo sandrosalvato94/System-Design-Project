@@ -1,4 +1,5 @@
 package polito.sdp2017.Tests;
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class Test01 {
 		DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 2;
+		a = 3;
 		
 		switch (a) {
 		case 1:	//addIP
@@ -55,6 +56,39 @@ public class Test01 {
 				}
 			break;
 		case 3:
+			LinkedList<IP> lip = new LinkedList<IP>();
+			String isIPCore = new String("true");
+			String idIP = new String("$");
+			String name = new String("$");
+			String maxLUTs = new String("900");
+			String minLUTs = new String("399");
+			String maxFFs = new String("$");
+			String minFFs = new String("$");
+			String maxLatency = new String("$");
+			String minLatency = new String("$");
+			String maxNMemories = new String("$");
+			String minNMemories = new String("$");
+			String maxPowerConsuption = new String("$");
+			String minPowerConsuption = new String("$");
+			String maxClockFrequency = new String("$");
+			String idAuthor = new String("$");
+			String nameAuthor = new String("$");
+			String company = new String("$");
+			
+			LinkedList<String> l = new LinkedList<String>();
+			
+			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); l.add(minLUTs);
+			l.add(maxFFs); l.add(minFFs); l.add(maxLatency); l.add(minLatency);
+			l.add(maxNMemories); l.add(minNMemories); l.add(maxPowerConsuption);
+			l.add(minPowerConsuption); l.add(maxClockFrequency); l.add(idAuthor);
+			l.add(nameAuthor); l.add(company);
+			
+			lip = DBM.searchIP(l);
+			
+			System.out.println("end search");
+			
+			
+			
 			
 			break;
 		default:
@@ -91,7 +125,7 @@ public class Test01 {
 				str = myInput.readLine();
 				return str;
 		} catch (IOException e) {
-				System.out.println ("Si ï¿½ verificato un errore: " + e);
+				System.out.println ("Si è verificato un errore: " + e);
 				System.exit(-1);
 		}
 		return str;
