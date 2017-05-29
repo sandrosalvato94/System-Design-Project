@@ -45,7 +45,7 @@ public class Test01 {
 				//tmp = DBM.removeIP("$", "VHDL_lfsr", false); //it doesn't exist in IPManager Lib
 				//DBM.removeIP("", "", true);
 				
-				if(tmp ==true)
+				if(tmp == true)
 				{
 					System.out.println("Rimosso con successo");
 				}
