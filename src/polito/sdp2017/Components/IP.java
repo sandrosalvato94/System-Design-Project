@@ -2,12 +2,14 @@ package polito.sdp2017.Components;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
@@ -17,6 +19,7 @@ import javax.xml.validation.Schema;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import polito.sdp2017.HardwareInterface.HardwareInterface;
 import polito.sdp2017.HardwareInterface.Hdl;
@@ -31,39 +34,34 @@ public class IP {
 	private String hdlSourcePath;
 	private HardwareInterface hwInterface;
 	
-	public static List<IP> getFromXML(String xmlPath) {
+	public static List<IP> getFromXML(String xmlPath) throws SAXException, ParserConfigurationException, IOException {
     	File fXmlFile = new File(xmlPath);
     	List<IP> listIPs = new LinkedList<IP>();
 		List<IP> listCores;
 		List<IP> listManagers;
 		
-		try {
-			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			
-			SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-			Schema schema = sf.newSchema(new StreamSource(new File("xmlSchema.xml")));
-			builderFactory.setSchema(schema);
+		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = sf.newSchema(new StreamSource(new File("xmlSchema.xml")));
+		builderFactory.setSchema(schema);
 
-			DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		    Document doc = builder.parse(fXmlFile);
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+	    Document doc = builder.parse(fXmlFile);
 	    	
-		    doc.getDocumentElement().normalize();
-		    Element root = doc.getDocumentElement();
+	    doc.getDocumentElement().normalize();
 	    	
-	    	NodeList cores = doc.getElementsByTagName("IPCore");
-	    	NodeList managers = doc.getElementsByTagName("IPManager");
+	   	NodeList cores = doc.getElementsByTagName("IPCore");
+	    NodeList managers = doc.getElementsByTagName("IPManager");
 	    	
-	    	listCores = IPCore.getFromDomNodeList(cores);
-	    	listManagers = IPManager.getFromDomNodeList(managers);
-	    	if (listCores != null) {
-		    	listIPs.addAll(listCores);
-			}
-	    	if (listManagers != null) {
-		    	listIPs.addAll(listManagers);
-	    	}
-		} catch (Exception e) {
-		    e.printStackTrace();
+	    listCores = IPCore.getFromDomNodeList(cores);
+	    listManagers = IPManager.getFromDomNodeList(managers);
+	    if (listCores != null) {
+		   	listIPs.addAll(listCores);
 		}
+	    if (listManagers != null) {
+		    listIPs.addAll(listManagers);
+	    }
 
 		return listIPs;
 	}
