@@ -29,24 +29,36 @@ public class ScreenStartController implements ControlledScreen {
     	logTextArea.appendText("Starting connection to :\n\t"+databasePath.getText()+"\n");
     	try {
 			applicationModel.openDatabaseConnection(databasePath.getText());
-			logTextArea.appendText("Connection enstablished, database ready...");
+			logTextArea.appendText("[OK] Connection enstablished, database ready...");
 		} catch (ClassNotFoundException | SQLException e) {
-			logTextArea.appendText("Unable to connect to database...\n");
+			logTextArea.appendText("[ERROR] Unable to connect to database...\n");
 		}
     }
     
     @FXML
     private void goToAddRemoveIP(ActionEvent event){
-    	myController.setScreen(Main.screenManageIPID);
+    	if (applicationModel.isConnected()) {
+        	myController.setScreen(Main.screenManageIPID);
+    	} else {
+    		logTextArea.appendText("[ERROR] You are not connected to any database...\n");
+    	}
     }
     
     @FXML
     private void goToCreateConfig(ActionEvent event){
-    	myController.setScreen(Main.screenCreateConfigID);
+    	if (applicationModel.isConnected()) {
+        	myController.setScreen(Main.screenCreateConfigID);
+    	} else {
+    		logTextArea.appendText("[ERROR] You are not connected to any database...\n");
+    	}
     }
     
     @FXML
     private void goToLoadConfig(ActionEvent event){
-    	myController.setScreen(Main.screenLoadConfigID);
+    	if (applicationModel.isConnected()) {
+    		myController.setScreen(Main.screenLoadConfigID);
+    	} else {
+    		logTextArea.appendText("[ERROR] You are not connected to any database...\n");
+    	}
     }
 }

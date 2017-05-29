@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.DesignEnvironmentGui.ScreenStartController">
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.DesignEnvironmentGui.ScreenStartController">
    <children>
       <HBox prefHeight="500.0" prefWidth="240.0">
          <children>
@@ -35,7 +35,7 @@
                   <Button mnemonicParsing="false" onAction="#connectDB" prefHeight="30.0" prefWidth="120.0" text="Connect..." translateX="20.0" translateY="20.0" />
                </children>
             </HBox>
-            <TextArea fx:id="logTextArea" editable="false" prefHeight="410.0" prefWidth="500.0" />
+            <TextArea fx:id="logTextArea" editable="false" prefHeight="410.0" prefWidth="497.0" />
          </children>
       </VBox>
    </children>

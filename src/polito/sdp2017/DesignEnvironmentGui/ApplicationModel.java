@@ -6,8 +6,8 @@ import polito.sdp2017.Components.DBManager;
 import polito.sdp2017.Components.SQLiteManager;
 
 public class ApplicationModel {
-	boolean databaseConnectionUp;
-	DBManager database;
+	private boolean databaseConnectionUp;
+	private DBManager database;
 	
 	public ApplicationModel() {
 		super();
@@ -23,6 +23,10 @@ public class ApplicationModel {
 	public void closeDatabaseConnection(String dbPath) throws SQLException {
 		database.closeConnection();
 		databaseConnectionUp = false;
+	}
+	
+	public boolean isConnected() {
+		return databaseConnectionUp;
 	}
 
 }
