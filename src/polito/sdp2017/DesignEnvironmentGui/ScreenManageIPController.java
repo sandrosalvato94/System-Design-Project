@@ -78,4 +78,9 @@ public class ScreenManageIPController implements ControlledScreen {
 			logTextAreaRemove.appendText("[ERROR] not removed...\n");
 		}
 	}
+	
+	@FXML
+	public void goBack (ActionEvent event) {
+		myController.setScreen(Main.screenStartID);
+	}
 }

@@ -29,12 +29,17 @@ public class ScreenStartController implements ControlledScreen {
     	logTextArea.appendText("Starting connection to :\n\t"+databasePath.getText()+"\n");
     	try {
 			applicationModel.openDatabaseConnection(databasePath.getText());
-			logTextArea.appendText("[OK] Connection enstablished, database ready...");
+			logTextArea.appendText("[OK] Connection enstablished, database ready...\n");
 		} catch (ClassNotFoundException | SQLException e) {
 			logTextArea.appendText("[ERROR] Unable to connect to database...\n");
 		} catch (IllegalArgumentException e) {
 			logTextArea.appendText("[ERROR] Specified path is not an SQLite3 database...\n");
 		}
+    }
+    
+    @FXML
+    private void generateNewDB(ActionEvent event){
+    	logTextArea.appendText("[ERROR] function still to be implemented\n");
     }
     
     @FXML
