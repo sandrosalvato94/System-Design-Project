@@ -29,7 +29,7 @@ public class Test01 {
 		DBManager DBM = new SQLiteManager();
 		DBM.setDBName("System Design Project Database");
 		DBM.openConnection(dbpath);
-		DBM.generateNewDatabase(DBM.getDBPath());
+		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
 		a = 3;
@@ -56,21 +56,15 @@ public class Test01 {
 				}
 			break;
 		case 3:
-			fillDatabase(DBM);
+			//fillDatabase(DBM);
 			LinkedList<IP> lip = new LinkedList<IP>();
-			String isIPCore = new String("true");
+			String isIPCore = new String("false");
 			String idIP = new String("$");
 			String name = new String("$");
-			String maxLUTs = new String("900");
-			String minLUTs = new String("399");
+			String maxLUTs = new String("$");
 			String maxFFs = new String("$");
-			String minFFs = new String("$");
 			String maxLatency = new String("$");
-			String minLatency = new String("$");
-			String maxNMemories = new String("$");
-			String minNMemories = new String("$");
 			String maxPowerConsuption = new String("$");
-			String minPowerConsuption = new String("$");
 			String maxClockFrequency = new String("$");
 			String idAuthor = new String("$");
 			String nameAuthor = new String("$");
@@ -78,13 +72,29 @@ public class Test01 {
 			
 			LinkedList<String> l = new LinkedList<String>();
 			
-			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); l.add(minLUTs);
-			l.add(maxFFs); l.add(minFFs); l.add(maxLatency); l.add(minLatency);
-			l.add(maxNMemories); l.add(minNMemories); l.add(maxPowerConsuption);
-			l.add(minPowerConsuption); l.add(maxClockFrequency); l.add(idAuthor);
+			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+			l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+		    l.add(maxClockFrequency); l.add(idAuthor);
 			l.add(nameAuthor); l.add(company);
 			
 			lip = DBM.searchIP(l);
+			
+			for(IP i : lip)
+			{
+				System.out.println(i.getName());
+				
+				if(i.getHwInterface().getGenerics() != null) {
+					for(Generic g : i.getHwInterface().getGenerics())
+					{
+						System.out.println(g.toString());
+					}
+				}
+				for(Pin p : i.getHwInterface().getPins())
+				{
+					System.out.println(p.toString());
+				}
+				System.out.println("\n");
+			}
 			
 			System.out.println("end search");
 			

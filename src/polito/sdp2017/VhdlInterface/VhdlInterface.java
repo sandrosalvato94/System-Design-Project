@@ -82,7 +82,7 @@ public class VhdlInterface implements HardwareInterface {
 		Matcher m2 = p2.matcher(s_port);
 		m2.matches();
 		s_port = new String(m2.group(1));
-		System.out.println(s_port);
+		//System.out.println(s_port);
 		try
 		{
 			splitted_entity = splitted_entity[0].split("\\s*generic\\s*");
@@ -91,7 +91,7 @@ public class VhdlInterface implements HardwareInterface {
 			Matcher m1 = p1.matcher(s_gen);
 			m1.matches();
 			s_gen = new String(m1.group(1));
-			System.out.println(s_gen);
+			//System.out.println(s_gen);
 		}
 		catch (ArrayIndexOutOfBoundsException e) //exception if generic is not declared in the entity
 		{
@@ -105,7 +105,7 @@ public class VhdlInterface implements HardwareInterface {
 		Pattern p = Pattern.compile("\\s*(\\w+)\\s*is.*", Pattern.DOTALL);
 		Matcher m = p.matcher(s_ent);
 		m.matches();
-		System.out.println(m.group(1));
+		//System.out.println(m.group(1));
 		this.entityName = m.group(1);
 		if(is_gen) {
 			this.generics = VhdlGeneric.parseFromSource(s_gen);
@@ -176,7 +176,9 @@ public class VhdlInterface implements HardwareInterface {
 				.collect(Collectors.joining("\n\t\t")));
 		strb.append("\n\t\t" + tmp.toString() + ");\n");
 		strb.append(" end entity "+entityName+";\n");
-			
+		
+		pins.add(tmp);
+		
 		return strb.toString();
 	}
 

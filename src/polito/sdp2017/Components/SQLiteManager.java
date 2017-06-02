@@ -1,5 +1,6 @@
 package polito.sdp2017.Components;
 
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,9 +53,8 @@ public class SQLiteManager implements DBManager {
 		    "idConf", "idMappedIP", "idIP", "priority", "physicalAddress"));
 	
 	public static final List<String> searchingParametersIP = Collections.unmodifiableList(Arrays.asList(
-		    "isIPCore", "idIP", "name", "LUTs", "LUTs", "FFs", "FFs", "latency", 
-		    "latency","nMemories", "nMemories", "powerConsuption",
-		    "powerConsuption", "maxClockFrequency", "contactPoint", "name", "company"));
+		    "isIPCore", "idIP", "name", "LUTs", "FFs",  
+		    "latency", "powerConsuption", "maxClockFrequency", "idAuthor", "name", "company"));
 	
 	public static final List<String> searchingParametersFPGAConf = Collections.unmodifiableList(Arrays.asList(
 		    "nIPs", "idConf", "name", "maxLUTs", "minLUTs", "maxFFs", "minFFs", "maxLatency", 
@@ -188,29 +188,45 @@ public class SQLiteManager implements DBManager {
 			if(listOfParameters.get(0).equals("true")) {
 				libIP = IPCoreLib;
 				libAuth = authorLib;
+				while(RS.next()) { 
+					//System.out.println(RS.getMetaData());
+					result.add(new IPCore(RS.getString("nameIP"), RS.getString("idIP"), 
+							   RS.getString("description"), 
+							   new HardwareProperties(RS.getInt("LUTs"), 
+							   RS.getInt("FFs"), RS.getDouble("latency"), 
+							   RS.getInt("nMemories"), RS.getDouble("powerConsuption"), 
+							   RS.getDouble("maxClockFrequency")), new Author(RS.getString("idAuthor"), 
+							   RS.getString("nameA"), 
+							   RS.getString("company"), RS.getString("email"), 
+							   RS.getString("role")), 
+							   RS.getString("hdlSourcePath"), RS.getString("driverPath")));
+				}
 			} else {
 				libIP = IPManagerLib;
 				libAuth = authorLib;
+				while(RS.next()) { 
+					//System.out.println(RS.getMetaData());
+					result.add(new IPManager(RS.getString("nameIP"), RS.getString("idIP"), 
+							   RS.getString("description"), 
+							   new HardwareProperties(RS.getInt("LUTs"), 
+							   RS.getInt("FFs"), RS.getDouble("latency"), 
+							   RS.getInt("nMemories"), RS.getDouble("powerConsuption"), 
+							   RS.getDouble("maxClockFrequency")), new Author(RS.getString("idAuthor"), 
+							   RS.getString("nameA"), 
+							   RS.getString("company"), RS.getString("email"), 
+							   RS.getString("role")), 
+							   RS.getString("hdlSourcePath")));
+				}
 			}
 			
-			while(RS.next()) { 
-				result.add(new IP(RS.getString(libIP + ".name"), RS.getString(libIP + ".idIP"), 
-						   RS.getString(libIP + ".description"), 
-						   new HardwareProperties(RS.getInt(libIP + ".FFs"), 
-						   RS.getInt(libIP + ".FFs"), RS.getDouble(libIP + ".latency"), 
-						   RS.getInt(libIP + ".nMemories"), RS.getDouble(libIP + ".powerConsuption"), 
-						   RS.getDouble(libIP + ".maxClockFrequency")), new Author(RS.getString(libAuth + ".idAuthor"), RS.getString(libAuth + ".name"), 
-						   RS.getString(libAuth + ".company"), RS.getString(libAuth + ".email"), 
-						   RS.getString(libAuth + ".role")), 
-						   RS.getString(libIP + ".hdlSourcePath")));
-			}
+			
 			RS.close();
 		}
 		catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
 		
-		
+		System.out.println(" ");
 		return result;
 	}
 
@@ -465,23 +481,23 @@ public class SQLiteManager implements DBManager {
 		String libAuth;
 		if(listOfParameters.get(0).equals("true")) //0 -> looking for IP cores
 		{
-			query.append("SELECT *\n" + " FROM " + IPCoreLib  + ", "
-					     + authorLib + "\n WHERE " + IPCoreLib + ".idIP <> 'pollo'\n AND " + 
+			query.append("SELECT " + IPCoreLib + ".name AS nameIP, " + authorLib + ".name AS nameA" + ", *\n" 
+		                 + " FROM " + IPCoreLib  + ", " + authorLib + 
+		                 "\n WHERE " + IPCoreLib + ".idIP <> 'pollo'\n AND " + 
 					     authorLib + ".idAuthor = " + IPCoreLib + ".contactPoint");
 			libIP = IPCoreLib;
 			libAuth = authorLib;
 		}
 		else //1 -> looking for IP managers
 		{
-			query.append("SELECT *\n" + " FROM " + IPManagerLib  + ", " + 
+			query.append("SELECT " + IPManagerLib + ".name AS nameIP, " + authorLib + ".name AS nameA" + ", *\n" +
+		                 " FROM " + IPManagerLib  + ", " + 
 		                 authorLib + "\n WHERE " + IPManagerLib + ".idIP <> 'pollo'\n AND " +
 					     authorLib + ".idAuthor = " + IPManagerLib + ".contactPoint");
 			libIP = IPManagerLib;
 			libAuth = authorLib;
 		}
 		
-		int j = 1;
-		boolean flag = false;
 		for(int i=1; i<listOfParameters.size(); i++)
 		{
 			if(!listOfParameters.get(i).equals("$")) //$ is our character for a uninitialized searching parameter 
@@ -499,29 +515,13 @@ public class SQLiteManager implements DBManager {
 				{
 					query.append("\n AND " + libIP + "." + searchingParametersIP.get(i) + " = " + listOfParameters.get(i));
 				}
-				if(i>=14 && i<=16)
+				if(i>=8 && i<=10)
 				{
 					query.append("\n AND " + libAuth + "." + searchingParametersIP.get(i) + " = " + "'"+ listOfParameters.get(i) + "'");
 				}
-				if(i>=3 && i<=12) //max & min LUTs, FFs, latency, #Memories, powerConsuption
+				if(i>=3 && i<=7) //LUTs, FFs, latency, #Memories, powerConsuption
 				{
-					if(i%2 == 1)
-					{
-						flag = true;
-					}
-					else
-					{
-						if(flag == true)
-						{
-							if(Double.parseDouble(listOfParameters.get(i)) <= Double.parseDouble(listOfParameters.get(i-1)))
-							{
-								query.append("\n AND " + libIP + "." + searchingParametersIP.get(i-1) + " >= " + listOfParameters.get(i-1));
-								query.append("\n AND " + libIP + "." + searchingParametersIP.get(i) + " <= " + listOfParameters.get(i));
-							}
-						}
-						flag = false;
-						
-					}
+					query.append("\n AND " + libIP + "." + searchingParametersIP.get(i) + " <= " + listOfParameters.get(i));
 				}
 				
 			}
