@@ -23,22 +23,14 @@
             <TextArea fx:id="logTextAreaAdd" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="750.0" translateX="25.0" />
          </children>
       </VBox>
-      <HBox layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="800.0">
-         <children>
-            <VBox prefHeight="240.0" prefWidth="385.0">
-               <children>
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="325.0" text="IP identifier" translateX="30.0" />
-                  <TextField fx:id="IPIdentifier" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="325.0" translateX="30.0" />
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="325.0" text="IP name" translateX="30.0" />
-                  <TextField fx:id="IPName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="325.0" translateX="30.0" />
-                  <CheckBox fx:id="isCore" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="325.0" text="is core" translateX="30.0" translateY="10.0" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#removeIP" prefHeight="30.0" prefWidth="325.0" text="Remove selected IP..." translateX="30.0" translateY="30.0" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="325.0" text="Back" translateX="30.0" translateY="60.0" />
-               </children>
-            </VBox>
-            <TextArea fx:id="logTextAreaRemove" editable="false" maxHeight="-Infinity" prefHeight="400.0" prefWidth="365.0" translateX="25.0" translateY="10.0" />
-         </children>
-      </HBox>
       <Separator layoutY="300.0" prefHeight="20.0" prefWidth="800.0" />
+      <TextField fx:id="IPName" layoutX="140.0" layoutY="394.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set IP name..." />
+      <TextField fx:id="IPIdentifier" layoutX="140.0" layoutY="342.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set IP identifier..." />
+      <Label layoutX="40.0" layoutY="342.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="IP identifier" />
+      <Label layoutX="40.0" layoutY="394.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="IP name" />
+      <Button layoutX="40.0" layoutY="505.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="175.0" text="&lt; Back" />
+      <Button layoutX="265.0" layoutY="505.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#removeIP" prefHeight="50.0" prefWidth="175.0" text="Remove IP..." />
+      <TextArea fx:id="logTextAreaRemove" editable="false" layoutX="471.0" layoutY="342.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="325.0" prefWidth="300.0" />
+      <CheckBox fx:id="isCore" layoutX="40.0" layoutY="450.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" text="is core" />
    </children>
 </AnchorPane>
