@@ -178,7 +178,7 @@ public class Test01 {
 			 maxClockFrequency = new String("$");
 			 idAuthor = new String("$");
 			 nameAuthor = new String("$");
-			 company = new String("Politecnico di Torino");
+			 company = new String("$");
 			 
 			 l = new LinkedList<String>();
 			 

@@ -284,9 +284,18 @@ public class SQLiteManager implements DBManager {
 		try {
 			state = DBConn.createStatement();
 			buildQuerySelectFPGAConf(listOfParameters, query);
+			
+			RS = state.executeQuery(query.toString());
+			
+			while(RS.next()) {
+				String tmpIdConf = RS.getString("idConfConf");
+				hmap.put(tmpIdConf, new LinkedList<MappedIP>());
+			}
+			
+			RS.close();
 			RS = state.executeQuery(query.toString());
 			while(RS.next()) {
-				String tmpIdConf = RS.getString("");
+				String tmpIdConf = RS.getString("idConfConf");
 				MappedIP tmpMappedIP = new MappedIP(RS.getString("idMappedIP"), 
 						               new IPCore(RS.getString("nameIPCore"), 
 						               RS.getString("idIPCore"), RS.getString("descriptionIPCore"), 
@@ -300,9 +309,9 @@ public class SQLiteManager implements DBManager {
 						               RS.getInt("priorityMapped"), RS.getString("physicalAddressMapped"));
 				hmap.get(tmpIdConf).add(tmpMappedIP);
 			}
-			
-			RS.first();
-			
+			RS.close();
+			//RS.first();
+			RS = state.executeQuery(query.toString());
 			while(RS.next()) { 
 				if(hmap.containsKey(RS.getString("idConfConf"))) {
 					LinkedList<MappedIP> tmpList = new LinkedList<>(hmap.get(RS.getString("idConfConf")));
@@ -315,7 +324,7 @@ public class SQLiteManager implements DBManager {
 							   RS.getDouble("maxClockFrequencyIPManager")), new Author(RS.getString("id_authorManager"), 
 							   RS.getString("name_authorManager"), RS.getString("company_authorManager"), RS.getString("email_authorManager"), 
 							   RS.getString("role_authorManager")), RS.getString("hdlSourcePathIPManager")), 
-							   RS.getString("bistreamPath"), new HardwareProperties(RS.getInt("LUTsConf"), 
+							   RS.getString("bitstreamPathConf"), new HardwareProperties(RS.getInt("LUTsConf"), 
 							   RS.getInt("FFsConf"), RS.getDouble("latencyConf"), 
 							   RS.getInt("nMemoriesConf"), RS.getDouble("powerConsuptionConf"), 
 							   RS.getDouble("maxClockFrequencyConf")), new Author(RS.getString("id_authorConf"), 
@@ -683,6 +692,7 @@ public class SQLiteManager implements DBManager {
 				     confLib + ".contactPoint AS contactPointConf, " +
 				     confLib + ".idIP AS idManagerConf, " +
 				     confLib + ".additionalDriverSource AS additionalDriverSourceConf, " +
+				     confLib + ".bitstreamPath AS bitstreamPathConf, " +
 				     mappedIPLib + ".idConf AS idConfMapped, " +
 				     mappedIPLib + ".idMappedIP AS idMappedIP, " +
 				     mappedIPLib + ".idIP AS idIPMapped, " +
@@ -730,7 +740,7 @@ public class SQLiteManager implements DBManager {
 				if(i==0) //nIPs
 				{
 					query.append("\n AND " + confLib + ".idConf IN (SELECT idConf FROM " + mappedIPLib +
-							      "GROUP BY idConf HAVING COUNT(*) >= " + listOfParameters.get(i) + ")");
+							      " GROUP BY idConf HAVING COUNT(*) >= " + listOfParameters.get(i) + ")");
 				}
 				if(i==1) //idConf
 				{
