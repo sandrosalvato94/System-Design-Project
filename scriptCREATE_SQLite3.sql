@@ -56,6 +56,7 @@ CREATE TABLE FPGAConfiguration(idConf			CHAR(30) PRIMARY KEY,
 							   maxClockFrequency 	DOUBLE CHECK(maxClockFrequency>=0.0),
 							   contactPoint 	CHAR(30),
 							   idIP				CHAR(30),
+							   additionalDriverSource CHAR(50),
 							   FOREIGN KEY(contactPoint)
 									REFERENCES Author(idAuthor)
 									ON DELETE SET NULL

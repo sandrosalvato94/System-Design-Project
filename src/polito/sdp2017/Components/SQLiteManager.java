@@ -347,9 +347,31 @@ public class SQLiteManager implements DBManager {
 		try {
 			state = DBConn.createStatement();
 			buildQueryInsertConfiguration(conf, query1, query2, query3);
-			state.executeUpdate(query1.toString());
-			state.executeUpdate(query2.toString());
-			state.executeUpdate(query3.toString());			
+			try
+			{
+				state.executeUpdate(query1.toString());
+			}
+			catch(SQLException se)
+			{
+				System.out.println(conf.getContactPoint().getIdAuthor() + " already exists inside Author");
+			}
+			try
+			{
+				state.executeUpdate(query2.toString());
+			}
+			catch(SQLException se)
+			{
+				//something
+			}
+			try
+			{
+				state.executeUpdate(query3.toString());
+			}
+			catch(SQLException se)
+			{
+				System.out.println(conf.getIdConf() + " already exists inside FPGAConfiguration");
+			}
+	
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}

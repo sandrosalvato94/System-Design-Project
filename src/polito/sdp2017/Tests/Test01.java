@@ -106,14 +106,14 @@ public class Test01 {
 			 lip = new LinkedList<IP>();
 			 isIPCore = new String("false");
 			 idIP = new String("$");
-			 name = new String("$");
+			 name = new String("sipisoAluControl");
 			 maxLUTs = new String("$");
 			 maxFFs = new String("$");
 			 maxLatency = new String("$");
 			 maxPowerConsuption = new String("$");
 			 maxClockFrequency = new String("$");
 			 idAuthor = new String("$");
-			 nameAuthor = new String("Emanuele Garolla");
+			 nameAuthor = new String("$");
 			 company = new String("$");
 			
 			l = new LinkedList<String>();
@@ -124,8 +124,9 @@ public class Test01 {
 			l.add(nameAuthor); l.add(company);
 			
 			lip = DBM.searchIP(l);
-			IPManager manager = (IPManager) lip.getFirst();
-			
+			IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+															  java.util.NoSuchElementException
+															  if no manager found*/
 			lip = new LinkedList<IP>();
 			 isIPCore = new String("true");
 			 idIP = new String("$");
@@ -136,8 +137,8 @@ public class Test01 {
 			 maxPowerConsuption = new String("$");
 			 maxClockFrequency = new String("$");
 			 idAuthor = new String("$");
-			 nameAuthor = new String("Emanuele Garolla");
-			 company = new String("$");
+			 nameAuthor = new String("$");
+			 company = new String("Politecnico di Torino");
 			
 			l = new LinkedList<String>();
 			
@@ -157,13 +158,14 @@ public class Test01 {
 				//System.out.println(m.get(i).toString());
 			}
 			
-			FPGAConfiguration conf = new FPGAConfiguration("confTest", "conf00",
-					m, manager, "src/polito/sdp2017/Tests/bitstream.c", 
-					new HardwareProperties(30, 40, 50.0, 2, 21.54, 33.33), 
-					new Author("cp77", "Kevin Pollidoro", "Politecnico di Torino", "kevin@pollidoro.it", "Fa configurazioni"), 
+			FPGAConfiguration conf = new FPGAConfiguration("confTest2", "conf02",
+					m, manager, "src/polito/sdp2017/Tests/bitstream2.c", 
+					new HardwareProperties(3, 0, 50.54, 890, 1.4, 3.33), 
+					new Author("cp16", "Donald Trump", "USA amministration", "donny@usa.it", "USA President"), 
 					null);
-			System.out.println(conf.toString());
+			//System.out.println(conf.toString());
 			//FPGAConfiguration.generateTopLevelEntity(conf);
+			DBM.addConfiguration(conf);
 			break;
 		default:
 			System.out.println("Program is arresting");
