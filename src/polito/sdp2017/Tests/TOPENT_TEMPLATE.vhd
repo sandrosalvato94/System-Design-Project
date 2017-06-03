@@ -53,7 +53,9 @@ begin
 					WE_IP			=>	WE_IP,
 					RE_IP			=>	RE_IP,
 					GE_IP			=>	GE_IP);
-				
+	
+	--HERE MANAGER--
+	
 	ip_man: IP_MANAGER 
 		port map(	clk 			=>	clock,
 					rst				=>	reset,

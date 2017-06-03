@@ -57,9 +57,8 @@ public class SQLiteManager implements DBManager {
 		    "latency", "powerConsuption", "maxClockFrequency", "idAuthor", "name", "company"));
 	
 	public static final List<String> searchingParametersFPGAConf = Collections.unmodifiableList(Arrays.asList(
-		    "nIPs", "idConf", "name", "maxLUTs", "minLUTs", "maxFFs", "minFFs", "maxLatency", 
-		    "minLatency","maxNMemories", "minNMemories", "maxPowerConsuption",
-		    "minPowerConsuption", "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
+		    "nIPs", "idConf", "name", "LUTs", "FFs", "Latency", "maxPowerConsuption",
+		    "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
 	
 	
 	public static final String SQLScritpCreate = "scriptCREATE_SQLite3.sql";
@@ -341,8 +340,6 @@ public class SQLiteManager implements DBManager {
 		StringBuilder query1 = new StringBuilder();
 		StringBuilder query2 = new StringBuilder();
 		StringBuilder query3 = new StringBuilder();
-		LinkedList<MappedIP> result = new LinkedList<MappedIP>();
-		String libIP, libAuth;
 		
 		try {
 			state = DBConn.createStatement();
@@ -533,10 +530,6 @@ public class SQLiteManager implements DBManager {
 				{
 					query.append("\n AND " + libIP + "." + searchingParametersIP.get(i) + " = " + "'" + listOfParameters.get(i) +"'");
 				}
-				if(i==13) //max frequency
-				{
-					query.append("\n AND " + libIP + "." + searchingParametersIP.get(i) + " = " + listOfParameters.get(i));
-				}
 				if(i>=8 && i<=10)
 				{
 					query.append("\n AND " + libAuth + "." + searchingParametersIP.get(i) + " = " + "'"+ listOfParameters.get(i) + "'");
@@ -664,7 +657,60 @@ public class SQLiteManager implements DBManager {
 	
 	private static void buildQuerySelectFPGAConf(List<String> listOfParameters, StringBuilder query)
 	{
-		query.append("SELECT *\n" + " FROM " + confLib + ", " + authorLib + " A1, "
+		query.append("SELECT A1.name AS name_authorConf, " +
+	                 "A1.idAuthor AS id_authorConf, " +
+				     "A1.company AS company_authorConf, " +
+	                 "A1.email AS email_authorConf, " +
+				     "A1.role AS role_authorConf, " +
+	                 "A2.name AS name_authorCore, " +
+	                 "A2.idAuthor AS id_authorCore, " +
+				     "A2.company AS company_authorCore, " +
+	                 "A2.email AS email_authorCore, " +
+				     "A2.role AS role_authorCore, " +
+				     "A3.name AS name_authorManager, " +
+	                 "A3.idAuthor AS id_authorManager, " +
+				     "A3.company AS company_authorManager, " +
+	                 "A3.email AS email_authorManager, " +
+				     "A3.role AS role_authorManager, " +
+	                 confLib + ".name AS nameConf, " +
+				     confLib + ".LUTs AS LUTsConf, " + 
+				     confLib + ".FFs AS FFsConf, " + 
+				     confLib + ".latency AS latencyConf, " + 
+				     confLib + ".nMemories AS nMemoriesConf, " + 
+				     confLib + ".powerConsuption AS powerConsuptionConf, " + 
+				     confLib + ".maxClockFrequency AS maxClockFrequencyConf, " + 
+				     confLib + ".contactPoint AS contactPointConf, " +
+				     confLib + ".idIP AS idManagerConf, " +
+				     confLib + ".additionalDriverSource AS additionalDriverSourceConf, " +
+				     mappedIPLib + ".idConf AS idConfMapped, " +
+				     mappedIPLib + ".idMappedIP AS idMappedIP, " +
+				     mappedIPLib + ".idIP AS idIPMapped, " +
+				     mappedIPLib + ".priority AS priorityMapped, " +
+				     mappedIPLib + ".physicalAddress AS physicalAddressMapped, " +
+				     IPCoreLib + ".idIP AS idIPCore, " +
+				     IPCoreLib + ".name AS nameIPCore, " +
+				     IPCoreLib + ".hdlSourcePath AS hdlSourcePathIPCore, " +
+				     IPCoreLib + ".description AS descriptionIPCore, " +
+				     IPCoreLib + ".LUTs AS LUTsIPCore, " +
+				     IPCoreLib + ".FFs AS FFsIPCore, " +
+				     IPCoreLib + ".latency AS latencyIPCore, " +
+				     IPCoreLib + ".nMemories AS nMemoriesIPCore, " +
+				     IPCoreLib + ".powerConsuption AS powerConsuptionIPCore, " +
+				     IPCoreLib + ".maxClockFrequency AS maxClockFrequencyIPCore, " +
+				     IPCoreLib + ".driverPath AS driverPathIPCore, " +
+				     IPCoreLib + ".contactPoint AS contactPointIPCore, " +
+				     IPManagerLib + ".idIP AS idIPManager, " +
+				     IPManagerLib + ".name AS nameIPManager, " +
+				     IPManagerLib + ".hdlSourcePath AS hdlSourcePathIPManager, " +
+				     IPManagerLib + ".description AS descriptionIPManager, " +
+				     IPManagerLib + ".LUTs AS LUTsIPManager, " +
+				     IPManagerLib + ".FFs AS FFsIPManager, " +
+				     IPManagerLib + ".latency AS latencyIPManager, " +
+				     IPManagerLib + ".nMemories AS nMemoriesIPManager, " +
+				     IPManagerLib + ".powerConsuption AS powerConsuptionIPManager, " +
+				     IPManagerLib + ".maxClockFrequency AS maxClockFrequencyIPManager, " +
+				     IPManagerLib + ".contactPoint AS contactPointIPManager\n " 
+	                 + " FROM " + confLib + ", " + authorLib + " A1, "
 					     + authorLib + " A2, " + authorLib + " A3, " + IPManagerLib + 
 				         ", " + mappedIPLib + ", " + IPCoreLib + "\n WHERE " +
 		              	 confLib + ".idConf <> 'pollo'\n AND " + 
@@ -673,10 +719,8 @@ public class SQLiteManager implements DBManager {
 					     " AND " + confLib + ".idConf = " + mappedIPLib + ".idConf\n" +
 		                 " AND " + IPCoreLib + ".idIP = " + mappedIPLib + ".idIP\n" +
 					     " AND " + IPCoreLib + ".contactPoint = "  + "A2.idAuthor\n" +
-		                 " AND " + IPManagerLib + "id.contactPoint = " + "A3.idAuthor"); 
+		                 " AND " + IPManagerLib + ".contactPoint = " + "A3.idAuthor"); 
 		
-		boolean flag = false;
-		//in this method, listOfParameters[0] is not used
 		for(int i=0; i<listOfParameters.size(); i++)
 		{
 			if(!listOfParameters.get(i).equals("$")) //$ is our character for a uninitialized searching parameter 
@@ -684,8 +728,8 @@ public class SQLiteManager implements DBManager {
 				
 				if(i==0) //nIPs
 				{
-					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
-							     " = " + listOfParameters.get(i));
+					query.append("\n AND " + confLib + ".idConf IN (SELECT idConf FROM " + mappedIPLib +
+							      "GROUP BY idConf HAVING COUNT(*) >= " + listOfParameters.get(i) + ")");
 				}
 				if(i==1) //idConf
 				{
@@ -697,36 +741,15 @@ public class SQLiteManager implements DBManager {
 					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
 							     " = " + "'" + listOfParameters.get(i) +"'");
 				}
-				if(i==13) //max frequency
-				{
-					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
-							     " = " + listOfParameters.get(i));
-				}
-				if(i>=14 && i<=16)
+				if(i>=14 && i<=16) //author data CONFIGURATION
 				{
 					query.append("\n AND " + "A1." + searchingParametersFPGAConf.get(i) + 
 							     " = " + "'"+ listOfParameters.get(i) + "'");
 				}
-				if(i>=3 && i<=12) //max & min LUTs, FFs, latency, #Memories, powerConsuption
+				if(i>=3 && i<=6) //max & min LUTs, FFs, latency, #Memories, powerConsuption
 				{
-					if(i%2 == 1)
-					{
-						flag = true;
-					}
-					else
-					{
-						if(flag == true)
-						{
-							if(Double.parseDouble(listOfParameters.get(i)) <= Double.parseDouble(listOfParameters.get(i-1)))
-							{
-								query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i-1) + 
-										     " >= " + listOfParameters.get(i-1));
-								query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
-										     " <= " + listOfParameters.get(i));
-							}
-						}
-						flag = false;		
-					}
+					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
+							     " <= " + listOfParameters.get(i));
 				}	
 			}
 		}

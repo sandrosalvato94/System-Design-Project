@@ -53,25 +53,4 @@ begin
 					WE_IP			=>	WE_IP,
 					RE_IP			=>	RE_IP,
 					GE_IP			=>	GE_IP);
-				
-	ip_man: IP_MANAGER 
-		port map(	clk 			=>	clock,
-					rst				=>	reset,
-					data_in			=>	data_in_ip,
-					data_out		=>	data_out_ip,				
-					add           	=>	address_ip,
-					W_enable		=>	WE_IP,
-					R_enable		=>	RE_IP,
-					generic_en		=>	GE_IP,
-					interrupt		=>  interrupt,
-					row_0			=>	row_0,
-					data_in_IPs		=>	data_in_IPs,
-					data_out_IPs	=>	data_out_IPs,				
-					add_IPs		    =>	add_IPs,
-					W_enable_IPs	=>	W_enable_IPs,
-					R_enable_IPs  	=>	R_enable_IPs,			
-					generic_en_IPs	=>	generic_en_IPs,
-					enable_IPs		=>	enable_IPs,
-					ack_IPs			=>	ack_IPs,
-					interrupt_IPs	=>	interrupt_IPs);
 	

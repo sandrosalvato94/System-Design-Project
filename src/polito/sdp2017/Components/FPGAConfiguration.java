@@ -60,9 +60,23 @@ public class FPGAConfiguration {
 		try(BufferedReader in  = new BufferedReader(new FileReader(pathTemplate.toString()));
 			BufferedWriter out = new BufferedWriter(new FileWriter(pathTarget.toString())))
 		{
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--STOP HERE--[\\s|.]*"))
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE MANAGER--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
+			}
+			
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE IPs--[\\s|.]*"))
+			{
+				if(tmpString.contains("ip_man: IP_MANAGER"))
+				{
+					strb = new StringBuffer(tmpString);
+					strb.replace(8, 17, conf.getManager().getName());
+					out.write(strb.toString() + "\n");
+				}
+				else
+				{
+					out.write(tmpString + "\n");
+				}
 			}
 			
 			

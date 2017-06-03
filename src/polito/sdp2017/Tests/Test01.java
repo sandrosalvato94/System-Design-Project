@@ -32,7 +32,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 4;
+		a = 5;
 		
 		switch (a) {
 		case 1:	//addIP
@@ -55,7 +55,7 @@ public class Test01 {
 					System.out.println("Oggetto non presente oppure non rimosso");
 				}
 			break;
-		case 3:
+		case 3: //searchIP
 			//fillDatabase(DBM);
 			LinkedList<IP> lip = new LinkedList<IP>();
 			String isIPCore = new String("true");
@@ -98,11 +98,8 @@ public class Test01 {
 			
 			System.out.println("end search");
 			
-			
-			
-			
 			break;
-		case 4:
+		case 4: //addConfiguration
 			 lip = new LinkedList<IP>();
 			 isIPCore = new String("false");
 			 idIP = new String("$");
@@ -166,6 +163,32 @@ public class Test01 {
 			//System.out.println(conf.toString());
 			//FPGAConfiguration.generateTopLevelEntity(conf);
 			DBM.addConfiguration(conf);
+			break;
+		
+		case 5: //search configuration
+			
+			LinkedList<FPGAConfiguration> lc = new LinkedList<FPGAConfiguration>();
+			 String nIPs = new String("3");
+			 idIP = new String("$");
+			 name = new String("$");
+			 maxLUTs = new String("$");
+			 maxFFs = new String("$");
+			 maxLatency = new String("$");
+			 maxPowerConsuption = new String("$");
+			 maxClockFrequency = new String("$");
+			 idAuthor = new String("$");
+			 nameAuthor = new String("$");
+			 company = new String("Politecnico di Torino");
+			 
+			 l = new LinkedList<String>();
+			 
+			 l.add(nIPs); l.add(idIP); l.add(name); l.add(maxLUTs); 
+				l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+			    l.add(maxClockFrequency); l.add(idAuthor);
+				l.add(nameAuthor); l.add(company);
+			
+			lc = DBM.searchConfiguration(l);
+				
 			break;
 		default:
 			System.out.println("Program is arresting");
