@@ -80,10 +80,10 @@
                      </font></TextArea>
                   <Button layoutX="334.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="200.0" text="&lt; Back" />
                   <Button layoutX="584.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#addIPToConf" prefHeight="50.0" prefWidth="200.0" text="Add IP to configuration" />
-                  <Label layoutX="334.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Set interrupt priority" />
-                  <Label layoutX="334.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Set physical address" />
-                  <TextField fx:id="interruptPriority" layoutX="484.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set interrupt priority..." />
-                  <TextField fx:id="physicalAddress" layoutX="484.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set physical address..." />
+                  <Label layoutX="334.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Set interrupt priority" />
+                  <Label layoutX="334.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Set physical address (hex)     0x" />
+                  <TextField fx:id="interruptPriority" layoutX="484.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" promptText="set interrupt priority..." translateX="50.0" />
+                  <TextField fx:id="physicalAddress" layoutX="484.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" promptText="set physical address..." translateX="50.0" />
                   <Button layoutX="159.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchIP" prefHeight="30.0" prefWidth="625.0" text="Search IP..." />
                   <CheckBox fx:id="isCore" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="is core" translateX="30.0" />
                </children></AnchorPane>

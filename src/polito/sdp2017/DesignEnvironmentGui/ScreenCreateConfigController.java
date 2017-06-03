@@ -15,10 +15,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import polito.sdp2017.Components.IP;
+import polito.sdp2017.Components.IPCore;
+import polito.sdp2017.Components.IPManager;
+import polito.sdp2017.Components.MappedIP;
 
 public class ScreenCreateConfigController implements ControlledScreen {
 	ApplicationModel applicationModel;
     ScreensController myController;
+    int mappedIpCnt = 0;
     IP focusedIP;
 
     @FXML private TextField IPIdentifier;
@@ -201,7 +205,29 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		
 	@FXML
 	public void addIPToConf (ActionEvent event) {
+		int priority = -1, phyAddress = -1;
 		
-		logArea.appendText("add ip to configuration\n");
+		try {			
+			if(focusedIP.getClass().getName().equals("polito.sdp2017.Components.IPCore")) {
+				priority = Integer.parseInt(interruptPriority.getText());
+				phyAddress = Integer.decode("0x"+physicalAddress.getText());
+				if (priority < 0 || phyAddress < 0) {
+					throw new NumberFormatException();
+				}
+				MappedIP mip = new MappedIP(String.valueOf(mappedIpCnt),(IPCore)focusedIP,
+												priority,"0x"+physicalAddress.getText());
+				applicationModel.addMappedIp(mip);
+				logArea.appendText("[OK] IPCore ("+focusedIP.getIdIP()+") added with:\n");
+				logArea.appendText("\tpriority    : "+priority+"\n");
+				logArea.appendText("\tphy address : "+phyAddress+"\n");
+			} else {
+				applicationModel.setManager((IPManager)focusedIP);
+				logArea.appendText("[OK] IPManager ("+focusedIP.getIdIP()+") added...\n");
+			}
+		} catch (NumberFormatException nfe) {
+			logArea.appendText("[ERROR] priority or physical address not valid...\n");
+		}
+		interruptPriority.setText("");
+		physicalAddress.setText("");
 	}
 }
