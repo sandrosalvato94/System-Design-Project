@@ -741,12 +741,12 @@ public class SQLiteManager implements DBManager {
 					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
 							     " = " + "'" + listOfParameters.get(i) +"'");
 				}
-				if(i>=14 && i<=16) //author data CONFIGURATION
+				if(i>=8 && i<=10) //author data CONFIGURATION
 				{
 					query.append("\n AND " + "A1." + searchingParametersFPGAConf.get(i) + 
 							     " = " + "'"+ listOfParameters.get(i) + "'");
 				}
-				if(i>=3 && i<=6) //max & min LUTs, FFs, latency, #Memories, powerConsuption
+				if(i>=3 && i<=7) //max LUTs, FFs, latency, powerConsuption, frequency
 				{
 					query.append("\n AND " + confLib + "." + searchingParametersFPGAConf.get(i) + 
 							     " <= " + listOfParameters.get(i));
