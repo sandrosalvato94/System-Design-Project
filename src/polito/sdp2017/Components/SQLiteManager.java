@@ -287,41 +287,41 @@ public class SQLiteManager implements DBManager {
 			RS = state.executeQuery(query.toString());
 			while(RS.next()) {
 				String tmpIdConf = RS.getString("");
-				MappedIP tmpMappedIP = new MappedIP(RS.getString(mappedIPLib + ".idMappedIP"), 
-						               new IPCore(RS.getString(IPCoreLib + ".name"), 
-						               RS.getString(IPCoreLib + ".idIP"), RS.getString(IPCoreLib + ".description"), 
-						               new HardwareProperties(RS.getInt(IPCoreLib + ".LUTs"), RS.getInt(IPCoreLib + ".FFs"), 
-						               RS.getDouble(IPCoreLib + ".latency"), RS.getInt(IPCoreLib + ".nMemories"), 
-						               RS.getDouble(IPCoreLib + ".powerConsuption"), RS.getDouble(IPCoreLib + ".maxClockFrequency")), 
-						               new Author(RS.getString("A2.idAuthor"), 
-								       RS.getString("A2.name"), RS.getString("A2.company"), 
-								       RS.getString("A2.email"), RS.getString("A2.role")), 
-						               RS.getString(IPCoreLib + ".hdlSourcePath"), RS.getString(IPCoreLib + ".driverPath")), 
-						               RS.getInt(mappedIPLib + ".priority"), RS.getString(mappedIPLib + ".physicalAddress"));
+				MappedIP tmpMappedIP = new MappedIP(RS.getString("idMappedIP"), 
+						               new IPCore(RS.getString("nameIPCore"), 
+						               RS.getString("idIPCore"), RS.getString("descriptionIPCore"), 
+						               new HardwareProperties(RS.getInt("LUTsIPCore"), RS.getInt("FFsIPCore"), 
+						               RS.getDouble("latencyIPCore"), RS.getInt("nMemoriesIPCore"), 
+						               RS.getDouble("powerConsuptionIPCore"), RS.getDouble("maxClockFrequencyIPCore")), 
+						               new Author(RS.getString("id_authorCore"), 
+								       RS.getString("name_authorCore"), RS.getString("company_authorCore"), 
+								       RS.getString("email_authorCore"), RS.getString("role_authorCore")), 
+						               RS.getString("hdlSourcePathIPCore"), RS.getString("driverPathIPCore")), 
+						               RS.getInt("priorityMapped"), RS.getString("physicalAddressMapped"));
 				hmap.get(tmpIdConf).add(tmpMappedIP);
 			}
 			
 			RS.first();
 			
 			while(RS.next()) { 
-				if(hmap.containsKey(RS.getString(confLib + ".idConf"))) {
-					LinkedList<MappedIP> tmpList = new LinkedList<>(hmap.get(RS.getString(confLib + ".idConf")));
-					result.add(new FPGAConfiguration(RS.getString(confLib + ".name"), 
-							   RS.getString(confLib + ".idConf"), tmpList, 
-							   new IPManager(RS.getString(IPManagerLib + ".name"), RS.getString(IPManagerLib + "idIP"), 
-							   RS.getString(IPManagerLib + ".description"), new HardwareProperties(RS.getInt(IPManagerLib + ".LUTs"), 
-							   RS.getInt(IPManagerLib + ".FFs"), RS.getDouble(IPManagerLib + ".latency"), 
-							   RS.getInt(IPManagerLib + ".nMemories"), RS.getDouble(IPManagerLib + ".powerConsuption"), 
-							   RS.getDouble(IPManagerLib + ".maxClockFrequency")), new Author(RS.getString("A3.idAuthor"), 
-							   RS.getString("A3.name"), RS.getString("A3.company"), RS.getString("A3.email"), 
-							   RS.getString("A3.role")), RS.getString(IPManagerLib + ".hdlSourcePath")), 
-							   RS.getString(confLib + "bistreamPath"), new HardwareProperties(RS.getInt(confLib + ".LUTs"), 
-							   RS.getInt(confLib + ".FFs"), RS.getDouble(confLib + ".latency"), 
-							   RS.getInt(confLib + ".nMemories"), RS.getDouble(confLib + ".powerConsuption"), 
-							   RS.getDouble(confLib + ".maxClockFrequency")), new Author(RS.getString("A1.idAuthor"), 
-							   RS.getString("A1.name"), RS.getString("A1.company"), RS.getString("A1.email"), 
-							   RS.getString("A1.role")), RS.getString(confLib + ".additionalDriverSource")));
-					hmap.remove(RS.getString(confLib + ".idConf"));
+				if(hmap.containsKey(RS.getString("idConfConf"))) {
+					LinkedList<MappedIP> tmpList = new LinkedList<>(hmap.get(RS.getString("idConfConf")));
+					result.add(new FPGAConfiguration(RS.getString("nameConf"), 
+							   RS.getString("idConfConf"), tmpList, 
+							   new IPManager(RS.getString("nameIPManager"), RS.getString("idIPManager"), 
+							   RS.getString("descriptionIPManager"), new HardwareProperties(RS.getInt("LUTsIPManager"), 
+							   RS.getInt("FFsIPManager"), RS.getDouble("latencyIPManager"), 
+							   RS.getInt("nMemoriesIPManager"), RS.getDouble("powerConsuptionIPManager"), 
+							   RS.getDouble("maxClockFrequencyIPManager")), new Author(RS.getString("id_authorManager"), 
+							   RS.getString("name_authorManager"), RS.getString("company_authorManager"), RS.getString("email_authorManager"), 
+							   RS.getString("role_authorManager")), RS.getString("hdlSourcePathIPManager")), 
+							   RS.getString("bistreamPath"), new HardwareProperties(RS.getInt("LUTsConf"), 
+							   RS.getInt("FFsConf"), RS.getDouble("latencyConf"), 
+							   RS.getInt("nMemoriesConf"), RS.getDouble("powerConsuptionConf"), 
+							   RS.getDouble("maxClockFrequencyConf")), new Author(RS.getString("id_authorConf"), 
+							   RS.getString("name_authorConf"), RS.getString("company_authorConf"), RS.getString("email_authorConf"), 
+							   RS.getString("role_authorConf")), RS.getString("additionalDriverSourceConf")));
+					hmap.remove(RS.getString("idConfConf"));
 				}
 			}
 			RS.close();
