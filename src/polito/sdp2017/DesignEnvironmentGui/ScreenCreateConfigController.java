@@ -198,14 +198,10 @@ public class ScreenCreateConfigController implements ControlledScreen {
 			});
 		}	
 	}
-	
-	@FXML
-	public void displayIP(MouseEvent event) {
-		logArea.appendText("mouse...\n");
-	}
-	
+		
 	@FXML
 	public void addIPToConf (ActionEvent event) {
+		
 		logArea.appendText("add ip to configuration\n");
 	}
 }
