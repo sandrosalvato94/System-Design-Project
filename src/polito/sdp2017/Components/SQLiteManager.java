@@ -286,7 +286,7 @@ public class SQLiteManager implements DBManager {
 			buildQuerySelectFPGAConf(listOfParameters, query);
 			RS = state.executeQuery(query.toString());
 			while(RS.next()) {
-				String tmpIdConf = RS.getString(confLib + ".idConf");
+				String tmpIdConf = RS.getString("");
 				MappedIP tmpMappedIP = new MappedIP(RS.getString(mappedIPLib + ".idMappedIP"), 
 						               new IPCore(RS.getString(IPCoreLib + ".name"), 
 						               RS.getString(IPCoreLib + ".idIP"), RS.getString(IPCoreLib + ".description"), 
@@ -672,6 +672,7 @@ public class SQLiteManager implements DBManager {
 				     "A3.company AS company_authorManager, " +
 	                 "A3.email AS email_authorManager, " +
 				     "A3.role AS role_authorManager, " +
+	                 confLib + ".idConf AS idConfConf, " + 
 	                 confLib + ".name AS nameConf, " +
 				     confLib + ".LUTs AS LUTsConf, " + 
 				     confLib + ".FFs AS FFsConf, " + 
