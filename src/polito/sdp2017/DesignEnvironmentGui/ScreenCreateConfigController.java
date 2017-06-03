@@ -61,9 +61,9 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		List<IP> foundIPs;
 		LinkedList<String> pars = new LinkedList<String>();
 		String s;
-		
+
 		searchedIP.getItems().clear();
-		
+	
 		if (isCore.isSelected()) {
 			pars.add("true");
 		} else {
@@ -186,6 +186,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		}
 		
 		foundIPs = applicationModel.searchIPs(pars);
+		
 		if (foundIPs.isEmpty()) {
 			logArea.appendText("[ERROR] no suitable IP found...\n");
 		} else {
@@ -193,12 +194,20 @@ public class ScreenCreateConfigController implements ControlledScreen {
 			for (IP i : foundIPs) {
 				map.put(i.getIdIP(), i);
 			}
+			System.out.println(map.toString());
 			
 			ObservableList<String> items = FXCollections.observableArrayList (map.keySet());
 			searchedIP.setItems(items);
 			searchedIP.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-			    focusedIP = map.get(newValue);
-				logArea.setText(focusedIP.getBrief());
+			    System.out.println(newValue);
+			    if (focusedIP == null) {
+			    	System.out.println("focused IP null before assignment");
+			    }
+				focusedIP = map.get(newValue);
+			    if (focusedIP == null) {
+			    	System.out.println("focused IP null after assignment");
+			    }
+				logArea.setText(focusedIP.getName());
 			});
 		}	
 	}
@@ -216,6 +225,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 				}
 				MappedIP mip = new MappedIP(String.valueOf(mappedIpCnt),(IPCore)focusedIP,
 												priority,"0x"+physicalAddress.getText());
+				mappedIpCnt++;
 				applicationModel.addMappedIp(mip);
 				logArea.appendText("[OK] IPCore ("+focusedIP.getIdIP()+") added with:\n");
 				logArea.appendText("\tpriority    : "+priority+"\n");
