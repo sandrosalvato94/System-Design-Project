@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>IP_Adder</IPName>
+        <IPId>VHDL_IP_Adder</IPId>
+        <IPDescription>A description for IP_Adder</IPDescription>
+        <ContactPoint>
+            <AuthorName>Emanuele Garolla</AuthorName>
+            <AuthorId>cp09</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>emanuele.garolla@polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>386</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>259</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.372</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5891</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.779</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.843</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/IP_Adder.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/IP_Adder</IPDriverPath>
+    </IPCore>
+</IPs>

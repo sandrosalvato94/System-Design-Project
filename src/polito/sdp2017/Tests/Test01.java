@@ -32,7 +32,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 3;
+		a = 4;
 		
 		switch (a) {
 		case 1:	//addIP
@@ -58,7 +58,7 @@ public class Test01 {
 		case 3:
 			//fillDatabase(DBM);
 			LinkedList<IP> lip = new LinkedList<IP>();
-			String isIPCore = new String("false");
+			String isIPCore = new String("true");
 			String idIP = new String("$");
 			String name = new String("$");
 			String maxLUTs = new String("$");
@@ -67,7 +67,7 @@ public class Test01 {
 			String maxPowerConsuption = new String("$");
 			String maxClockFrequency = new String("$");
 			String idAuthor = new String("$");
-			String nameAuthor = new String("$");
+			String nameAuthor = new String("Emanuele Garolla");
 			String company = new String("$");
 			
 			LinkedList<String> l = new LinkedList<String>();
@@ -101,6 +101,69 @@ public class Test01 {
 			
 			
 			
+			break;
+		case 4:
+			 lip = new LinkedList<IP>();
+			 isIPCore = new String("false");
+			 idIP = new String("$");
+			 name = new String("$");
+			 maxLUTs = new String("$");
+			 maxFFs = new String("$");
+			 maxLatency = new String("$");
+			 maxPowerConsuption = new String("$");
+			 maxClockFrequency = new String("$");
+			 idAuthor = new String("$");
+			 nameAuthor = new String("Emanuele Garolla");
+			 company = new String("$");
+			
+			l = new LinkedList<String>();
+			
+			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+			l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+		    l.add(maxClockFrequency); l.add(idAuthor);
+			l.add(nameAuthor); l.add(company);
+			
+			lip = DBM.searchIP(l);
+			IPManager manager = (IPManager) lip.getFirst();
+			
+			lip = new LinkedList<IP>();
+			 isIPCore = new String("true");
+			 idIP = new String("$");
+			 name = new String("$");
+			 maxLUTs = new String("$");
+			 maxFFs = new String("$");
+			 maxLatency = new String("$");
+			 maxPowerConsuption = new String("$");
+			 maxClockFrequency = new String("$");
+			 idAuthor = new String("$");
+			 nameAuthor = new String("Emanuele Garolla");
+			 company = new String("$");
+			
+			l = new LinkedList<String>();
+			
+			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+			l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+		    l.add(maxClockFrequency); l.add(idAuthor);
+			l.add(nameAuthor); l.add(company);
+			
+			lip = DBM.searchIP(l);
+			
+			//System.out.println(manager.toString());
+			LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+			
+			for(int i = 0; i<lip.size(); i++)
+			{
+				m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+				//System.out.println(m.get(i).toString());
+			}
+			
+			FPGAConfiguration conf = new FPGAConfiguration("confTest", "conf00",
+					m, manager, "src/polito/sdp2017/Tests/bitstream.c", 
+					new HardwareProperties(30, 40, 50.0, 2, 21.54, 33.33), 
+					new Author("cp77", "Kevin Pollidoro", "Politecnico di Torino", "kevin@pollidoro.it", "Fa configurazioni"), 
+					null);
+			System.out.println(conf.toString());
+			//FPGAConfiguration.generateTopLevelEntity(conf);
 			break;
 		default:
 			System.out.println("Program is arresting");

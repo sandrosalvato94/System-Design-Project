@@ -1,6 +1,18 @@
 package polito.sdp2017.Components;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class FPGAConfiguration {
 	private String name;
@@ -23,6 +35,43 @@ public class FPGAConfiguration {
 		this.hwProperties = hwProperties;
 		this.contactPoint = contactPoint;
 		this.additionalDriverSource = additionalDriverSource;
+	}
+	
+	public static void generateTopLevelEntity(FPGAConfiguration conf) {
+		Path pathTarget = Paths.get("./src/polito/sdp2017/Tests/Tmp/TopLevelEntity.vhd");
+		Path pathTemplate = Paths.get("./src/polito/sdp2017/Tests/TOPENT_TEMPLATE.vhd");
+		
+		if(newFile(pathTarget.toString()) != 1)
+		{
+			return;
+		}
+		
+		File f_template = new File(pathTemplate.toString());
+		
+		if(!f_template.exists())
+		{
+			System.out.println("ERROR: File TOPENT_TEMPLATE.vhd not found.");
+			return;
+		}
+		
+		StringBuffer strb = new StringBuffer("");
+		String tmpString;
+		
+		try(BufferedReader in  = new BufferedReader(new FileReader(pathTemplate.toString()));
+			BufferedWriter out = new BufferedWriter(new FileWriter(pathTarget.toString())))
+		{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--STOP HERE--[\\s|.]*"))
+			{
+				out.write(tmpString + "\n");
+			}
+			
+			
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
 	}
 
 	public void setName(String name) {
@@ -103,6 +152,17 @@ public class FPGAConfiguration {
 	public String getAdditionalDriverSource() {
 		return this.additionalDriverSource;
 	}
+	
+	public LinkedList<String> getAllSourcePaths()
+	{
+		LinkedList<String> l = new LinkedList<String>();
+		for(MappedIP m : this.mappedIPs)
+		{
+			l.add(m.getIpCore().getHdlSourcePath());
+		}
+		
+		return l;
+	}
 
 	@Override
 	public int hashCode() {
@@ -176,5 +236,36 @@ public class FPGAConfiguration {
 		return "FPGAConfiguration [name=" + name + ", idConf=" + idConf + ", mappedIPs=" + mappedIPs + ", manager="
 				+ manager + ", bitstreamPath=" + bitstreamPath + ", hwProperties=" + hwProperties + ", contactPoint="
 				+ contactPoint + ", additionalDriverSource=" + additionalDriverSource + "]";
+	}
+	
+	public static int newFile(String path) {
+	 
+	    try {
+	        File file = new File(path);
+	         
+	        if (file.exists())
+	        {
+	            System.out.println("Il file " + path + " esiste già. Sovrascritto");
+	            file.createNewFile();
+	            return 1;
+	        }
+	        else 
+	        {	if (file.createNewFile())
+	        	{
+	            	System.out.println("Il file " + path + " è stato creato");
+	            	return 1;
+	        	}
+	        	else
+	        	{
+	        		System.out.println("Il file " + path + " non può essere creato");
+	        		return -1;
+	        	}
+	        }
+	        
+	     
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        return -1;
+	    }
 	}
 }

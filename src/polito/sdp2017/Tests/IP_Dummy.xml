@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPCore>
+        <IPName>IP_Dummy</IPName>
+        <IPId>VHDL_IP_Dummy</IPId>
+        <IPDescription>A description for IP_Dummy</IPDescription>
+        <ContactPoint>
+            <AuthorName>Emanuele Garolla</AuthorName>
+            <AuthorId>cp09</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>emanuele.garolla@polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>386</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>259</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.372</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5891</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.779</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.843</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/IP_Dummy.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/Instr_decoder</IPDriverPath>
+    </IPCore>
+</IPs>

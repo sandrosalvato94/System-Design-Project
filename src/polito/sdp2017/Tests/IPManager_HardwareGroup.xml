@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<IPs>
+    <IPManager>
+        <IPName>IP_MANAGER</IPName>
+        <IPId>VHDL_IP_MANAGER_HWGR</IPId>
+        <IPDescription>A description for a IPManager</IPDescription>
+        <ContactPoint>
+            <AuthorName>Emanuele Garolla</AuthorName>
+            <AuthorId>cp09</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>emanuele.garolla@polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
+        </ContactPoint>
+        <HardwareProperties>
+            <HardwarePropertiesLUTs>909</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>70</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.066</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2868</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.962</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.152</HardwarePropertiesMaxClkFreq>
+        </HardwareProperties>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/IPManager_HardwareGroup.vhd</IPHdlSourcePath>
+    </IPManager>
+</IPs>

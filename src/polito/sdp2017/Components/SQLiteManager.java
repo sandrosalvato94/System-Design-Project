@@ -244,7 +244,7 @@ public class SQLiteManager implements DBManager {
 			} catch(SQLException se) {
 				System.out.println(ipToBeAdded.getContactPoint().getIdAuthor() + " already exists inside Author");
 			}
-
+			System.out.println(query2.toString());
 			state.executeUpdate(query2.toString());
 	}
 
