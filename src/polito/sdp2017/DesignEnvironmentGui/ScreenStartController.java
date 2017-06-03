@@ -39,7 +39,7 @@ public class ScreenStartController implements ControlledScreen {
     
     @FXML
     private void generateNewDB(ActionEvent event){
-    	logTextArea.appendText("[ERROR] function still to be implemented\n");
+    	logTextArea.appendText("[ATTENTION] function still to be implemented\n");
     }
     
     @FXML

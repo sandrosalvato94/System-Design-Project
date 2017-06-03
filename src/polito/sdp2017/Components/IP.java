@@ -230,4 +230,17 @@ public class IP {
 			return false;
 		return true;
 	}
+
+	public String getBrief() {
+		StringBuffer strb = new StringBuffer("");
+		
+		strb.append("id   : "+idIP+"\n");
+		strb.append("name : "+name+"\n");
+		strb.append("\n");
+		strb.append(description+"\n");
+		strb.append("\n");
+		strb.append(hwProperties.toString()+"\n");
+		
+		return strb.toString();
+	}
 }

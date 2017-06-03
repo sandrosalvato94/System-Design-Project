@@ -11,11 +11,13 @@ import org.xml.sax.SAXException;
 
 import polito.sdp2017.Components.DBManager;
 import polito.sdp2017.Components.IP;
+import polito.sdp2017.Components.MappedIP;
 import polito.sdp2017.Components.SQLiteManager;
 
 public class ApplicationModel {
 	private boolean databaseConnectionUp;
 	private DBManager database;
+	private List<MappedIP> mapped = new LinkedList<MappedIP>();
 	
 	public ApplicationModel() {
 		super();
@@ -56,5 +58,11 @@ public class ApplicationModel {
 	public boolean removeIP(String id, String name, boolean isCore) {
 		return database.removeIP(name, id, isCore);
 	}
+
+	public List<IP> searchIPs(LinkedList<String> pars) {
+		return database.searchIP(pars);
+	}
+	
+	
 
 }

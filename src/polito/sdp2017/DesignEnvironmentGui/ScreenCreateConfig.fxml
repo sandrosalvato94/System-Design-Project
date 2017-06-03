@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.sdp2017.DesignEnvironmentGui.ScreenCreateConfigController">
   <tabs>
@@ -69,17 +71,21 @@
                         <TextField fx:id="company" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set company..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                      </children>
                   </GridPane>
-                  <Separator layoutX="6.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="10.0" prefWidth="800.0" />
-                  <ListView layoutX="14.0" layoutY="224.0" prefHeight="430.0" prefWidth="300.0" />
-                  <Separator layoutX="314.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="430.0" prefWidth="20.0" />
-                  <TextArea fx:id="logArea" editable="false" layoutX="334.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="450.0" />
-                  <Button layoutX="334.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="125.0" text="&lt; Back" />
-                  <Button layoutX="604.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#addIPToConf" prefHeight="50.0" prefWidth="180.0" text="Add IP to configuration" />
+                  <Separator layoutY="274.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="10.0" prefWidth="800.0" />
+                  <ListView fx:id="searchedIP" layoutX="14.0" layoutY="298.0" prefHeight="350.0" prefWidth="300.0" />
+                  <Separator layoutX="314.0" layoutY="299.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="350.0" prefWidth="20.0" />
+                  <TextArea fx:id="logArea" editable="false" layoutX="334.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="175.0" prefWidth="450.0">
+                     <font>
+                        <Font name="Courier" size="15.0" />
+                     </font></TextArea>
+                  <Button layoutX="334.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="200.0" text="&lt; Back" />
+                  <Button layoutX="584.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#addIPToConf" prefHeight="50.0" prefWidth="200.0" text="Add IP to configuration" />
                   <Label layoutX="334.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Set interrupt priority" />
                   <Label layoutX="334.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" text="Set physical address" />
                   <TextField fx:id="interruptPriority" layoutX="484.0" layoutY="497.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set interrupt priority..." />
                   <TextField fx:id="physicalAddress" layoutX="484.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="set physical address..." />
-                  <Button layoutX="471.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchIP" prefHeight="50.0" prefWidth="125.0" text="Search IP..." />
+                  <Button layoutX="159.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchIP" prefHeight="30.0" prefWidth="625.0" text="Search IP..." />
+                  <CheckBox fx:id="isCore" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="is core" translateX="30.0" />
                </children></AnchorPane>
       </content>
     </Tab>
