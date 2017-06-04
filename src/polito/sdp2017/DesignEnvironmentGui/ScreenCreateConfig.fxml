@@ -60,15 +60,15 @@
                         <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="max power consumption" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="max clock frequency" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="contact point identifier" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="max power" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="max clock freq" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="contact point id" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                         <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="company" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                         <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="contact point name" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                        <TextField fx:id="maxPowerConsumption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="max power consumption..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <TextField fx:id="maxClockFrequency" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="max clock frequency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                        <TextField fx:id="contactPointId" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="contact point identifier..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                        <TextField fx:id="contactPointName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="contact point name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <TextField fx:id="maxPowerConsumption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max power consumption..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <TextField fx:id="maxClockFrequency" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max clock frequency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <TextField fx:id="contactPointId" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point identifier..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <TextField fx:id="contactPointName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                         <TextField fx:id="company" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set company..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                      </children>
                   </GridPane>
@@ -87,7 +87,7 @@
                   <TextField fx:id="physicalAddress" layoutX="484.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" promptText="set physical address..." translateX="50.0" />
                   <Button layoutX="159.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchIP" prefHeight="30.0" prefWidth="625.0" text="Search IP..." />
                   <CheckBox fx:id="isCore" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="is core" translateX="30.0" />
-                  <Button layoutX="459.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#resetConf" prefHeight="50.0" prefWidth="100.0" text="Reset" />
+                  <Button layoutX="460.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#resetConf" prefHeight="50.0" prefWidth="100.0" text="Reset" />
                </children></AnchorPane>
       </content>
     </Tab>

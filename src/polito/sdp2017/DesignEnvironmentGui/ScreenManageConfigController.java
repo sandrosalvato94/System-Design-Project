@@ -1,6 +1,6 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
-public class ScreenLoadConfigController implements ControlledScreen {
+public class ScreenManageConfigController implements ControlledScreen {
 	ApplicationModel applicationModel;
     ScreensController myController;
 

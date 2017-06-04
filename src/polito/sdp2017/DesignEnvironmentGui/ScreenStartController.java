@@ -63,7 +63,7 @@ public class ScreenStartController implements ControlledScreen {
     @FXML
     private void goToLoadConfig(ActionEvent event){
     	if (applicationModel.isConnected()) {
-    		myController.setScreen(Main.screenLoadConfigID);
+    		myController.setScreen(Main.screenManageConfigID);
     	} else {
     		logTextArea.appendText("[ERROR] You are not connected to any database...\n");
     	}

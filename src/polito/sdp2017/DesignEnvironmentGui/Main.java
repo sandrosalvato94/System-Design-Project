@@ -9,11 +9,11 @@ public class Main extends Application {
     public static final String screenStartID = "start";
     public static final String screenManageIPID = "manageIP";
     public static final String screenCreateConfigID = "createConfig";
-    public static final String screenLoadConfigID = "loadConfig.fxml";
+    public static final String screenManageConfigID = "manageConfig";
     public static final String screenStartFile = "ScreenStart.fxml";
     public static final String screenManageIPFile = "ScreenManageIP.fxml";
     public static final String screenCreateConfigFile = "ScreenCreateConfig.fxml";
-    public static final String screenLoadConfigFile = "ScreenLoadConfig.fxml";
+    public static final String screenManageConfigFile = "ScreenManageConfig.fxml";
     
     @Override
     public void start(Stage primaryStage) {
@@ -23,7 +23,7 @@ public class Main extends Application {
         mainContainer.loadScreen(Main.screenStartID, Main.screenStartFile, appModel);
         mainContainer.loadScreen(Main.screenManageIPID, Main.screenManageIPFile, appModel);
         mainContainer.loadScreen(Main.screenCreateConfigID, Main.screenCreateConfigFile, appModel);
-        mainContainer.loadScreen(Main.screenLoadConfigID, Main.screenLoadConfigFile, appModel);
+        mainContainer.loadScreen(Main.screenManageConfigID, Main.screenManageConfigFile, appModel);
         
         mainContainer.setScreen(Main.screenStartID);
         
