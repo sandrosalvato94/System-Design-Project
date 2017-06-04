@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>IPManager_HardwareGroup</IPName>
         <IPDescription>A description for IPManager_HardwareGroup</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Emanuele Garolla</AuthorName>
+            <AuthorId>cp04</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>emanuelegarolla@polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>465</HardwarePropertiesLUTs>
@@ -19,6 +19,5 @@
             <HardwarePropertiesMaxClkFreq>6.383</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/IPManager_HardwareGroup.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/IPManager_HardwareGroup</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

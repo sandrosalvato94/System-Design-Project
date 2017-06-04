@@ -131,7 +131,6 @@ public class SQLiteManager implements DBManager {
 
 		Class.forName("org.sqlite.JDBC");
 		DBPath = "jdbc:sqlite:"+dbPath;
-		System.out.println(DBPath);
 		//SQLiteConfig config = new SQLiteConfig();  
         //config.enforceForeignKeys(true);
 		//DBConn = DriverManager.getConnection(DBPath/*, config.toProperties()*/);

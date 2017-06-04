@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>sipisoAluControl</IPName>
         <IPDescription>A description for sipisoAluControl</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Paolo Prinetto</AuthorName>
+            <AuthorId>cp07</AuthorId>
+            <AuthorCompany>Consorzio CINI</AuthorCompany>
+            <AuthorEmail>paoloprinetto@polito.it</AuthorEmail>
+            <AuthorRole>Full Professor</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>315</HardwarePropertiesLUTs>
@@ -19,6 +19,5 @@
             <HardwarePropertiesMaxClkFreq>5.570</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/sipisoAluControl.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

@@ -32,7 +32,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 5;
+		a = 4;
 		
 		switch (a) {
 		case 1:	//addIP
@@ -58,7 +58,7 @@ public class Test01 {
 		case 3: //searchIP
 			//fillDatabase(DBM);
 			LinkedList<IP> lip = new LinkedList<IP>();
-			String isIPCore = new String("true");
+			String isIPCore = new String("false");
 			String idIP = new String("$");
 			String name = new String("$");
 			String maxLUTs = new String("$");
@@ -104,14 +104,14 @@ public class Test01 {
 			 isIPCore = new String("false");
 			 idIP = new String("$");
 			 name = new String("$");
-			 maxLUTs = new String("200");
-			 maxFFs = new String("500");
+			 maxLUTs = new String("$");
+			 maxFFs = new String("$");
 			 maxLatency = new String("$");
 			 maxPowerConsuption = new String("$");
 			 maxClockFrequency = new String("$");
 			 idAuthor = new String("$");
 			 nameAuthor = new String("$");
-			 company = new String("$");
+			 company = new String("Politecnico di Torino");
 			
 			l = new LinkedList<String>();
 			
@@ -127,7 +127,7 @@ public class Test01 {
 			lip = new LinkedList<IP>();
 			 isIPCore = new String("true");
 			 idIP = new String("$");
-			 name = new String("Encoder");
+			 name = new String("$");
 			 maxLUTs = new String("$");
 			 maxFFs = new String("$");
 			 maxLatency = new String("$");
@@ -135,7 +135,7 @@ public class Test01 {
 			 maxClockFrequency = new String("$");
 			 idAuthor = new String("$");
 			 nameAuthor = new String("$");
-			 company = new String("$");
+			 company = new String("Politecnico di Torino");
 			
 			l = new LinkedList<String>();
 			
@@ -155,10 +155,10 @@ public class Test01 {
 				//System.out.println(m.get(i).toString());
 			}
 			
-			FPGAConfiguration conf = new FPGAConfiguration("confTest5", "conf05",
-					m, manager, "src/polito/sdp2017/Tests/bitstream5.c", 
-					new HardwareProperties(7, 5, 0.54, 0, 0.4, 0.33), 
-					new Author("cp08", "Giuseppe Sisinni", "Politecnico di Torino", "giuseppesisinni@live.it", "Student"), 
+			FPGAConfiguration conf = new FPGAConfiguration("confTest4", "conf04",
+					m, manager, "src/polito/sdp2017/Tests/bitstream4.c", 
+					new HardwareProperties(99, 5, 655, 1, 5434, 37), 
+					new Author("cp98", "Paolo Monti", "Politecnico di Torino", "paolomonti@live.it", "Student"), 
 					null);
 			//System.out.println(conf.toString());
 			//FPGAConfiguration.generateTopLevelEntity(conf);

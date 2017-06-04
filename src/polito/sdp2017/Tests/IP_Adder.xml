@@ -4,11 +4,11 @@
         <IPName>IP_Adder</IPName>
         <IPDescription>A description for IP_Adder</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Emanuele Garolla</AuthorName>
+            <AuthorId>cp04</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>emanuelegarolla@polito.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>104</HardwarePropertiesLUTs>

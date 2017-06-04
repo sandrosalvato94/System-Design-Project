@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>ControlUnit_FSM</IPName>
         <IPDescription>A description for ControlUnit_FSM</IPDescription>
         <ContactPoint>
@@ -20,5 +20,5 @@
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/ControlUnit_FSM.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/ControlUnit_FSM</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

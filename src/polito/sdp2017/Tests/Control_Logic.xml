@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>Control_Logic</IPName>
         <IPDescription>A description for Control_Logic</IPDescription>
         <ContactPoint>
@@ -19,6 +19,5 @@
             <HardwarePropertiesMaxClkFreq>0.814</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Control_Logic.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

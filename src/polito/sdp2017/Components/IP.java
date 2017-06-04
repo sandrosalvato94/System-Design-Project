@@ -70,8 +70,6 @@ public class IP {
 	public IP(String name, String idIP, String description, HardwareProperties hwProperties,
 			Author contactPoint, String hdlSourcePath) {		
 		try {
-			String hdlStringCode = idIP.split("_")[0];
-			Hdl ipHdl = Hdl.hdlFromString(hdlStringCode.toLowerCase());
 			
 			this.name = name;
 			this.idIP = idIP;
@@ -79,6 +77,9 @@ public class IP {
 			this.hwProperties = hwProperties;
 			this.contactPoint = contactPoint;
 			this.hdlSourcePath = hdlSourcePath;
+			
+			String hdlStringCode = this.idIP.split("_")[0];
+			Hdl ipHdl = Hdl.hdlFromString(hdlStringCode.toLowerCase());
 			
 			switch (ipHdl) {
 			case VHDL:

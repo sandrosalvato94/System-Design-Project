@@ -4,11 +4,11 @@
         <IPName>lfsr</IPName>
         <IPDescription>A description for lfsr</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Mariagrazia Graziano</AuthorName>
+            <AuthorId>cp05</AuthorId>
+            <AuthorCompany>Politecnico di Torino</AuthorCompany>
+            <AuthorEmail>mariagraziano@polito.it</AuthorEmail>
+            <AuthorRole>Full Professor</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>335</HardwarePropertiesLUTs>

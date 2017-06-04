@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>registerfile</IPName>
         <IPDescription>A description for registerfile</IPDescription>
         <ContactPoint>
@@ -19,6 +19,5 @@
             <HardwarePropertiesMaxClkFreq>2.196</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/registerfile.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/registerfile</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

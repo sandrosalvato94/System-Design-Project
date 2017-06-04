@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPCore>
+    <IPManager>
         <IPName>b14BCD</IPName>
         <IPDescription>A description for b14BCD</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>Alessandro Salvato</AuthorName>
+            <AuthorId>cp01</AuthorId>
+            <AuthorCompany>ARM</AuthorCompany>
+            <AuthorEmail>sandrosalvato94@live.it</AuthorEmail>
+            <AuthorRole>Digital Designer</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>958</HardwarePropertiesLUTs>
@@ -19,6 +19,5 @@
             <HardwarePropertiesMaxClkFreq>3.319</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b14BCD.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/b14BCD</IPDriverPath>
-    </IPCore>
+    </IPManager>
 </IPs>

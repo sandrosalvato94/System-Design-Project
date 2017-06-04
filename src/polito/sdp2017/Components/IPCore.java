@@ -64,11 +64,24 @@ public class IPCore extends IP {
     									Double.parseDouble(hwAttr.get("HardwarePropertiesPowerConsumption")),
     									Double.parseDouble(hwAttr.get("HardwarePropertiesMaxClkFreq")));
     		
-    		Hdl h = Hdl.hdlFromString(ipAttr.get("IPHdlSourcePath"));
+    		String tmp = ipAttr.get("IPHdlSourcePath");
+    		String[] splitted = tmp.split("\\.");
+    		if(splitted[1].equals("vhd") || splitted[1].equals("vhdl"))
+    		{
+    			tmp = "VHDL";
+    		}
+    		if(splitted[1].equals("v") || splitted[1].equals("verilog"))
+    		{
+    			tmp = "VRLG";
+    		}
+    		if(splitted[1].equals("cpp"))
+    		{
+    			tmp = "SYSC";
+    		}
     		
     		IPCore core = new IPCore(
     									ipAttr.get("IPName"),
-    									h+"_"+ipAttr.get("IPName"),
+    									tmp+"_"+ipAttr.get("IPName"),
     									ipAttr.get("IPDescription"),
     									hwProperties,
     									contactPoint,

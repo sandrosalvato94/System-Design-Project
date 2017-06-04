@@ -4,11 +4,11 @@
         <IPName>GeneralGenerate</IPName>
         <IPDescription>A description for GeneralGenerate</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+			<AuthorName>Alessandro Salvato</AuthorName>
+            <AuthorId>cp01</AuthorId>
+            <AuthorCompany>ARM</AuthorCompany>
+            <AuthorEmail>sandrosalvato94@live.it</AuthorEmail>
+            <AuthorRole>Digital Designer</AuthorRole>	
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>162</HardwarePropertiesLUTs>

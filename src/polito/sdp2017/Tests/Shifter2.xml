@@ -4,11 +4,11 @@
         <IPName>Shifter2</IPName>
         <IPDescription>A description for Shifter2</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>Federica De Blasio</AuthorName>
+            <AuthorId>cp05</AuthorId>
+            <AuthorCompany>Università degli Studi di Foggia</AuthorCompany>
+            <AuthorEmail>federicadeblasio@unifg.it</AuthorEmail>
+            <AuthorRole>Student</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
             <HardwarePropertiesLUTs>703</HardwarePropertiesLUTs>
