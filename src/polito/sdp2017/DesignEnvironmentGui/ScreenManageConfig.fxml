@@ -27,11 +27,11 @@
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max power consumption..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point id..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max clock frequency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set company..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxPowerConsumption" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max power consumption..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <TextField fx:id="contactPointId" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point id..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxClockFrequency" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max clock frequency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="company" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set company..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <TextField fx:id="contactPointName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set contact point name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max power" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max clock freq" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="contact point id" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
@@ -53,32 +53,32 @@
             <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max IPs..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set configuration name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set configuration id..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max FFs..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max LUTs" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxIPs" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max IPs..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <TextField fx:id="confName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set configuration name..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <TextField fx:id="confId" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set configuration id..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxFFs" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max FFs..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxLUTs" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max LUTs" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max IPs" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="configuration id" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="configuration name" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max LUTs" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max FFs" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="max latency" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max latency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <TextField fx:id="maxLatency" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max latency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
-      <Button layoutX="421.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="365.0" text="Search configuration..." />
+      <Button layoutX="421.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchConf" prefHeight="30.0" prefWidth="365.0" text="Search configuration..." />
       <Separator layoutX="2.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="800.0" />
-      <ListView layoutX="14.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" />
+      <ListView fx:id="searchedConf" layoutX="14.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" />
       <Separator layoutX="314.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="30.0" />
-      <TextArea layoutX="344.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="275.0" prefWidth="443.0">
+      <TextArea fx:id="logArea" layoutX="344.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="275.0" prefWidth="443.0">
          <font>
             <Font name="Courier" size="15.0" />
          </font>
       </TextArea>
-      <Button layoutX="344.0" layoutY="634.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="&lt; Back" />
-      <Button layoutX="586.0" layoutY="634.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Reset" />
-      <Button layoutX="344.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Delete configuration" />
-      <Button layoutX="586.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Load configuration" />
+      <Button layoutX="344.0" layoutY="634.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="200.0" text="&lt; Back" />
+      <Button layoutX="586.0" layoutY="634.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#resetConf" prefHeight="50.0" prefWidth="200.0" text="Reset" />
+      <Button layoutX="344.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#deleteConf" prefHeight="50.0" prefWidth="200.0" text="Delete configuration" />
+      <Button layoutX="586.0" layoutY="570.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#loadConf" prefHeight="50.0" prefWidth="200.0" text="Load configuration" />
    </children>
 </AnchorPane>

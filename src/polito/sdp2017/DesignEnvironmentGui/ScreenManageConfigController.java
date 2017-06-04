@@ -14,14 +14,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import polito.sdp2017.Components.FPGAConfiguration;
-import polito.sdp2017.Components.IP;
 
 public class ScreenManageConfigController implements ControlledScreen {
 	ApplicationModel applicationModel;
     ScreensController myController;
     
     Map<String, FPGAConfiguration> map = new HashMap<String,FPGAConfiguration>();
-    int mappedIpCnt = 0;
     FPGAConfiguration focusedConf;
     
     @FXML private TextField maxIPs;
@@ -216,6 +214,7 @@ public class ScreenManageConfigController implements ControlledScreen {
 				map.put(c.getIdConf(), c);
 			}
 			
+			System.out.println(map.toString());
 			searchedConf.getItems().clear();
 			ObservableList<String> items = FXCollections.observableArrayList (map.keySet());
 			searchedConf.setItems(items);

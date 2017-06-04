@@ -10,6 +10,7 @@ public class Main extends Application {
     public static final String screenManageIPID = "manageIP";
     public static final String screenCreateConfigID = "createConfig";
     public static final String screenManageConfigID = "manageConfig";
+
     public static final String screenStartFile = "ScreenStart.fxml";
     public static final String screenManageIPFile = "ScreenManageIP.fxml";
     public static final String screenCreateConfigFile = "ScreenCreateConfig.fxml";

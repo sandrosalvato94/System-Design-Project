@@ -1,5 +1,6 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.io.IOException;
 import java.util.HashMap;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -37,7 +38,7 @@ public class ScreensController  extends StackPane {
             addScreen(name, loadScreen);
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
