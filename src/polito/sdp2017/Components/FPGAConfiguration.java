@@ -60,6 +60,19 @@ public class FPGAConfiguration {
 		try(BufferedReader in  = new BufferedReader(new FileReader(pathTemplate.toString()));
 			BufferedWriter out = new BufferedWriter(new FileWriter(pathTarget.toString())))
 		{
+			
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--COMPONENTS HERE--[\\s|.]*"))
+			{
+				out.write(tmpString + "\n");
+			}
+			
+			for(MappedIP m : conf.getMappedIPs())
+			{
+				out.write("\n");
+				//m.getIpCore().getHwInterface()
+			}
+			
+			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE MANAGER--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
@@ -281,5 +294,16 @@ public class FPGAConfiguration {
 	        e.printStackTrace();
 	        return -1;
 	    }
+	}
+	
+	public String getBrief()
+	{
+		StringBuffer s = new StringBuffer();
+		
+		s.append("ID configuration: \t" + this.getIdConf() + "\n");
+		s.append("Name configuration: \t" + this.getName() + "\n");
+		s.append("Hardware sroperties: \t" + this.getHwProperties().toString() + "\n");
+		
+		return s.toString();
 	}
 }

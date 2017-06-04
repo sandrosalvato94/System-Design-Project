@@ -33,7 +33,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a =4; 
+		a =5; 
 		
 		switch (a) {
 		case 1:	//addIP
@@ -113,8 +113,8 @@ public class Test01 {
 		case 5: //search configuration
 			
 			LinkedList<FPGAConfiguration> lc = new LinkedList<FPGAConfiguration>();
-			 String nIPs = new String("12");
-			 idIP = new String("$");
+			 String nIPs = new String("$");
+			 idIP = new String("conf05");
 			 name = new String("$");
 			 maxLUTs = new String("$");
 			 maxFFs = new String("$");
@@ -133,6 +133,7 @@ public class Test01 {
 				l.add(nameAuthor); l.add(company);
 			
 			lc = DBM.searchConfiguration(l);
+			FPGAConfiguration.generateTopLevelEntity(lc.getFirst());
 				
 			break;
 		case 6:

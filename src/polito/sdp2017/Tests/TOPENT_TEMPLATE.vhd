@@ -17,6 +17,8 @@ end TOP_ENTITY;
 
 architecture STRUCTURAL of TOP_ENTITY is
 
+	--COMPONENTS HERE--
+
 	signal	row_0			  	: std_logic_vector (DATA_WIDTH-1 downto 0); 
 	signal	data_in_ip		  	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal	data_out_ip			: std_logic_vector (DATA_WIDTH-1 downto 0);	
