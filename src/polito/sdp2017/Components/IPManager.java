@@ -8,6 +8,8 @@ import java.util.TreeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import polito.sdp2017.HardwareInterface.Hdl;
+
 public class IPManager extends IP {
 
 	static List<IP> getFromDomNodeList (NodeList managerNodes) {
@@ -60,10 +62,12 @@ public class IPManager extends IP {
     									Integer.parseInt(hwAttr.get("HardwarePropertiesNMemories")),
     									Double.parseDouble(hwAttr.get("HardwarePropertiesPowerConsumption")),
     									Double.parseDouble(hwAttr.get("HardwarePropertiesMaxClkFreq")));
-
+    		
+    		Hdl h = Hdl.hdlFromString(ipAttr.get("IPHdlSourcePath"));
+    		
     		IPManager core = new IPManager(
     									ipAttr.get("IPName"),
-    									ipAttr.get("IPId"),
+    									h+"_"+ipAttr.get("IPName"),
     									ipAttr.get("IPDescription"),
     									hwProperties,
     									contactPoint,

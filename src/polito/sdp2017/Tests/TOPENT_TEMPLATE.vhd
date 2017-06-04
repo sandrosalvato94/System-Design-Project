@@ -77,7 +77,7 @@ begin
 					ack_IPs			=>	ack_IPs,
 					interrupt_IPs	=>	interrupt_IPs);
 	
-	--STOP HERE--
+	--HERE IPs--
 	
 	 ip_0: IP_DUMMY	
 		port map(	clk				=> clock, 

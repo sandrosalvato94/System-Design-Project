@@ -6,7 +6,6 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element type="xs:string" name="IPName"/>
-              <xs:element type="xs:string" name="IPId"/>
               <xs:element type="xs:string" name="IPDescription"/>
               <xs:element name="ContactPoint">
                 <xs:complexType>
@@ -40,7 +39,6 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element type="xs:string" name="IPName"/>
-              <xs:element type="xs:string" name="IPId"/>
               <xs:element type="xs:string" name="IPDescription"/>
               <xs:element name="ContactPoint">
                 <xs:complexType>
