@@ -220,8 +220,36 @@ public class ScreenCreateConfigController implements ControlledScreen {
 	}
 	
 	@FXML
-	public void resetConf (ActionEvent event) {
-		logArea.appendText("still to be implemented...\n");
+	public void resetConf (ActionEvent event) {	
+	    IPIdentifier.setText("");
+	    IPName.setText("");
+	    maxLUTs.setText("");
+	    maxFFs.setText("");
+	    maxLatency.setText("");
+	    maxPowerConsumption.setText("");
+	    maxClockFrequency.setText("");
+	    contactPointId.setText("");
+	    contactPointName.setText("");
+	    company.setText("");
+	    physicalAddress.setText("");
+	    interruptPriority.setText("");
+	    confContactPointId.setText("");
+	    confContactPointName.setText("");
+	    confCompany.setText("");
+	    confEmail.setText("");
+	    confRole.setText("");
+	    isCore.setSelected(false);
+	    logArea.setText("");
+	    reportArea.setText("");
+	    createConfLogArea.setText("");
+	    progressBar.setProgress(0);
+		
+		focusedIP = null;
+		map.clear();
+		mappedIpCnt = 0;
+		searchedIP.getItems().clear();
+		
+		applicationModel.resetIPs();
 	}
 	
 	@FXML
@@ -248,16 +276,55 @@ public class ScreenCreateConfigController implements ControlledScreen {
 			}
 		} catch (NumberFormatException nfe) {
 			logArea.appendText("[ERROR] priority or physical address not valid...\n");
+		} catch (NullPointerException npe) {
+			logArea.appendText("[ERROR] nothing is selected...\n");
 		}
 		interruptPriority.setText("");
 		physicalAddress.setText("");
-		
-		applicationModel.printMappedIP();
 	}
 	
 	@FXML
 	public void printReport (ActionEvent event) {
-		reportArea.appendText("still to be implemented...\n");
+		String confContactId = confContactPointId.getText();
+		String confContactName = confContactPointName.getText();
+		String confContactMail = confEmail.getText();
+		String confContactCompany = confCompany.getText();
+		String confContactRole = confRole.getText();
+				
+		if (confContactId.trim().equals("")) {
+			confContactId = "unknown";
+		}
+		if (confContactName.trim().equals("")) {
+			confContactName = "unknown";
+		}
+		if (confContactMail.trim().equals("")) {
+			confContactMail = "unknown";
+		}
+		if (confContactCompany.trim().equals("")) {
+			confContactCompany = "unknown";
+		}
+		if (confContactRole.trim().equals("")) {
+			confContactRole = "unknown";
+		}
+		
+		reportArea.setText("CONFIGURATION REPORT\n");
+		reportArea.appendText("contact point id   : "+confContactId+"\n");
+		reportArea.appendText("contact point name : "+confContactName+"\n");
+		reportArea.appendText("contact point mail : "+confContactMail+"\n");
+		reportArea.appendText("company            : "+confContactCompany+"\n");
+		reportArea.appendText("role               : "+confContactRole+"\n");
+		reportArea.appendText("\n");
+		for (MappedIP m : applicationModel.getMapped()) {
+			reportArea.appendText(m.getIdMappedIP()+" - "+m.getIpCore().getIdIP()+"\n");
+			reportArea.appendText("    priority    : "+m.getPriority()+"\n");
+			reportArea.appendText("    phy address : "+m.getPhysicalAddress()+"\n\n");
+		}
+		
+		if (applicationModel.getManager() == null) {
+			reportArea.appendText("[WARNING] manager missing\n");
+		} else {
+			reportArea.appendText("manager - "+applicationModel.getManager()+"\n");
+		}
 	}
 	
 	@FXML

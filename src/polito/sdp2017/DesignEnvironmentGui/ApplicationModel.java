@@ -73,11 +73,16 @@ public class ApplicationModel {
 		manager = focusedIP;	
 	}
 	
-	public void printMappedIP() {
-		for (MappedIP m : mapped) {
-			System.out.println(m.getIpCore().getName());
-		}
+	public List<MappedIP> getMapped() {
+		return mapped;
 	}
-	
 
+	public IPManager getManager() {
+		return manager;
+	}
+
+	public void resetIPs() {
+		manager = null;
+		mapped.clear();
+	}
 }
