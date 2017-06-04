@@ -37,7 +37,12 @@ public class ScreenCreateConfigController implements ControlledScreen {
     @FXML private TextField contactPointName;
     @FXML private TextField company;    
     @FXML private TextField physicalAddress;
-    @FXML private TextField interruptPriority;
+    @FXML private TextField interruptPriority; 
+    @FXML private TextField confContactPointId;
+    @FXML private TextField confContactPointName;
+    @FXML private TextField confCompany;    
+    @FXML private TextField confEmail;
+    @FXML private TextField confRole;
     @FXML private CheckBox isCore;
     @FXML private TextArea logArea;
     @FXML private TextArea reportArea;
@@ -258,5 +263,6 @@ public class ScreenCreateConfigController implements ControlledScreen {
 	@FXML
 	public void createConfiguration (ActionEvent event) {
 		createConfLogArea.appendText("still to be implemented...\n");
+		progressBar.setProgress(progressBar.getProgress()+0.1);
 	}
 }
