@@ -10,6 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import polito.sdp2017.Components.DBManager;
+import polito.sdp2017.Components.FPGAConfiguration;
 import polito.sdp2017.Components.IP;
 import polito.sdp2017.Components.IPManager;
 import polito.sdp2017.Components.MappedIP;
@@ -84,5 +85,9 @@ public class ApplicationModel {
 	public void resetIPs() {
 		manager = null;
 		mapped.clear();
+	}
+
+	public List<FPGAConfiguration> searchConfs(LinkedList<String> pars) {
+		return database.searchConfiguration(pars);
 	}
 }

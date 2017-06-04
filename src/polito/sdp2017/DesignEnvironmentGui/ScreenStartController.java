@@ -61,7 +61,7 @@ public class ScreenStartController implements ControlledScreen {
     }
     
     @FXML
-    private void goToLoadConfig(ActionEvent event){
+    private void goToManageConfig(ActionEvent event){
     	if (applicationModel.isConnected()) {
     		myController.setScreen(Main.screenManageConfigID);
     	} else {
