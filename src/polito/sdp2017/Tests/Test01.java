@@ -32,7 +32,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 4;
+		a = 4; //hjkljhgfghj
 		
 		switch (a) {
 		case 1:	//addIP
