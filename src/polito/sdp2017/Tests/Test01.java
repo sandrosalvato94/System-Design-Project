@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -32,7 +33,7 @@ public class Test01 {
 		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a = 4; //hjkljhgfghj
+		a =6; 
 		
 		switch (a) {
 		case 1:	//addIP
@@ -100,75 +101,18 @@ public class Test01 {
 			
 			break;
 		case 4: //addConfiguration
-			 lip = new LinkedList<IP>();
-			 isIPCore = new String("false");
-			 idIP = new String("$");
-			 name = new String("$");
-			 maxLUTs = new String("$");
-			 maxFFs = new String("$");
-			 maxLatency = new String("$");
-			 maxPowerConsuption = new String("$");
-			 maxClockFrequency = new String("$");
-			 idAuthor = new String("$");
-			 nameAuthor = new String("$");
-			 company = new String("Politecnico di Torino");
-			
-			l = new LinkedList<String>();
-			
-			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
-			l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
-		    l.add(maxClockFrequency); l.add(idAuthor);
-			l.add(nameAuthor); l.add(company);
-			
-			lip = DBM.searchIP(l);
-			IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
-															  java.util.NoSuchElementException
-															  if no manager found*/
-			lip = new LinkedList<IP>();
-			 isIPCore = new String("true");
-			 idIP = new String("$");
-			 name = new String("$");
-			 maxLUTs = new String("$");
-			 maxFFs = new String("$");
-			 maxLatency = new String("$");
-			 maxPowerConsuption = new String("$");
-			 maxClockFrequency = new String("$");
-			 idAuthor = new String("$");
-			 nameAuthor = new String("$");
-			 company = new String("Politecnico di Torino");
-			
-			l = new LinkedList<String>();
-			
-			l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
-			l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
-		    l.add(maxClockFrequency); l.add(idAuthor);
-			l.add(nameAuthor); l.add(company);
-			
-			lip = DBM.searchIP(l);
-			
-			//System.out.println(manager.toString());
-			LinkedList<MappedIP> m = new LinkedList<MappedIP>();
-			
-			for(int i = 0; i<lip.size(); i++)
-			{
-				m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
-				//System.out.println(m.get(i).toString());
-			}
-			
-			FPGAConfiguration conf = new FPGAConfiguration("confTest4", "conf04",
-					m, manager, "src/polito/sdp2017/Tests/bitstream4.c", 
-					new HardwareProperties(99, 5, 655, 1, 5434, 37), 
-					new Author("cp98", "Paolo Monti", "Politecnico di Torino", "paolomonti@live.it", "Student"), 
-					null);
-			//System.out.println(conf.toString());
-			//FPGAConfiguration.generateTopLevelEntity(conf);
-			DBM.addConfiguration(conf);
+			 //fillDatabase(DBM);
+			 addConf00(DBM);
+			 addConf01(DBM);
+			 addConf02(DBM);
+			 addConf03(DBM);
+			 addConf04(DBM);
 			break;
 		
 		case 5: //search configuration
 			
 			LinkedList<FPGAConfiguration> lc = new LinkedList<FPGAConfiguration>();
-			 String nIPs = new String("3");
+			 String nIPs = new String("12");
 			 idIP = new String("$");
 			 name = new String("$");
 			 maxLUTs = new String("$");
@@ -189,6 +133,9 @@ public class Test01 {
 			
 			lc = DBM.searchConfiguration(l);
 				
+			break;
+		case 6:
+				DBM.removeConfiguration("fake", "$");
 			break;
 		default:
 			System.out.println("Program is arresting");
@@ -256,4 +203,318 @@ public class Test01 {
 		        }
 	}
 	
+	public static void addConf00(DBManager DBM)
+	{
+		 LinkedList<IP>lip = new LinkedList<IP>();
+		 String isIPCore = new String("false");
+		 String idIP = new String("$");
+		 String name = new String("$");
+		 String maxLUTs = new String("$");
+		 String maxFFs = new String("$");
+		 String maxLatency = new String("$");
+		 String maxPowerConsuption = new String("$");
+		 String maxClockFrequency = new String("$");
+		 String idAuthor = new String("$");
+		 String nameAuthor = new String("$");
+		 String company = new String("Politecnico di Torino");
+		
+		LinkedList<String> l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+														  java.util.NoSuchElementException
+														  if no manager found*/
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("$");
+		 maxLUTs = new String("$");
+		 maxFFs = new String("$");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("$");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("Politecnico di Torino");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		
+		for(int i = 0; i<lip.size(); i++)
+		{
+			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+		}
+		
+		FPGAConfiguration conf = new FPGAConfiguration("confTest0", "conf00",
+				m, manager, "src/polito/sdp2017/Tests/bitstream0.c", 
+				new HardwareProperties(99, 5, 655, 1, 5434, 37), 
+				new Author("cp98", "Paolo Monti", "Politecnico di Torino", "paolomonti@live.it", "Student"), 
+				null);
+		DBM.addConfiguration(conf);
+	}
+	
+	public static void addConf01(DBManager DBM)
+	{
+		 LinkedList<IP>lip = new LinkedList<IP>();
+		 String isIPCore = new String("false");
+		 String idIP = new String("$");
+		 String name = new String("$");
+		 String maxLUTs = new String("$");
+		 String maxFFs = new String("$");
+		 String maxLatency = new String("$");
+		 String maxPowerConsuption = new String("$");
+		 String maxClockFrequency = new String("$");
+		 String idAuthor = new String("cp01");
+		 String nameAuthor = new String("$");
+		 String company = new String("$");
+		
+		LinkedList<String> l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+														  java.util.NoSuchElementException
+														  if no manager found*/
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("$");
+		 maxLUTs = new String("$");
+		 maxFFs = new String("$");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("3.0");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("$");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		
+		for(int i = 0; i<lip.size(); i++)
+		{
+			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+		}
+
+		FPGAConfiguration conf = new FPGAConfiguration("confTest1", "conf01",
+				m, manager, "src/polito/sdp2017/Tests/bitstream1.c", 
+				new HardwareProperties(789, 23456, 69, 1, 4, 0.09), 
+				new Author("cp97", "Genoveffa Alberti", "Corso Massimo", "genoveffa.alberti@live.it", "Pubbliche Relazioni"), 
+				null);
+		DBM.addConfiguration(conf);
+	}
+	
+	public static void addConf02(DBManager DBM)
+	{
+		 LinkedList<IP>lip = new LinkedList<IP>();
+		 String isIPCore = new String("false");
+		 String idIP = new String("$");
+		 String name = new String("$");
+		 String maxLUTs = new String("$");
+		 String maxFFs = new String("$");
+		 String maxLatency = new String("1.0");
+		 String maxPowerConsuption = new String("$");
+		 String maxClockFrequency = new String("$");
+		 String idAuthor = new String("$");
+		 String nameAuthor = new String("$");
+		 String company = new String("$");
+		
+		LinkedList<String> l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+														  java.util.NoSuchElementException
+														  if no manager found*/
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("$");
+		 maxLUTs = new String("800");
+		 maxFFs = new String("800");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("$");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("$");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		
+		for(int i = 0; i<lip.size(); i++)
+		{
+			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+		}
+
+		FPGAConfiguration conf = new FPGAConfiguration("confTest2", "conf02",
+				m, manager, "src/polito/sdp2017/Tests/bitstream2.c", 
+				new HardwareProperties(79, 456, 9, 10, 40, 20.09), 
+				new Author("cp96", "Francesca Bocchetti", "Telecom", "francescabocchetti@telecom.it", "Pubbliche Relazioni"), 
+				null);
+		DBM.addConfiguration(conf);
+	}
+
+	public static void addConf03(DBManager DBM)
+	{
+		 LinkedList<IP>lip = new LinkedList<IP>();
+		 String isIPCore = new String("false");
+		 String idIP = new String("$");
+		 String name = new String("$");
+		 String maxLUTs = new String("400");
+		 String maxFFs = new String("$");
+		 String maxLatency = new String("$");
+		 String maxPowerConsuption = new String("$");
+		 String maxClockFrequency = new String("$");
+		 String idAuthor = new String("$");
+		 String nameAuthor = new String("$");
+		 String company = new String("$");
+		
+		LinkedList<String> l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+														  java.util.NoSuchElementException
+														  if no manager found*/
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("$");
+		 maxLUTs = new String("$");
+		 maxFFs = new String("$");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("$");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("$");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		
+		for(int i = 0; i<lip.size(); i++)
+		{
+			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+		}
+
+		FPGAConfiguration conf = new FPGAConfiguration("confTest3", "conf03",
+				m, manager, "src/polito/sdp2017/Tests/bitstream3.c", 
+				new HardwareProperties(9, 556, 559, 140, 420, 201.09), 
+				new Author("cp95", "Italo Treni", "Trenitalia", "delay@telecom.it", "Accompagnatore"), 
+				null);
+		DBM.addConfiguration(conf);
+	}
+
+	public static void addConf04(DBManager DBM)
+	{
+		 LinkedList<IP>lip = new LinkedList<IP>();
+		 String isIPCore = new String("false");
+		 String idIP = new String("$");
+		 String name = new String("$");
+		 String maxLUTs = new String("$");
+		 String maxFFs = new String("$");
+		 String maxLatency = new String("1.0");
+		 String maxPowerConsuption = new String("$");
+		 String maxClockFrequency = new String("$");
+		 String idAuthor = new String("$");
+		 String nameAuthor = new String("$");
+		 String company = new String("$");
+		
+		LinkedList<String> l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		IPManager manager = (IPManager) lip.getFirst(); /*Exception in thread "main" 
+														  java.util.NoSuchElementException
+														  if no manager found*/
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("Extender");
+		 maxLUTs = new String("$");
+		 maxFFs = new String("$");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("$");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("$");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		
+		for(int i = 0; i<lip.size(); i++)
+		{
+			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
+		}
+
+		FPGAConfiguration conf = new FPGAConfiguration("confTest4", "conf04",
+				m, manager, "src/polito/sdp2017/Tests/bitstream4.c", 
+				new HardwareProperties(79, 456, 9, 10, 40, 20.09), 
+				new Author("cp01", "Francesca Bocchetti", "Telecom", "francescabocchetti@telecom.it", "Pubbliche Relazioni"), 
+				null);
+		DBM.addConfiguration(conf);
+	}
 }

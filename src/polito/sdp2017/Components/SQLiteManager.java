@@ -256,6 +256,8 @@ public class SQLiteManager implements DBManager {
 		try
 		{
 			state = DBConn.createStatement();
+			state.execute("PRAGMA foreign_keys = ON;");
+			state.execute("PRAGMA foreign_keys;");
 			if(state.executeUpdate(query.toString()) == 0)
 			{
 				return false;
@@ -391,13 +393,15 @@ public class SQLiteManager implements DBManager {
 		
 		try {
 			state = DBConn.createStatement();
-			RS = state.executeQuery(query.toString());
+			state.execute("PRAGMA foreign_keys = ON;");
+			state.execute("PRAGMA foreign_keys;");
 			
-			if(RS.wasNull()) {
-				RS.close();
+			if(state.executeUpdate(query.toString()) == 0)
+			{
 				return false;
-			} else {
-				RS.close();
+			}
+			else
+			{
 				return true;
 			}
 		} catch(Exception e) {
@@ -739,7 +743,7 @@ public class SQLiteManager implements DBManager {
 				if(i==0) //nIPs
 				{
 					query.append("\n AND " + confLib + ".idConf IN (SELECT idConf FROM " + mappedIPLib +
-							      " GROUP BY idConf HAVING COUNT(*) >= " + listOfParameters.get(i) + ")");
+							      " GROUP BY idConf HAVING COUNT(*) <= " + listOfParameters.get(i) + ")");
 				}
 				if(i==1) //idConf
 				{
