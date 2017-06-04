@@ -2,7 +2,6 @@
 <IPs>
     <IPCore>
         <IPName>Shifter</IPName>
-        <IPId>VHDL_Shifter</IPId>
         <IPDescription>A description for Shifter</IPDescription>
         <ContactPoint>
             <AuthorName>EmanueleParisi</AuthorName>
@@ -12,12 +11,12 @@
             <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>275</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>972</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.522</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>995</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.341</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.182</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>226</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>283</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>0.866</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1207</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>5.231</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.159</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter</IPDriverPath>

@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>Shifter2</IPName>
-        <IPId>VHDL_Shifter2</IPId>
         <IPDescription>A description for Shifter2</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>737</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>889</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>7.550</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1456</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>0.965</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>3.392</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>703</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>135</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.823</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4606</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.525</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>0.710</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>

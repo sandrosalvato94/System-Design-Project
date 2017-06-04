@@ -1,24 +1,24 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPManager>
-        <IPName>IP_MANAGER</IPName>
-        <IPId>VHDL_IP_MANAGER_HWGR</IPId>
-        <IPDescription>A description for a IPManager</IPDescription>
+    <IPCore>
+        <IPName>IPManager_HardwareGroup</IPName>
+        <IPDescription>A description for IPManager_HardwareGroup</IPDescription>
         <ContactPoint>
-            <AuthorName>Emanuele Garolla</AuthorName>
-            <AuthorId>cp09</AuthorId>
-            <AuthorCompany>Politecnico di Torino</AuthorCompany>
-            <AuthorEmail>emanuele.garolla@polito.it</AuthorEmail>
-            <AuthorRole>Student</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>909</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>70</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>4.066</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>2868</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>9.962</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>5.152</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>465</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>555</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.189</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4482</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.508</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.383</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/IPManager_HardwareGroup.vhd</IPHdlSourcePath>
-    </IPManager>
+        <IPDriverPath>/path/to/driver/IPManager_HardwareGroup</IPDriverPath>
+    </IPCore>
 </IPs>

@@ -1,24 +1,24 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPManager>
+    <IPCore>
         <IPName>b14BCD</IPName>
-        <IPId>VHDL_b14BCD</IPId>
         <IPDescription>A description for b14BCD</IPDescription>
         <ContactPoint>
-            <AuthorName>Federica De Blasio</AuthorName>
-            <AuthorId>cp04</AuthorId>
-            <AuthorCompany>Università degli studi di Foggia</AuthorCompany>
-            <AuthorEmail>federica.deblasio@unifg.it</AuthorEmail>
-            <AuthorRole>Student</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>192</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>413</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>9.769</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8575</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>4.807</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>5.541</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>958</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>268</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.100</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2351</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>3.174</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.319</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b14BCD.vhd</IPHdlSourcePath>
-    </IPManager>
+        <IPDriverPath>/path/to/driver/b14BCD</IPDriverPath>
+    </IPCore>
 </IPs>

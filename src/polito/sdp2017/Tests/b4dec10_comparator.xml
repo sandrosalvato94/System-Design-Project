@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>b4dec10_comparator</IPName>
-        <IPId>VHDL_b4dec10_comparator</IPId>
         <IPDescription>A description for b4dec10_comparator</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>999</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>969</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>9.286</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>2060</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>8.268</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.065</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>946</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>448</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.962</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4155</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>2.662</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>9.941</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b4dec10_comparator.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b4dec10_comparator</IPDriverPath>

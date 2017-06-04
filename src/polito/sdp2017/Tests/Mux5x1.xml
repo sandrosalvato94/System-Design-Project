@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>Mux5x1</IPName>
-        <IPId>VHDL_Mux5x1</IPId>
         <IPDescription>A description for Mux5x1</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>cp01</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>327</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>948</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>9.250</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8902</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>1.160</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.857</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>531</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>780</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>2.870</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5005</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.436</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.359</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Mux5x1.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Mux5x1</IPDriverPath>

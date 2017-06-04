@@ -2,7 +2,6 @@
 <IPs>
     <IPCore>
         <IPName>hex7seg_decoder</IPName>
-        <IPId>VHDL_hex7seg_decoder</IPId>
         <IPDescription>A description for hex7seg_decoder</IPDescription>
         <ContactPoint>
             <AuthorName>AlessandroSalvato</AuthorName>
@@ -12,12 +11,12 @@
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>616</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>201</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.163</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6634</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.146</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.522</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>324</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>578</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>5.878</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1266</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.070</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>8.999</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/hex7seg_decoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/hex7seg_decoder</IPDriverPath>

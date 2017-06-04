@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>lfsr</IPName>
-        <IPId>VHDL_lfsr</IPId>
         <IPDescription>A description for lfsr</IPDescription>
         <ContactPoint>
-            <AuthorName>Mariagrazia Graziano</AuthorName>
-            <AuthorId>cp07</AuthorId>
-            <AuthorCompany>Everywher</AuthorCompany>
-            <AuthorEmail>A lot of emails</AuthorEmail>
-            <AuthorRole>Master of everything</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>162</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>708</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>9.951</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1516</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>8.258</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>9.271</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>335</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>810</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.134</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>3503</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>1.617</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.439</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/lfsr.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/lfsr</IPDriverPath>

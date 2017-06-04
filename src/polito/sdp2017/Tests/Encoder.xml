@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>Encoder</IPName>
-        <IPId>VHDL_Encoder</IPId>
         <IPDescription>A description for Encoder</IPDescription>
         <ContactPoint>
-            <AuthorName>Michele Simili</AuthorName>
-            <AuthorId>cp05</AuthorId>
-            <AuthorCompany>Politecnico di Torino</AuthorCompany>
-            <AuthorEmail>michele.simili@studenti.polito.it</AuthorEmail>
-            <AuthorRole>Student</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>856</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>666</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.622</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>6472</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.544</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>4.510</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>64</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>505</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>0.774</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2440</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.175</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>2.652</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Encoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Encoder</IPDriverPath>

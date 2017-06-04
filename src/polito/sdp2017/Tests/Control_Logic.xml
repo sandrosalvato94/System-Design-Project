@@ -1,24 +1,24 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPManager>
+    <IPCore>
         <IPName>Control_Logic</IPName>
-        <IPId>VHDL_Control_Logic</IPId>
         <IPDescription>A description for Control_Logic</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>cp01</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>813</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>226</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.507</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1560</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>7.513</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.708</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>509</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>8</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>6.575</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>9885</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.894</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>0.814</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Control_Logic.vhd</IPHdlSourcePath>
-    </IPManager>
+        <IPDriverPath>/path/to/driver/Control_Logic</IPDriverPath>
+    </IPCore>
 </IPs>

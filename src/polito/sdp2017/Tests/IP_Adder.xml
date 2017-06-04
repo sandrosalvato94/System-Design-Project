@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>IP_Adder</IPName>
-        <IPId>VHDL_IP_Adder</IPId>
         <IPDescription>A description for IP_Adder</IPDescription>
         <ContactPoint>
-            <AuthorName>Emanuele Garolla</AuthorName>
-            <AuthorId>cp09</AuthorId>
-            <AuthorCompany>Politecnico di Torino</AuthorCompany>
-            <AuthorEmail>emanuele.garolla@polito.it</AuthorEmail>
-            <AuthorRole>Student</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>386</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>259</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.372</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>5891</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.779</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.843</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>104</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>619</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.561</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>3434</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.568</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>3.507</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/IP_Adder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/IP_Adder</IPDriverPath>

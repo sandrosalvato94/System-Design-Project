@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>GeneralGenerate</IPName>
-        <IPId>VHDL_GeneralGenerate</IPId>
         <IPDescription>A description for GeneralGenerate</IPDescription>
         <ContactPoint>
             <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>cp01</AuthorId>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
             <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
             <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>222</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>628</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>3.800</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>7835</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>6.188</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>5.562</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>162</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>60</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.822</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>6088</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>3.557</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.515</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/GeneralGenerate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralGenerate</IPDriverPath>

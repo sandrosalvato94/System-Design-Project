@@ -48,8 +48,6 @@ if __name__ == "__main__":
         core = SubElement(top,'IPCore')
         IPName = SubElement(core,'IPName')
         IPName.text = name
-        IPId = SubElement(core,'IPId')
-        IPId.text = 'VHDL_'+name
         IPDescription = SubElement(core,'IPDescription')
         IPDescription.text = 'A description for '+name
 

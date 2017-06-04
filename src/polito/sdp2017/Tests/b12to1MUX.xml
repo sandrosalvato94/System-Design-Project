@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>b12to1MUX</IPName>
-        <IPId>VHDL_b12to1MUX</IPId>
         <IPDescription>A description for b12to1MUX</IPDescription>
         <ContactPoint>
-            <AuthorName>Paolo Prinetto</AuthorName>
-            <AuthorId>cp03</AuthorId>
-            <AuthorCompany>CINI</AuthorCompany>
-            <AuthorEmail>paolo.prinetto@polito.it</AuthorEmail>
-            <AuthorRole>Professor</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>23</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>116</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>7.767</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>8849</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>7.066</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.699</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>767</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>904</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.533</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>2893</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>8.569</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>4.440</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/b12to1MUX.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/b12to1MUX</IPDriverPath>

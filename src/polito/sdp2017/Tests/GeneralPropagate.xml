@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>GeneralPropagate</IPName>
-        <IPId>VHDL_GeneralPropagate</IPId>
         <IPDescription>A description for GeneralPropagate</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>id of EmanueleParisi</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>409</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>892</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.362</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>4759</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.459</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.405</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>387</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>633</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.660</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5991</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>3.749</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.739</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/GeneralPropagate.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/GeneralPropagate</IPDriverPath>

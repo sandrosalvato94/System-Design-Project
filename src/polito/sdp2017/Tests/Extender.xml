@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>Extender</IPName>
-        <IPId>VHDL_Extender</IPId>
         <IPDescription>A description for Extender</IPDescription>
         <ContactPoint>
-            <AuthorName>Simone Machetti</AuthorName>
-            <AuthorId>cp06</AuthorId>
-            <AuthorCompany>Politecnico di Torino</AuthorCompany>
-            <AuthorEmail>simone.machetti@studenti.polito.it</AuthorEmail>
-            <AuthorRole>Student</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>838</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>279</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.016</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>4498</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>5.728</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>2.835</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>492</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>574</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>7.676</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>4146</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>6.885</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.990</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Extender.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Extender</IPDriverPath>

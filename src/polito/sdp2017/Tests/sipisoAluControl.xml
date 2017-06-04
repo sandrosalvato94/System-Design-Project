@@ -1,24 +1,24 @@
 <?xml version="1.0" ?>
 <IPs>
-    <IPManager>
+    <IPCore>
         <IPName>sipisoAluControl</IPName>
-        <IPId>VHDL_sipisoAluControl</IPId>
         <IPDescription>A description for sipisoAluControl</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>id of AlessandroSalvato</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>124</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>761</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>1.547</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1345</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>8.814</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.903</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>315</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>986</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>4.772</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>3853</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.791</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>5.570</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/sipisoAluControl.vhd</IPHdlSourcePath>
-    </IPManager>
+        <IPDriverPath>/path/to/driver/sipisoAluControl</IPDriverPath>
+    </IPCore>
 </IPs>

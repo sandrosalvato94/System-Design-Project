@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>profiler</IPName>
-        <IPId>VHDL_profiler</IPId>
         <IPDescription>A description for profiler</IPDescription>
         <ContactPoint>
             <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>cp01</AuthorId>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
             <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
             <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
             <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>528</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>479</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>2.432</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1385</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>3.874</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>7.640</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>306</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>628</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.786</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>1582</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>0.989</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>1.187</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/profiler.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/profiler</IPDriverPath>

@@ -2,22 +2,21 @@
 <IPs>
     <IPCore>
         <IPName>Instr_decoder</IPName>
-        <IPId>VHDL_Instr_decoder</IPId>
         <IPDescription>A description for Instr_decoder</IPDescription>
         <ContactPoint>
-            <AuthorName>AlessandroSalvato</AuthorName>
-            <AuthorId>cp05</AuthorId>
-            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
-            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
-            <AuthorRole>role of AlessandroSalvato</AuthorRole>
+            <AuthorName>EmanueleParisi</AuthorName>
+            <AuthorId>id of EmanueleParisi</AuthorId>
+            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
+            <AuthorEmail>email of EmanueleParisi</AuthorEmail>
+            <AuthorRole>role of EmanueleParisi</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>386</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>259</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>6.372</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>5891</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>2.779</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>8.843</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>944</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>495</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>3.171</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>5942</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>4.684</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>2.758</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
         <IPHdlSourcePath>src/polito/sdp2017/Tests/Instr_decoder.vhd</IPHdlSourcePath>
         <IPDriverPath>/path/to/driver/Instr_decoder</IPDriverPath>

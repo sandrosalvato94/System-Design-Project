@@ -2,23 +2,23 @@
 <IPs>
     <IPCore>
         <IPName>fake</IPName>
-        <IPId>VHDL_fake</IPId>
-        <IPDescription>A description for Shifter2</IPDescription>
+        <IPDescription>A description for fake</IPDescription>
         <ContactPoint>
-            <AuthorName>EmanueleParisi</AuthorName>
-            <AuthorId>cp12</AuthorId>
-            <AuthorCompany>company of EmanueleParisi</AuthorCompany>
-            <AuthorRole>role of EmanueleParisi</AuthorRole>
+            <AuthorName>AlessandroSalvato</AuthorName>
+            <AuthorId>id of AlessandroSalvato</AuthorId>
+            <AuthorCompany>company of AlessandroSalvato</AuthorCompany>
+            <AuthorEmail>email of AlessandroSalvato</AuthorEmail>
+            <AuthorRole>role of AlessandroSalvato</AuthorRole>
         </ContactPoint>
         <HardwareProperties>
-            <HardwarePropertiesLUTs>737</HardwarePropertiesLUTs>
-            <HardwarePropertiesFFs>889</HardwarePropertiesFFs>
-            <HardwarePropertiesLatency>7.550</HardwarePropertiesLatency>
-            <HardwarePropertiesNMemories>1456</HardwarePropertiesNMemories>
-            <HardwarePropertiesPowerConsumption>0.965</HardwarePropertiesPowerConsumption>
-            <HardwarePropertiesMaxClkFreq>3.392</HardwarePropertiesMaxClkFreq>
+            <HardwarePropertiesLUTs>475</HardwarePropertiesLUTs>
+            <HardwarePropertiesFFs>233</HardwarePropertiesFFs>
+            <HardwarePropertiesLatency>9.252</HardwarePropertiesLatency>
+            <HardwarePropertiesNMemories>3490</HardwarePropertiesNMemories>
+            <HardwarePropertiesPowerConsumption>9.304</HardwarePropertiesPowerConsumption>
+            <HardwarePropertiesMaxClkFreq>6.577</HardwarePropertiesMaxClkFreq>
         </HardwareProperties>
-        <IPHdlSourcePath>src/polito/sdp2017/Tests/Shifter2.vhd</IPHdlSourcePath>
-        <IPDriverPath>/path/to/driver/Shifter2</IPDriverPath>
+        <IPHdlSourcePath>src/polito/sdp2017/Tests/fake.vhd</IPHdlSourcePath>
+        <IPDriverPath>/path/to/driver/fake</IPDriverPath>
     </IPCore>
 </IPs>
