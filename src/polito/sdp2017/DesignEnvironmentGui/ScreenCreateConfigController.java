@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import polito.sdp2017.Components.IP;
@@ -39,7 +40,10 @@ public class ScreenCreateConfigController implements ControlledScreen {
     @FXML private TextField interruptPriority;
     @FXML private CheckBox isCore;
     @FXML private TextArea logArea;
+    @FXML private TextArea reportArea;
+    @FXML private TextArea createConfLogArea;
     @FXML private ListView<String> searchedIP;
+    @FXML private ProgressBar progressBar;
 
     @FXML
     public void initialize() {
@@ -209,7 +213,12 @@ public class ScreenCreateConfigController implements ControlledScreen {
 			searchedIP.setItems(items);
 		}	
 	}
-		
+	
+	@FXML
+	public void resetConf (ActionEvent event) {
+		logArea.appendText("still to be implemented...\n");
+	}
+	
 	@FXML
 	public void addIPToConf (ActionEvent event) {
 		int priority = -1, phyAddress = -1;
@@ -239,5 +248,15 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		physicalAddress.setText("");
 		
 		applicationModel.printMappedIP();
+	}
+	
+	@FXML
+	public void printReport (ActionEvent event) {
+		reportArea.appendText("still to be implemented...\n");
+	}
+	
+	@FXML
+	public void createConfiguration (ActionEvent event) {
+		createConfLogArea.appendText("still to be implemented...\n");
 	}
 }
