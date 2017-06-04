@@ -13,7 +13,6 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import polito.sdp2017.Components.IP;
 import polito.sdp2017.Components.IPCore;
 import polito.sdp2017.Components.IPManager;
@@ -22,6 +21,7 @@ import polito.sdp2017.Components.MappedIP;
 public class ScreenCreateConfigController implements ControlledScreen {
 	ApplicationModel applicationModel;
     ScreensController myController;
+    Map<String,IP> map = new HashMap<String,IP>();
     int mappedIpCnt = 0;
     IP focusedIP;
 
@@ -41,6 +41,16 @@ public class ScreenCreateConfigController implements ControlledScreen {
     @FXML private TextArea logArea;
     @FXML private ListView<String> searchedIP;
 
+    @FXML
+    public void initialize() {
+		searchedIP.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue != null) {
+				focusedIP = map.get(newValue);
+				logArea.setText(focusedIP.getBrief());
+			}
+		});
+    }
+    
     @Override
     public void setScreenParent(ScreensController screenParent){
     	myController = screenParent;
@@ -61,8 +71,6 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		List<IP> foundIPs;
 		LinkedList<String> pars = new LinkedList<String>();
 		String s;
-
-		searchedIP.getItems().clear();
 	
 		if (isCore.isSelected()) {
 			pars.add("true");
@@ -190,25 +198,15 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		if (foundIPs.isEmpty()) {
 			logArea.appendText("[ERROR] no suitable IP found...\n");
 		} else {
-			Map<String,IP> map = new HashMap<String,IP>();
+			map.clear();
+			
 			for (IP i : foundIPs) {
 				map.put(i.getIdIP(), i);
 			}
-			System.out.println(map.toString());
 			
+			searchedIP.getItems().clear();
 			ObservableList<String> items = FXCollections.observableArrayList (map.keySet());
 			searchedIP.setItems(items);
-			searchedIP.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-			    System.out.println(newValue);
-			    if (focusedIP == null) {
-			    	System.out.println("focused IP null before assignment");
-			    }
-				focusedIP = map.get(newValue);
-			    if (focusedIP == null) {
-			    	System.out.println("focused IP null after assignment");
-			    }
-				logArea.setText(focusedIP.getName());
-			});
 		}	
 	}
 		
@@ -239,5 +237,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		}
 		interruptPriority.setText("");
 		physicalAddress.setText("");
+		
+		applicationModel.printMappedIP();
 	}
 }
