@@ -46,55 +46,55 @@ component ip_manager is
 	port (
 		clk : in std_logic;
 		rst : in std_logic;
-		data_in : out std_logic_vector((data_width-1 downto 0));
-		data_out : in std_logic_vector((data_width-1 downto 0));
-		add : out std_logic_vector((add_width-1 downto 0));
+		data_in : out std_logic_vector(data_width-1 downto 0);
+		data_out : in std_logic_vector(data_width-1 downto 0);
+		add : out std_logic_vector(add_width-1 downto 0);
 		w_enable : out std_logic;
 		r_enable : out std_logic;
 		generic_en : out std_logic;
 		interrupt : out std_logic;
-		row_0 : in std_logic_vector((data_width-1 downto 0));
+		row_0 : in std_logic_vector(data_width-1 downto 0);
 		data_in_ips : in data_array;
 		data_out_ips : out data_array;
 		add_ips : in add_array;
-		w_enable_ips : in std_logic_vector((0 to num_ips-1));
-		r_enable_ips : in std_logic_vector((0 to num_ips-1));
-		generic_en_ips : in std_logic_vector((0 to num_ips-1));
-		enable_ips : out std_logic_vector((0 to num_ips-1));
-		ack_ips : out std_logic_vector((0 to num_ips-1));
-		interrupt_ips : in std_logic_vector((0 to num_ips-1)));
- end component ip_manager;
+		w_enable_ips : in std_logic_vector(0 to num_ips-1);
+		r_enable_ips : in std_logic_vector(0 to num_ips-1);
+		generic_en_ips : in std_logic_vector(0 to num_ips-1);
+		enable_ips : out std_logic_vector(0 to num_ips-1);
+		ack_ips : out std_logic_vector(0 to num_ips-1);
+		interrupt_ips : in std_logic_vector(0 to num_ips-1));
+end component ip_manager;
 
 component ip_dummy is
 	port (
 		clk : in std_logic;
 		rst : in std_logic;
-		data_in : out std_logic_vector((data_width-1 downto 0));
-		data_out : in std_logic_vector((data_width-1 downto 0));
-		address : out std_logic_vector((add_width-1 downto 0));
+		data_in : out std_logic_vector(data_width-1 downto 0);
+		data_out : in std_logic_vector(data_width-1 downto 0);
+		address : out std_logic_vector(add_width-1 downto 0);
 		w_enable : out std_logic;
 		r_enable : out std_logic;
 		generic_en : out std_logic;
 		enable : in std_logic;
 		ack : in std_logic;
 		interrupt : out std_logic);
- end component ip_dummy;
+end component ip_dummy;
 
 
 component ip_adder is
 	port (
 		clk : in std_logic;
 		rst : in std_logic;
-		data_in : out std_logic_vector((data_width-1 downto 0));
-		data_out : in std_logic_vector((data_width-1 downto 0));
-		address : out std_logic_vector((add_width-1 downto 0));
+		data_in : out std_logic_vector(data_width-1 downto 0);
+		data_out : in std_logic_vector(data_width-1 downto 0);
+		address : out std_logic_vector(add_width-1 downto 0);
 		w_enable : out std_logic;
 		r_enable : out std_logic;
 		generic_en : out std_logic;
 		enable : in std_logic;
 		ack : in std_logic;
 		interrupt : out std_logic);
- end component ip_adder;
+end component ip_adder;
 
 
 	signal	row_0			  	: std_logic_vector (DATA_WIDTH-1 downto 0); 
@@ -163,7 +163,7 @@ mapIP_0: IP_Dummy
 		rst	=> reset,
 		data_in	=> data_in_IPs(0),
 		data_out	=> data_out_IPs(0),
-		address	=> addIPs_IPs(0),
+		address	=> add_IPs(0),
 		W_enable	=> W_enable_IPs(0),
 		R_enable	=> R_enable_IPs(0),
 		generic_en	=> generic_en_IPs(0),
@@ -178,7 +178,7 @@ mapIP_1: IP_Adder
 		rst	=> reset,
 		data_in	=> data_in_IPs(1),
 		data_out	=> data_out_IPs(1),
-		address	=> addIPs_IPs(1),
+		address	=> add_IPs(1),
 		W_enable	=> W_enable_IPs(1),
 		R_enable	=> R_enable_IPs(1),
 		generic_en	=> generic_en_IPs(1),
@@ -193,7 +193,7 @@ mapIP_2: IP_Dummy
 		rst	=> reset,
 		data_in	=> data_in_IPs(2),
 		data_out	=> data_out_IPs(2),
-		address	=> addIPs_IPs(2),
+		address	=> add_IPs(2),
 		W_enable	=> W_enable_IPs(2),
 		R_enable	=> R_enable_IPs(2),
 		generic_en	=> generic_en_IPs(2),
@@ -208,7 +208,7 @@ mapIP_3: IP_Dummy
 		rst	=> reset,
 		data_in	=> data_in_IPs(3),
 		data_out	=> data_out_IPs(3),
-		address	=> addIPs_IPs(3),
+		address	=> add_IPs(3),
 		W_enable	=> W_enable_IPs(3),
 		R_enable	=> R_enable_IPs(3),
 		generic_en	=> generic_en_IPs(3),

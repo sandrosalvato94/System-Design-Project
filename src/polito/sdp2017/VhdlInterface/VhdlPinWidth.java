@@ -66,7 +66,7 @@ public class VhdlPinWidth {
 	 * @return a String representing the pin parallelism using the VHDL syntax
 	 */
 	public String toString() {
-		return "("+left+" "+direction+" "+right+")";
+		return left+" "+direction+" "+right;
 	}
 
 	/**
