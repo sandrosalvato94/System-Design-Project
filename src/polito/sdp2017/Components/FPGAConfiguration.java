@@ -119,7 +119,7 @@ public class FPGAConfiguration {
 				out.write("\t\trst\t=> reset,\n");
 				out.write("\t\tdata_in\t=> data_in_IPs(" + cnt + "),\n");
 				out.write("\t\tdata_out\t=> data_out_IPs(" + cnt + "),\n");
-				out.write("\t\taddress\t=> addIPs_IPs(" + cnt + "),\n");
+				out.write("\t\taddress\t=> add_IPs(" + cnt + "),\n");
 				out.write("\t\tW_enable\t=> W_enable_IPs(" + cnt + "),\n");
 				out.write("\t\tR_enable\t=> R_enable_IPs(" + cnt + "),\n");
 				out.write("\t\tgeneric_en\t=> generic_en_IPs(" + cnt + "),\n");
