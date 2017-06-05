@@ -192,7 +192,7 @@ public class VhdlInterface implements HardwareInterface {
 				.map(p->p.toString() + ";")
 				.collect(Collectors.joining("\n\t\t")));
 		strb.append("\n\t\t" + tmp.toString() + ");\n");
-		strb.append(" end component "+entityName+";\n");
+		strb.append("end component "+entityName+";\n");
 		
 		pins.add(tmp);
 		
