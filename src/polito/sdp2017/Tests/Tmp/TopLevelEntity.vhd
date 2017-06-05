@@ -65,36 +65,19 @@ component ip_manager is
 		interrupt_ips : in std_logic_vector((0 to num_ips-1)));
  end component ip_manager;
 
-component ip_adder is
+component hex7seg_decoder is
 	port (
-		clk : in std_logic;
-		rst : in std_logic;
-		data_in : out std_logic_vector((data_width-1 downto 0));
-		data_out : in std_logic_vector((data_width-1 downto 0));
-		address : out std_logic_vector((add_width-1 downto 0));
-		w_enable : out std_logic;
-		r_enable : out std_logic;
-		generic_en : out std_logic;
-		enable : in std_logic;
-		ack : in std_logic;
-		interrupt : out std_logic);
- end component ip_adder;
+		in_char : in std_logic_vector((3 downto 0));
+		out_string : out std_logic_vector((6 downto 0)));
+ end component hex7seg_decoder;
 
 
-component ip_dummy is
+component b8comp2tohex_converter is
 	port (
-		clk : in std_logic;
-		rst : in std_logic;
-		data_in : out std_logic_vector((data_width-1 downto 0));
-		data_out : in std_logic_vector((data_width-1 downto 0));
-		address : out std_logic_vector((add_width-1 downto 0));
-		w_enable : out std_logic;
-		r_enable : out std_logic;
-		generic_en : out std_logic;
-		enable : in std_logic;
-		ack : in std_logic;
-		interrupt : out std_logic);
- end component ip_dummy;
+		in_string : in std_logic_vector((7 downto 0));
+		out1 : out std_logic_vector((3 downto 0));
+		out0 : out std_logic_vector((3 downto 0)));
+ end component b8comp2tohex_converter;
 
 
 	signal	row_0			  	: std_logic_vector (DATA_WIDTH-1 downto 0); 
@@ -157,7 +140,7 @@ ip_man: ip_manager
 					interrupt_IPs	=>	interrupt_IPs);
 	
 
-ip_0: IP_Adder
+ip_0: hex7seg_decoder
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
@@ -172,7 +155,7 @@ ip_0: IP_Adder
 		interrupt	=> interrupt_IPs(0));
 
 
-ip_1: IP_Dummy
+ip_1: b8comp2tohex_converter
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
