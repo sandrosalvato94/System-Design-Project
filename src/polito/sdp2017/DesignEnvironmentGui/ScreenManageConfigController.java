@@ -2,6 +2,9 @@ package polito.sdp2017.DesignEnvironmentGui;
 
 import javafx.fxml.FXML;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -63,7 +66,24 @@ public class ScreenManageConfigController implements ControlledScreen {
 	
 	@FXML
 	public void resetConf (ActionEvent event) {
-
+	    confId.setText("");
+	    confName.setText("");
+	    maxLUTs.setText("");
+	    maxFFs.setText("");
+	    maxLatency.setText("");
+	    maxPowerConsumption.setText("");
+	    maxClockFrequency.setText("");
+	    contactPointId.setText("");
+	    contactPointName.setText("");
+	    company.setText("");
+	    contactPointId.setText("");
+	    contactPointName.setText("");
+	    company.setText("");
+	    logArea.setText("");
+		
+		focusedConf = null;
+		map.clear();
+		searchedConf.getItems().clear();
 	}
 	
 	@FXML
@@ -213,8 +233,7 @@ public class ScreenManageConfigController implements ControlledScreen {
 			for (FPGAConfiguration c : foundConfs) {
 				map.put(c.getIdConf(), c);
 			}
-			
-			System.out.println(map.toString());
+
 			searchedConf.getItems().clear();
 			ObservableList<String> items = FXCollections.observableArrayList (map.keySet());
 			searchedConf.setItems(items);
@@ -223,11 +242,33 @@ public class ScreenManageConfigController implements ControlledScreen {
 	
 	@FXML
 	public void loadConf (ActionEvent event) {
-		
+		if (focusedConf != null) {
+			File bitstream = new File(focusedConf.getBitstreamPath());
+			if (bitstream.exists() && bitstream.isFile()) {
+				logArea.setText("[OK] bitstream file found :\n");
+				try(BufferedReader in  = new BufferedReader(new FileReader(bitstream))) {		
+					in.lines().forEach(l->logArea.appendText(l+"\n"));
+				} catch(Exception e) {
+					logArea.appendText("[ERROR] IO error, unable to open file...\n");
+				}
+			} else {
+				logArea.appendText("[ERROR] no configuration selected...\n");
+			}
+		}
 	}
 	
 	@FXML
 	public void deleteConf (ActionEvent event) {
-		
+		boolean res = false;
+		if (focusedConf != null) {
+			res = applicationModel.deleteConf(focusedConf.getName(), focusedConf.getIdConf());
+			if (res) {
+				logArea.appendText("[OK] configuration removed\n");
+			} else {
+				logArea.appendText("[ERROR] unable to remove configuration...\n");
+			}
+		} else {
+			logArea.appendText("[ERROR] no configuration selected...\n");
+		}
 	}
 }

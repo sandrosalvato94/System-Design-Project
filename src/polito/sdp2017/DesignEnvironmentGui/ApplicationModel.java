@@ -90,4 +90,8 @@ public class ApplicationModel {
 	public List<FPGAConfiguration> searchConfs(LinkedList<String> pars) {
 		return database.searchConfiguration(pars);
 	}
+
+	public boolean deleteConf(String name, String idConf) {
+		return database.removeConfiguration(name, idConf);
+	}
 }
