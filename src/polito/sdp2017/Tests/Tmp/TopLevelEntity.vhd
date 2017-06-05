@@ -186,4 +186,4 @@ ip_1: IP_Dummy
 		ack	=> ack_IPs(1),
 		interrupt	=> interrupt_IPs(1));
 
-end architecture
+end architecture;

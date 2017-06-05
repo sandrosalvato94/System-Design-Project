@@ -8,8 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.sqlite.SQLiteConfig;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -61,7 +59,7 @@ public class SQLiteManager implements DBManager {
 		    "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
 	
 	
-	public static final String SQLScritpCreate = "scriptCREATE_SQLite3.sql";
+	public static final String SQLScriptCreate = "scriptCREATE_SQLite3.sql";
 	
 	/*public static void main(String[] args) throws FileNotFoundException, SQLException
 	{
@@ -163,9 +161,9 @@ public class SQLiteManager implements DBManager {
 	}
 
 	@Override
-	public void generateNewDatabase(String path) {
+	public void resetDatabase() {
 		try {
-			importSQL(DBConn, SQLScritpCreate);
+			importSQL(DBConn, SQLScriptCreate);
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
@@ -387,7 +385,6 @@ public class SQLiteManager implements DBManager {
 	@Override
 	public boolean removeConfiguration(String name, String id) {
 		Statement state;
-		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteConfiguration(name, id, query);
 		

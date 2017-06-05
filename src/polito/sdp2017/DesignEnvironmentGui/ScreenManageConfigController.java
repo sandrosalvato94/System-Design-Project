@@ -1,6 +1,6 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
-import javafx.fxml.FXML;
+import polito.sdp2017.Components.FPGAConfiguration;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,13 +10,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javafx.fxml.FXML;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import polito.sdp2017.Components.FPGAConfiguration;
 
 public class ScreenManageConfigController implements ControlledScreen {
 	ApplicationModel applicationModel;
@@ -25,6 +26,7 @@ public class ScreenManageConfigController implements ControlledScreen {
     Map<String, FPGAConfiguration> map = new HashMap<String,FPGAConfiguration>();
     FPGAConfiguration focusedConf;
     
+    @FXML private Button searchButton;
     @FXML private TextField maxIPs;
     @FXML private TextField confId;
     @FXML private TextField confName;
@@ -252,8 +254,10 @@ public class ScreenManageConfigController implements ControlledScreen {
 					logArea.appendText("[ERROR] IO error, unable to open file...\n");
 				}
 			} else {
-				logArea.appendText("[ERROR] no configuration selected...\n");
+				logArea.appendText("[ERROR] bitstream file do not exist...\n");
 			}
+		} else {
+			logArea.appendText("[ERROR] no configuration selected...\n");
 		}
 	}
 	
@@ -264,6 +268,7 @@ public class ScreenManageConfigController implements ControlledScreen {
 			res = applicationModel.deleteConf(focusedConf.getName(), focusedConf.getIdConf());
 			if (res) {
 				logArea.appendText("[OK] configuration removed\n");
+				searchButton.fire();
 			} else {
 				logArea.appendText("[ERROR] unable to remove configuration...\n");
 			}

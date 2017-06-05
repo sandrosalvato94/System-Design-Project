@@ -11,7 +11,7 @@ public interface DBManager {
 	public String getDBPath();
 	public void setDBName(String DBName);
 	public String getDBName();
-	public void generateNewDatabase(String path);
+	public void resetDatabase();
 	public LinkedList<IP> searchIP(LinkedList<String> listOfParameters);
 	public void addIP(IP ipToBeAdded) throws SQLException;
 	public boolean removeIP(String name, String id, boolean isCore);

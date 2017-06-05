@@ -94,4 +94,8 @@ public class ApplicationModel {
 	public boolean deleteConf(String name, String idConf) {
 		return database.removeConfiguration(name, idConf);
 	}
+
+	public void resetDatabase() {
+		database.resetDatabase();
+	}
 }

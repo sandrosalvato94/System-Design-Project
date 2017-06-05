@@ -173,7 +173,7 @@ public class Test01 {
 				str = myInput.readLine();
 				return str;
 		} catch (IOException e) {
-				System.out.println ("Si è verificato un errore: " + e);
+				System.out.println ("Si ï¿½ verificato un errore: " + e);
 				System.exit(-1);
 		}
 		return str;

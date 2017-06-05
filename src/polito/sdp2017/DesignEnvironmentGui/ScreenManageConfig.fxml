@@ -67,7 +67,7 @@
             <TextField fx:id="maxLatency" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="220.0" promptText="set max latency..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
-      <Button layoutX="421.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchConf" prefHeight="30.0" prefWidth="365.0" text="Search configuration..." />
+      <Button fx:id="searchButton" layoutX="421.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#searchConf" prefHeight="30.0" prefWidth="365.0" text="Search configuration..." />
       <Separator layoutX="2.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="800.0" />
       <ListView fx:id="searchedConf" layoutX="14.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" />
       <Separator layoutX="314.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="30.0" />

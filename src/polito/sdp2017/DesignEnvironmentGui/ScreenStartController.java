@@ -1,5 +1,6 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.io.File;
 import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
@@ -38,8 +39,12 @@ public class ScreenStartController implements ControlledScreen {
     }
     
     @FXML
-    private void generateNewDB(ActionEvent event){
-    	logTextArea.appendText("[ATTENTION] function still to be implemented\n");
+    private void resetDB(ActionEvent event){
+    	if (applicationModel.isConnected()) {
+    		applicationModel.resetDatabase();
+    	} else {
+    		logTextArea.appendText("[ERROR] You are not connected to any database...\n");
+    	}
     }
     
     @FXML
