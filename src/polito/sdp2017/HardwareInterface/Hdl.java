@@ -33,7 +33,7 @@ public enum Hdl {
 	 * @return a Hdl code
 	 */
 	public static Hdl hdlFromString (String hdl) {
-		if (matchMap.containsKey(hdl)) {	//	Check if the String represent a valid PinDirection for VHDL
+		if (matchMap.containsKey(hdl)) {	//	Check if the String represent a valid HDL
 			return matchMap.get(hdl);		//	Returns the proper identifier is returned
 		}
 		throw new RuntimeException("Unknown Vhdl type : "+hdl);	//	If the String is not recognised a
