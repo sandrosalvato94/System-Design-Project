@@ -38,17 +38,14 @@ public class FPGAConfiguration {
 		Path pathTarget = Paths.get("./src/polito/sdp2017/Tests/Tmp/TopLevelEntity.vhd");
 		Path pathTemplate = Paths.get("./src/polito/sdp2017/Tests/TOPENT_TEMPLATE.vhd");
 		
-		if(newFile(pathTarget.toString()) != 1)
-		{
-			return;
+		if(newFile(pathTarget.toString()) != 1) {
+			throw new RuntimeException("File can't be created");
 		}
 		
 		File f_template = new File(pathTemplate.toString());
 		
-		if(!f_template.exists())
-		{
-			System.out.println("ERROR: File TOPENT_TEMPLATE.vhd not found.");
-			return;
+		if(!f_template.exists()) {
+			throw new RuntimeException("File TOPENT_TEMPLATE.vhd not found.");
 		}
 		
 		StringBuffer strb = new StringBuffer("");
@@ -117,7 +114,7 @@ public class FPGAConfiguration {
 		}
 		catch(Exception e)
 		{
-			
+			throw new RuntimeException("Unable to write file");
 		}
 	}
 
@@ -292,19 +289,19 @@ public class FPGAConfiguration {
 	         
 	        if (file.exists())
 	        {
-	            System.out.println("Il file " + path + " esiste gi�. Sovrascritto");
+	            System.out.println("Il file " + path + " esiste gia'. Sovrascritto");
 	            file.createNewFile();
 	            return 1;
 	        }
 	        else 
 	        {	if (file.createNewFile())
 	        	{
-	            	System.out.println("Il file " + path + " � stato creato");
+	            	System.out.println("Il file " + path + " e' stato creato");
 	            	return 1;
 	        	}
 	        	else
 	        	{
-	        		System.out.println("Il file " + path + " non pu� essere creato");
+	        		System.out.println("Il file " + path + " non puo' essere creato");
 	        		return -1;
 	        	}
 	        }

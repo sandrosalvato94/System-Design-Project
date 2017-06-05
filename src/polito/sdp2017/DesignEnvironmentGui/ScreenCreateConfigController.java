@@ -1,9 +1,13 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +18,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import polito.sdp2017.Components.Author;
+import polito.sdp2017.Components.FPGAConfiguration;
 import polito.sdp2017.Components.IP;
 import polito.sdp2017.Components.IPCore;
 import polito.sdp2017.Components.IPManager;
@@ -43,6 +49,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
     @FXML private TextField confCompany;    
     @FXML private TextField confEmail;
     @FXML private TextField confRole;
+    @FXML private TextField confName;
     @FXML private CheckBox isCore;
     @FXML private TextArea logArea;
     @FXML private TextArea reportArea;
@@ -238,6 +245,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 	    confCompany.setText("");
 	    confEmail.setText("");
 	    confRole.setText("");
+	    confName.setText("");
 	    isCore.setSelected(false);
 	    logArea.setText("");
 	    reportArea.setText("");
@@ -271,6 +279,9 @@ public class ScreenCreateConfigController implements ControlledScreen {
 				logArea.appendText("\tpriority    : "+priority+"\n");
 				logArea.appendText("\tphy address : "+phyAddress+"\n");
 			} else {
+				if (applicationModel.getManager() != null) {
+					logArea.appendText("[WARNING] previous IPManager overwritten...\n");
+				}
 				applicationModel.setManager((IPManager)focusedIP);
 				logArea.appendText("[OK] IPManager ("+focusedIP.getIdIP()+") added...\n");
 			}
@@ -290,6 +301,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		String confContactMail = confEmail.getText();
 		String confContactCompany = confCompany.getText();
 		String confContactRole = confRole.getText();
+		String confUserName = confName.getText();
 				
 		if (confContactId.trim().equals("")) {
 			confContactId = "unknown";
@@ -306,8 +318,11 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		if (confContactRole.trim().equals("")) {
 			confContactRole = "unknown";
 		}
+		if (confUserName.trim().equals("")) {
+			confUserName = "unknown";
+		}
 		
-		reportArea.setText("CONFIGURATION REPORT\n");
+		reportArea.setText("CONFIGURATION "+confUserName+" REPORT\n");
 		reportArea.appendText("contact point id   : "+confContactId+"\n");
 		reportArea.appendText("contact point name : "+confContactName+"\n");
 		reportArea.appendText("contact point mail : "+confContactMail+"\n");
@@ -329,7 +344,129 @@ public class ScreenCreateConfigController implements ControlledScreen {
 	
 	@FXML
 	public void createConfiguration (ActionEvent event) {
-		createConfLogArea.appendText("still to be implemented...\n");
+		FPGAConfiguration fpgaConfiguration = new FPGAConfiguration(null, null, null, null,
+																	null, null, null, null);
+		Author contactPoint;
+		String confContactId = confContactPointId.getText();
+		String confContactName = confContactPointName.getText();
+		String confContactMail = confEmail.getText();
+		String confContactCompany = confCompany.getText();
+		String confContactRole = confRole.getText();
+		String confUserName = confName.getText();
+		
+		createConfLogArea.setText("reading configuration name...");
+		if (confUserName.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tconfiguration name set to unknown\n");
+			confUserName = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(0.05);
+		
+		createConfLogArea.appendText("reading contact point id from fields...");
+		if (confContactId.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tcontact point id set to unknown...\n");
+			confContactId = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(progressBar.getProgress()+0.01);
+		
+		createConfLogArea.appendText("reading contact point name from fields...");
+		if (confContactName.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tcontact point name set to unknown...\n");
+			confContactName = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(progressBar.getProgress()+0.01);
+		
+		createConfLogArea.appendText("reading contact point mail from fields...");
+		if (confContactMail.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tcontact point mail set to unknown\n");
+			confContactMail = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(progressBar.getProgress()+0.01);
+		
+		createConfLogArea.appendText("reading contact point company from fields...");
+		if (confContactCompany.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tcontact point company set to unknown\n");
+			confContactCompany = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(progressBar.getProgress()+0.01);
+		
+		createConfLogArea.appendText("reading contact point role from fields...");
+		if (confContactRole.trim().equals("")) {
+			createConfLogArea.appendText(" [WARNING]\n\tcontact point role set to unknown\n");
+			confContactRole = "unknown";
+		} else {
+			createConfLogArea.appendText(" [OK]\n");
+		}
+		progressBar.setProgress(progressBar.getProgress()+0.01);
+		
+		contactPoint = new Author(confContactId, confContactName, confContactCompany,
+				confContactMail, confContactRole);
+		fpgaConfiguration.setContactPoint(contactPoint);
+		createConfLogArea.appendText("contact point set [OK]\n");
+		
+		SimpleDateFormat dtf = new SimpleDateFormat("yyyyMMddHHmmss");
+		Date localDate = new Date();
+		
+		String confId;
+		String rndAlphabet = "0123456789abcdefghijklmnopqrtsuwxyz";
+		Random rnd = new Random(System.currentTimeMillis());
+		StringBuilder strb = new StringBuilder();
+		for (int i=0;i<15;i++) {
+			strb.append(rndAlphabet.charAt(rnd.nextInt(rndAlphabet.length()))); 
+		}
+		confId = dtf.format(localDate)+strb.toString();
+		fpgaConfiguration.setIdConf(confId);
+		createConfLogArea.appendText("configuration id created: "+confId+"... [OK]\n");
+		progressBar.setProgress(progressBar.getProgress()+0.05);
+		
+		createConfLogArea.appendText("retrieving IPs...");
+		if (applicationModel.getManager() == null || applicationModel.getMapped().isEmpty()) {
+			createConfLogArea.appendText(" [ERROR]\n\tmanager or cores missing...\n");
+			progressBar.setProgress(0);
+			return;
+		} else {
+			fpgaConfiguration.setManager(applicationModel.getManager());
+			fpgaConfiguration.setMappedIPs(applicationModel.getMapped());
+		}
+		createConfLogArea.appendText(" [OK]\n");
 		progressBar.setProgress(progressBar.getProgress()+0.1);
+
+		createConfLogArea.appendText("additional driver source is null... [WARNING]\n");
+
+		createConfLogArea.appendText("creating top level entity...");
+		try {
+			FPGAConfiguration.generateTopLevelEntity(fpgaConfiguration);
+			createConfLogArea.appendText(" [OK]\n");
+			progressBar.setProgress(progressBar.getProgress()+0.1);
+		} catch (RuntimeException rte) {
+			createConfLogArea.appendText(" [ERROR]\n\t"+rte.getMessage()+"\n");
+			progressBar.setProgress(0);
+			return;
+		}
+
+		createConfLogArea.appendText("retrieving HDL sources...\n");
+		List<String> listOfSources = fpgaConfiguration.getMappedIPs().stream()
+										.map(m -> m.getIpCore().getHdlSourcePath())
+										.collect(Collectors.toList());
+		listOfSources.stream()
+						.forEach(l -> createConfLogArea.appendText("\t"+l+" [OK]\n"));
+
+		// ------- END OF OUR TASKS !!!!!!
+		// spawn synth process
+		// wait
+		// retrieve infos hardware properties
+		// print ok!
+		
+		createConfLogArea.appendText("finish...\n");
+		applicationModel.resetIPs();
 	}
 }
