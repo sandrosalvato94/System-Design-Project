@@ -8,8 +8,6 @@ import java.util.TreeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import polito.sdp2017.HardwareInterface.Hdl;
-
 public class IPManager extends IP {
 
 	static List<IP> getFromDomNodeList (NodeList managerNodes) {

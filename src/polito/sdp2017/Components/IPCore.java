@@ -8,8 +8,6 @@ import java.util.TreeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import polito.sdp2017.HardwareInterface.Hdl;
-
 public class IPCore extends IP {
 	private String driverPath;
     

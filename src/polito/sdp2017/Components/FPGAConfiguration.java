@@ -3,8 +3,6 @@ package polito.sdp2017.Components;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,7 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 public class FPGAConfiguration {
 	private String name;
@@ -295,19 +292,19 @@ public class FPGAConfiguration {
 	         
 	        if (file.exists())
 	        {
-	            System.out.println("Il file " + path + " esiste già. Sovrascritto");
+	            System.out.println("Il file " + path + " esiste giï¿½. Sovrascritto");
 	            file.createNewFile();
 	            return 1;
 	        }
 	        else 
 	        {	if (file.createNewFile())
 	        	{
-	            	System.out.println("Il file " + path + " è stato creato");
+	            	System.out.println("Il file " + path + " ï¿½ stato creato");
 	            	return 1;
 	        	}
 	        	else
 	        	{
-	        		System.out.println("Il file " + path + " non può essere creato");
+	        		System.out.println("Il file " + path + " non puï¿½ essere creato");
 	        		return -1;
 	        	}
 	        }
