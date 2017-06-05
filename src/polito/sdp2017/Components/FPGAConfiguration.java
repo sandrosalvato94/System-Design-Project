@@ -66,10 +66,13 @@ public class FPGAConfiguration {
 				out.write(tmpString + "\n");
 			}
 			
+			out.write(conf.getManager().getHwInterface().toStringInstantiation());
+			
 			for(MappedIP m : conf.getMappedIPs())
 			{
 				out.write("\n");
-				//m.getIpCore().getHwInterface()
+				out.write(m.getIpCore().getHwInterface().toStringInstantiation());
+				out.write("\n");
 			}
 			
 			
@@ -82,9 +85,7 @@ public class FPGAConfiguration {
 			{
 				if(tmpString.contains("ip_man: IP_MANAGER"))
 				{
-					strb = new StringBuffer(tmpString);
-					strb.replace(8, 17, conf.getManager().getName());
-					out.write(strb.toString() + "\n");
+					out.write("ip_man: " + conf.getManager().getHwInterface().getEntityName() + "\n");
 				}
 				else
 				{
@@ -92,7 +93,29 @@ public class FPGAConfiguration {
 				}
 			}
 			
+			int cnt = 0;
 			
+			for(MappedIP m : conf.getMappedIPs())
+			{
+				out.write("\n");
+				out.write("ip_" + cnt + ": " + m.getIpCore().getName() + "\n");
+				out.write("\tPORT MAP(\n");
+				out.write("\t\tclk\t=> clock,\n");
+				out.write("\t\trst\t=> reset,\n");
+				out.write("\t\tdata_in\t=> data_in_IPs(" + cnt + "),\n");
+				out.write("\t\tdata_out\t=> data_out_IPs(" + cnt + "),\n");
+				out.write("\t\taddress\t=> addIPs_IPs(" + cnt + "),\n");
+				out.write("\t\tW_enable\t=> W_enable_IPs(" + cnt + "),\n");
+				out.write("\t\tR_enable\t=> R_enable_IPs(" + cnt + "),\n");
+				out.write("\t\tgeneric_en\t=> generic_en_IPs(" + cnt + "),\n");
+				out.write("\t\tenable\t=> enable_IPs(" + cnt + "),\n");
+				out.write("\t\tack\t=> ack_IPs(" + cnt + "),\n");
+				out.write("\t\tinterrupt\t=> interrupt_IPs(" + cnt + "));\n");
+				out.write("\n");
+				cnt++;
+			}
+			
+			out.write("end architecture;");
 			
 		}
 		catch(Exception e)

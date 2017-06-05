@@ -162,13 +162,7 @@ public class VhdlInterface implements HardwareInterface {
 					.collect(Collectors.joining("\n\t\t")));
 			strb.append(");\n");
 		}
-		
-		//System.out.println(pins.size());
-		
-		/*for(Pin p : pins)
-		{
-			System.out.println(p.toString());
-		}*/
+	
 		strb.append("\tport (\n\t\t");
 		Pin tmp = pins.remove(pins.size()-1);
 		strb.append(pins.stream()
@@ -182,7 +176,7 @@ public class VhdlInterface implements HardwareInterface {
 		return strb.toString();
 	}
 	
-	public String toStringComponent() {
+	public String toStringInstantiation() {
 		StringBuilder strb = new StringBuilder("component "+entityName+" is\n");
 		if (generics != null) {
 			strb.append("\tgeneric (\n\t\t");
@@ -192,12 +186,6 @@ public class VhdlInterface implements HardwareInterface {
 			strb.append(");\n");
 		}
 		
-		//System.out.println(pins.size());
-		
-		/*for(Pin p : pins)
-		{
-			System.out.println(p.toString());
-		}*/
 		strb.append("\tport (\n\t\t");
 		Pin tmp = pins.remove(pins.size()-1);
 		strb.append(pins.stream()

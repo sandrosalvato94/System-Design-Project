@@ -27,4 +27,5 @@ public interface HardwareInterface {
 	 * 		   description of a circuit
 	 */
 	public List<Generic> getGenerics();
+	public String toStringInstantiation();
 }
