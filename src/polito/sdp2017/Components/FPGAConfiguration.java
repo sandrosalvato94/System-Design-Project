@@ -3,13 +3,24 @@ package polito.sdp2017.Components;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Collectors.*;
 
 public class FPGAConfiguration {
 	private String name;
@@ -61,11 +72,13 @@ public class FPGAConfiguration {
 			}
 			
 			out.write(conf.getManager().getHwInterface().toStringInstantiation());
+				
+			Map<String, List<MappedIP>> hmap = conf.mappedIPs.stream().collect(Collectors.groupingBy((l -> l.getIpCore().getIdIP()), Collectors.toList()));
 			
-			for(MappedIP m : conf.getMappedIPs())
+			for(String s : hmap.keySet())
 			{
 				out.write("\n");
-				out.write(m.getIpCore().getHwInterface().toStringInstantiation());
+				out.write(hmap.get(s).get(0).getIpCore().getHwInterface().toStringInstantiation());
 				out.write("\n");
 			}
 			
@@ -87,12 +100,17 @@ public class FPGAConfiguration {
 				}
 			}
 			
+			List<MappedIP> tmplist = conf.getMappedIPs()
+										 .stream()
+										 .sorted(Comparator.comparing(MappedIP::getPriority))
+										 .collect(Collectors.toList());
+			
 			int cnt = 0;
 			
-			for(MappedIP m : conf.getMappedIPs())
+			for(MappedIP m : tmplist)
 			{
 				out.write("\n");
-				out.write("ip_" + cnt + ": " + m.getIpCore().getName() + "\n");
+				out.write( m.getIdMappedIP() + ": " + m.getIpCore().getName() + "\n");
 				out.write("\tPORT MAP(\n");
 				out.write("\t\tclk\t=> clock,\n");
 				out.write("\t\trst\t=> reset,\n");
@@ -322,5 +340,11 @@ public class FPGAConfiguration {
 		s.append("Hardware sroperties: \t" + this.getHwProperties().toString() + "\n");
 		
 		return s.toString();
+	}
+	
+	public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) 
+	{
+	    Map<Object, Boolean> map = new ConcurrentHashMap<>();
+	    return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
 	}
 }

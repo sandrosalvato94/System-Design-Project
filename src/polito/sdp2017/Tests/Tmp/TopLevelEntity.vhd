@@ -65,19 +65,36 @@ component ip_manager is
 		interrupt_ips : in std_logic_vector((0 to num_ips-1)));
  end component ip_manager;
 
-component hex7seg_decoder is
+component ip_dummy is
 	port (
-		in_char : in std_logic_vector((3 downto 0));
-		out_string : out std_logic_vector((6 downto 0)));
- end component hex7seg_decoder;
+		clk : in std_logic;
+		rst : in std_logic;
+		data_in : out std_logic_vector((data_width-1 downto 0));
+		data_out : in std_logic_vector((data_width-1 downto 0));
+		address : out std_logic_vector((add_width-1 downto 0));
+		w_enable : out std_logic;
+		r_enable : out std_logic;
+		generic_en : out std_logic;
+		enable : in std_logic;
+		ack : in std_logic;
+		interrupt : out std_logic);
+ end component ip_dummy;
 
 
-component b8comp2tohex_converter is
+component ip_adder is
 	port (
-		in_string : in std_logic_vector((7 downto 0));
-		out1 : out std_logic_vector((3 downto 0));
-		out0 : out std_logic_vector((3 downto 0)));
- end component b8comp2tohex_converter;
+		clk : in std_logic;
+		rst : in std_logic;
+		data_in : out std_logic_vector((data_width-1 downto 0));
+		data_out : in std_logic_vector((data_width-1 downto 0));
+		address : out std_logic_vector((add_width-1 downto 0));
+		w_enable : out std_logic;
+		r_enable : out std_logic;
+		generic_en : out std_logic;
+		enable : in std_logic;
+		ack : in std_logic;
+		interrupt : out std_logic);
+ end component ip_adder;
 
 
 	signal	row_0			  	: std_logic_vector (DATA_WIDTH-1 downto 0); 
@@ -140,7 +157,7 @@ ip_man: ip_manager
 					interrupt_IPs	=>	interrupt_IPs);
 	
 
-ip_0: hex7seg_decoder
+mapIP_0: IP_Dummy
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
@@ -155,7 +172,7 @@ ip_0: hex7seg_decoder
 		interrupt	=> interrupt_IPs(0));
 
 
-ip_1: b8comp2tohex_converter
+mapIP_1: IP_Adder
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
@@ -168,5 +185,35 @@ ip_1: b8comp2tohex_converter
 		enable	=> enable_IPs(1),
 		ack	=> ack_IPs(1),
 		interrupt	=> interrupt_IPs(1));
+
+
+mapIP_2: IP_Dummy
+	PORT MAP(
+		clk	=> clock,
+		rst	=> reset,
+		data_in	=> data_in_IPs(2),
+		data_out	=> data_out_IPs(2),
+		address	=> addIPs_IPs(2),
+		W_enable	=> W_enable_IPs(2),
+		R_enable	=> R_enable_IPs(2),
+		generic_en	=> generic_en_IPs(2),
+		enable	=> enable_IPs(2),
+		ack	=> ack_IPs(2),
+		interrupt	=> interrupt_IPs(2));
+
+
+mapIP_3: IP_Dummy
+	PORT MAP(
+		clk	=> clock,
+		rst	=> reset,
+		data_in	=> data_in_IPs(3),
+		data_out	=> data_out_IPs(3),
+		address	=> addIPs_IPs(3),
+		W_enable	=> W_enable_IPs(3),
+		R_enable	=> R_enable_IPs(3),
+		generic_en	=> generic_en_IPs(3),
+		enable	=> enable_IPs(3),
+		ack	=> ack_IPs(3),
+		interrupt	=> interrupt_IPs(3));
 
 end architecture;
