@@ -1,19 +1,15 @@
 package polito.sdp2017.Tests;
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.LinkedList;
-import java.util.Random;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
-
-import com.sun.javafx.geom.transform.GeneralTransform3D;
 
 import  polito.sdp2017.Components.*;
 import  polito.sdp2017.HardwareInterface.*; 
@@ -30,13 +26,13 @@ public class Test01 {
 		DBManager DBM = new SQLiteManager();
 		DBM.setDBName("System Design Project Database");
 		DBM.openConnection(dbpath);
-		//DBM.generateNewDatabase(DBM.getDBPath());
 		//printMenu();
 		//a = selectChoice(scannerIO);
 		a =5; 
 		
 		switch (a) {
 		case 1:	//addIP
+			DBM.resetDatabase();
 			fillDatabase(DBM);
 			break;
 		case 2:	//removeIP
@@ -173,7 +169,7 @@ public class Test01 {
 				str = myInput.readLine();
 				return str;
 		} catch (IOException e) {
-				System.out.println ("Si ï¿½ verificato un errore: " + e);
+				System.out.println ("Si è verificato un errore: " + e);
 				System.exit(-1);
 		}
 		return str;
@@ -549,14 +545,14 @@ public class Test01 {
 		lip = new LinkedList<IP>();
 		 isIPCore = new String("true");
 		 idIP = new String("$");
-		 name = new String("$");
+		 name = new String("IP_Dummy");
 		 maxLUTs = new String("$");
 		 maxFFs = new String("$");
 		 maxLatency = new String("$");
 		 maxPowerConsuption = new String("$");
 		 maxClockFrequency = new String("$");
 		 idAuthor = new String("$");
-		 nameAuthor = new String("Emanuele Garolla");
+		 nameAuthor = new String("$");
 		 company = new String("$");
 		
 		l = new LinkedList<String>();
@@ -569,12 +565,35 @@ public class Test01 {
 		lip = DBM.searchIP(l);
 		
 		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
+		m.add(new MappedIP("mapIP_0" , (IPCore)lip.get(0), 0, "00x00000"));
+		m.add(new MappedIP("mapIP_2" , (IPCore)lip.get(0), 2, "00x00002"));
+		m.add(new MappedIP("mapIP_3" , (IPCore)lip.get(0), 3, "00x00003"));
 		
-		for(int i = 0; i<lip.size(); i++)
-		{
-			m.add(new MappedIP("mapIP_" + i , (IPCore)lip.get(i), i, "00x0000" + i));
-		}
-
+		lip = new LinkedList<IP>();
+		 isIPCore = new String("true");
+		 idIP = new String("$");
+		 name = new String("IP_Adder");
+		 maxLUTs = new String("$");
+		 maxFFs = new String("$");
+		 maxLatency = new String("$");
+		 maxPowerConsuption = new String("$");
+		 maxClockFrequency = new String("$");
+		 idAuthor = new String("$");
+		 nameAuthor = new String("$");
+		 company = new String("$");
+		
+		l = new LinkedList<String>();
+		
+		l.add(isIPCore); l.add(idIP); l.add(name); l.add(maxLUTs); 
+		l.add(maxFFs); l.add(maxLatency); l.add(maxPowerConsuption);
+	    l.add(maxClockFrequency); l.add(idAuthor);
+		l.add(nameAuthor); l.add(company);
+		
+		lip = DBM.searchIP(l);
+		
+		m.add(new MappedIP("mapIP_1" , (IPCore)lip.get(0), 1, "00x00001"));
+		
+		
 		FPGAConfiguration conf = new FPGAConfiguration("confTest5", "conf05",
 				m, manager, "src/polito/sdp2017/Tests/bitstream4.c", 
 				new HardwareProperties(9, 56, 0, 0, 0, 0.09), 
