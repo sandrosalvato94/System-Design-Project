@@ -1,5 +1,6 @@
 package polito.sdp2017.DesignEnvironmentGui;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -35,6 +36,9 @@ public class ScreenCreateConfigController implements ControlledScreen {
     Map<String,IP> map = new HashMap<String,IP>();
     int mappedIpCnt = 0;
     IP focusedIP;
+    
+    private final String diamondPath = "C:/lscc/diamond/3.9_x64/bin/nt64";
+    private final String tclScritpPath = "C:/lscc/diamond/3.9_x64/bin/nt64/scripts/myscript.tcl";
 
     @FXML private TextField IPIdentifier;
     @FXML private TextField IPName;
@@ -500,7 +504,13 @@ public class ScreenCreateConfigController implements ControlledScreen {
 										.collect(Collectors.toList());
 		listOfSources.stream()
 						.forEach(l -> createConfLogArea.appendText("\t"+l+" [OK]\n"));
-
+		
+		try {
+			Process proc = Runtime.getRuntime()
+					       .exec(diamondPath + "/pnmainc.exe " + tclScritpPath);
+		} catch (IOException e) {
+			 createConfLogArea.appendText(e.getMessage() + " [ERROR]\n");
+		}
 		// ------- END OF OUR TASKS !!!!!!
 		// spawn synth process
 		// wait

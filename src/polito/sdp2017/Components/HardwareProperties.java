@@ -70,10 +70,10 @@ public class HardwareProperties {
 	public String toString() {
 		return "LUTs              : " + this.LUTs + "\n" +
 			   "FFs               : " + this.FFs + "\n" +
-			   "Latency           : " + this.latency + " ns\n" +
+			   "Latency           : " + this.latency + " us\n" +
 			   "Memories          : " + this.nMemories + "\n" +
 			   "Power consuption  : " + this.powerConsumption + " W\n" +
-			   "Max clk frequency : " + this.maxClkFreq + " Hz\n";
+			   "Max clk frequency : " + this.maxClkFreq + " MHz\n";
 	}
 	
 	@Override
