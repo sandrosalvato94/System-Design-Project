@@ -644,5 +644,22 @@ public class FPGAConfiguration {
 			}
 		}	
 	}
+	
+	public static void createConfiguration(FPGAConfiguration fpgaconf, DBManager DBM) throws IOException, InterruptedException
+	{	
+		FPGAConfiguration.setNumberIPCoresInConstantsVHDL(fpgaconf); //changes the value of N_IPS inside constants.vhd package
+		
+		FPGAConfiguration.generateTopLevelEntity(fpgaconf); //generation of the top level entity
+		
+		FPGAConfiguration.createTCLScript(fpgaconf); //creates new TCL script
+		
+		FPGAConfiguration.runSynthesis(fpgaconf);	//runs synthesis (and copy bitstream)
+
+		fpgaconf.setHwProperties(FPGAConfiguration.getHPFromLattice(Constants.diamondImplPath)); //set HWProperties
+		
+		FPGAConfiguration.deleteAllFiles(Constants.diamondImplPath); //erases every files inside Diamond folder
+		
+		DBM.addConfiguration(fpgaconf);
+	}
 
 }

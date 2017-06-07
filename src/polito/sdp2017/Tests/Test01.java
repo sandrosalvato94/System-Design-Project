@@ -153,9 +153,7 @@ public class Test01 {
 		
 		case 7:
 			FPGAConfiguration fpgaconf = addConf21(DBM);
-			//System.out.println(fpgaconf.toString());
-			createConfiguration(fpgaconf, DBM);
-			System.out.println(fpgaconf.toString());
+			FPGAConfiguration.createConfiguration(fpgaconf, DBM);
 			break;
 		case 8:
 			
@@ -714,26 +712,4 @@ public class Test01 {
 		return conf;
 		//DBM.addConfiguration(conf);
 	}
-	
-	public static void createConfiguration(FPGAConfiguration fpgaconf, DBManager DBM) throws IOException, InterruptedException
-	{	
-		FPGAConfiguration.setNumberIPCoresInConstantsVHDL(fpgaconf); //changes the value of N_IPS inside constants.vhd package
-		
-		FPGAConfiguration.generateTopLevelEntity(fpgaconf); //generation of the top level entity
-		
-		FPGAConfiguration.createTCLScript(fpgaconf); //creates new TCL script
-		
-		FPGAConfiguration.runSynthesis(fpgaconf);	//runs synthesis (and copy bitstream)
-
-		fpgaconf.setHwProperties(FPGAConfiguration.getHPFromLattice(Constants.diamondImplPath)); //set HWProperties
-		
-		FPGAConfiguration.deleteAllFiles(Constants.diamondImplPath); //erases every files inside Diamond folder
-		
-		DBM.addConfiguration(fpgaconf);
-	}
-	
-	
-	
-	
-	
 }
