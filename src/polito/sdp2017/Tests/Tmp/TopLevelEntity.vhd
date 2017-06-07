@@ -81,22 +81,6 @@ component ip_dummy is
 end component ip_dummy;
 
 
-component ip_adder is
-	port (
-		clk : in std_logic;
-		rst : in std_logic;
-		data_in : out std_logic_vector(data_width-1 downto 0);
-		data_out : in std_logic_vector(data_width-1 downto 0);
-		address : out std_logic_vector(add_width-1 downto 0);
-		w_enable : out std_logic;
-		r_enable : out std_logic;
-		generic_en : out std_logic;
-		enable : in std_logic;
-		ack : in std_logic;
-		interrupt : out std_logic);
-end component ip_adder;
-
-
 	signal	row_0			  	: std_logic_vector (DATA_WIDTH-1 downto 0); 
 	signal	data_in_ip		  	: std_logic_vector (DATA_WIDTH-1 downto 0);
 	signal	data_out_ip			: std_logic_vector (DATA_WIDTH-1 downto 0);	
@@ -172,7 +156,7 @@ mapIP_0: IP_Dummy
 		interrupt	=> interrupt_IPs(0));
 
 
-mapIP_1: IP_Adder
+mapIP_15: IP_Dummy
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
@@ -187,7 +171,7 @@ mapIP_1: IP_Adder
 		interrupt	=> interrupt_IPs(1));
 
 
-mapIP_2: IP_Dummy
+mapIP_3: IP_Dummy
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,
@@ -202,7 +186,7 @@ mapIP_2: IP_Dummy
 		interrupt	=> interrupt_IPs(2));
 
 
-mapIP_3: IP_Dummy
+mapIP_17: IP_Dummy
 	PORT MAP(
 		clk	=> clock,
 		rst	=> reset,

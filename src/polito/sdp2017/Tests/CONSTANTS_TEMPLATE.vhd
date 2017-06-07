@@ -4,7 +4,8 @@ use ieee.numeric_std.all;
 
 package CONSTANTS is
  	
-	constant NUM_IPS                : integer := 4; 	
+	--IMPORTANT: Choose the number of IP cores
+	
 	
 	constant DATA_WIDTH				: integer := 16;
 	constant ADD_WIDTH				: integer := 6;
@@ -17,3 +18,4 @@ package CONSTANTS is
 	constant IPADD_POS     : integer := 11; -- downto 0
 	
 end package CONSTANTS;
+--END HERE--
