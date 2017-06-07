@@ -41,7 +41,7 @@ public class Test01 {
 	/*********DIAMOND PATHS*********/
 	final static String diamondShellPath = 		DiamondRoot + "pnmainc.exe";
 	final static String diamondImplPath = 		DiamondRoot + "impl1";
-	final static String diamondImplSourcePath = diamondImplPath + "source";
+	final static String diamondImplSourcePath = diamondImplPath + "/source";
 	final static String diamondTCLScritpPath = 	DiamondRoot + "scripts/myscript.tcl";
 	final static String diamondBitstreamPath = 	DiamondRoot + "impl1/provaDefinitivaTCL_impl1.bit";
 	final static String powerReportPath =  		diamondImplPath + "report_power_summary.html";
@@ -60,7 +60,7 @@ public class Test01 {
 		DBM.openConnection(dbpath);
 		//printMenu();
 		//a = selectChoice(scannerIO);
-		a =4; 
+		a =7; 
 		
 		switch (a) {
 		case 1:	//addIP
@@ -136,7 +136,6 @@ public class Test01 {
 			 addConf03(DBM);
 			 addConf04(DBM);
 			 addConf05(DBM);
-			 addConf21(DBM);
 			break;
 		
 		case 5: //search configuration
@@ -170,7 +169,9 @@ public class Test01 {
 			break;
 		
 		case 7:
-				
+			FPGAConfiguration fpgaconf = addConf21(DBM);
+			//System.out.println(fpgaconf.toString());
+			createConfiguration(fpgaconf);
 			break;
 		case 8:
 			
@@ -642,7 +643,7 @@ public class Test01 {
 		DBM.addConfiguration(conf);
 	}
 
-	public static void addConf21(DBManager DBM)
+	public static FPGAConfiguration addConf21(DBManager DBM)
 	{
 		LinkedList<IP>lip = new LinkedList<IP>();
 		 String isIPCore = new String("false");
@@ -722,11 +723,13 @@ public class Test01 {
 		
 		
 		FPGAConfiguration conf = new FPGAConfiguration("confTest21", "conf21",
-				m, manager, "src/polito/sdp2017/Tests/bitstream21.c", 
-				new HardwareProperties(9, 56, 0, 0, 0, 0.09), 
+				m, manager, "", 
+				new HardwareProperties(-1, -1, -1, -1, -1, -1), 
 				new Author("cp21", "Mr. Diamond", "Lattice Semiconductor", "fabbro@live.it", "Tester"), 
 				null);
-		DBM.addConfiguration(conf);
+		
+		return conf;
+		//DBM.addConfiguration(conf);
 	}
 	
 	public static void deleteAllFiles(String path)
@@ -743,11 +746,11 @@ public class Test01 {
 		
 		createTCLScript(fpgaconf); //create new TCL script
 		
-		runSynthesis(fpgaconf);	//run synthesis (and copy bitstream)
+		//runSynthesis(fpgaconf);	//run synthesis (and copy bitstream)
 		
-		fpgaconf.setHwProperties(getHPFromLattice(diamondImplPath)); //
+		//fpgaconf.setHwProperties(getHPFromLattice(diamondImplPath)); //
 		
-		deleteAllFiles(diamondImplPath);
+		//deleteAllFiles(diamondImplPath);
 	}
 	
 	public static HardwareProperties getHPFromLattice(String pathDir)
@@ -871,16 +874,30 @@ public class Test01 {
 		try(BufferedReader in  = new BufferedReader(new FileReader(TCLscriptTemplatePath));
 			BufferedWriter out = new BufferedWriter(new FileWriter(diamondTCLScritpPath)))
 		{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--DIAMOND PATH HERE--[\\s|.]*"))
+			{
+				out.write(tmpString + "\n");
+			}
+			
+			out.write("cd \"" + DiamondRoot + "\"");
+			
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--SOURCE HERE--[\\s|.]*"))
+			{
+				out.write(tmpString + "\n");
+			}
+			
+			out.write("file mkdir " + "\"" + diamondImplSourcePath + "\"\n");
+			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--VHDL HERE--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "/Tmp/TopLevelEntity.vhd\" "  +
+			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\" "  +
 			           "\"" + diamondImplSourcePath + "\"\n");
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "/BUFFER_DATA.vhd\" "  +
+			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "BUFFER_DATA.vhd\" "  +
 			           "\"" + diamondImplSourcePath + "\"\n");
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "/Tmp/constants.vhd\" "  +
+			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "constants.vhd\" "  +
 			           "\"" + diamondImplSourcePath + "\"\n");
 			
 			Map<String, List<MappedIP>> hmap = fpgaconf.getMappedIPs().stream().collect(Collectors.groupingBy((l -> l.getIpCore().getIdIP()), Collectors.toList()));
@@ -890,6 +907,27 @@ public class Test01 {
 				out.write("file copy -force -- " + "\"" + JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
 						  "\" " + "\"" + diamondImplSourcePath + "\"\n");
 			}
+			
+			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + fpgaconf.getManager().getHdlSourcePath() +
+					 "\" " + "\"" + diamondImplSourcePath + "\"\n");
+			
+			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\"\n");
+			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "BUFFER_DATA.vhd\"\n");
+			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "constants.vhd\"\n");
+			
+			for(String s : hmap.keySet())
+			{
+				out.write("prj_src add " + "\"" + JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
+						  "\"\n");
+			}
+			
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--REPORT HERE--[\\s|.]*"))
+			{
+				out.write(tmpString + "\n");
+			}
+			
+			out.write("pwc_writereport html -file " + "\"" + diamondImplPath + "/report.html\"\n");
+			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
