@@ -1,4 +1,5 @@
 package polito.sdp2017.Tests;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -24,32 +25,14 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import  polito.sdp2017.Components.*;
-import  polito.sdp2017.HardwareInterface.*; 
+import polito.sdp2017.Constants.Constants;
+import  polito.sdp2017.HardwareInterface.*;
+
 
 public class Test01 {
 	
-	final static String JavaApplicationRoot = "C:/Users/UTENTE/workspace/System-Design-Project/";
-	final static String DiamondRoot = "/lscc/diamond/3.9_x64/bin/nt64/";
-	
-	/***********JAVA PATHS**********/
-	final static String dbpath = 		   		JavaApplicationRoot + "src/polito/sdp2017/Tests/DB01.db";
-	final static String JavaProjectVHDLs = 		JavaApplicationRoot + "src/polito/sdp2017/Tests/";
-	final static String JavaProjectBitstreams = JavaApplicationRoot + "src/polito/sdp2017/Test/Bitstreams/";
-	final static String TCLscriptTemplatePath = JavaApplicationRoot + "src/polito/sdp2017/Tests/TCLSCRIPT_TEMPLATE.tcl";
-	/*******************************/
-	
-	/*********DIAMOND PATHS*********/
-	final static String diamondShellPath = 		DiamondRoot + "pnmainc.exe";
-	final static String diamondImplPath = 		DiamondRoot + "impl1";
-	final static String diamondImplSourcePath = diamondImplPath + "/source";
-	final static String diamondTCLScritpPath = 	DiamondRoot + "scripts/myscript.tcl";
-	final static String diamondBitstreamPath = 	DiamondRoot + "impl1/provaDefinitivaTCL_impl1.bit";
-	final static String powerReportPath =  		diamondImplPath + "report_power_summary.html";
-	final static String frequencyPath = 		diamondImplPath + "provaDefinitivaTCL_impl1.bgn";
-	final static String LUTsFFsPath = 			diamondImplPath + "provaDefinitivaTCL_impl1_map.asd";
-	final static String[] prv = {diamondShellPath, diamondTCLScritpPath};
-	/*******************************/
-	
+
+
 	public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException, SAXException, ParserConfigurationException, InterruptedException {
 		
 		int a; 
@@ -57,7 +40,7 @@ public class Test01 {
 		Scanner scannerIO = new Scanner(System.in);
 		DBManager DBM = new SQLiteManager();
 		DBM.setDBName("System Design Project Database");
-		DBM.openConnection(dbpath);
+		DBM.openConnection(Constants.dbpath);
 		//printMenu();
 		//a = selectChoice(scannerIO);
 		a =7; 
@@ -742,9 +725,11 @@ public class Test01 {
 
 	public static void createConfiguration(FPGAConfiguration fpgaconf) throws IOException, InterruptedException
 	{	
-		final String[] prv = {diamondShellPath, diamondTCLScritpPath};
+		final String[] prv = {Constants.diamondShellPath, Constants.diamondTCLScritpPath};
 		
 		createTCLScript(fpgaconf); //create new TCL script
+		
+		FPGAConfiguration.generateTopLevelEntity(fpgaconf);
 		
 		//runSynthesis(fpgaconf);	//run synthesis (and copy bitstream)
 		
@@ -765,9 +750,9 @@ public class Test01 {
 		int LUTs = 0, FFs = 0, nMemories = 0;
 		Double latency = 0.0, maxPowerConsuption = 0.0, maxClockFrequency = 0.0;
 		
-		File f_power = new File(powerReportPath);
-		File f_freq = new File(frequencyPath);
-		File f_area = new File(LUTsFFsPath);
+		File f_power = new File(Constants.powerReportPath);
+		File f_freq = new File(Constants.frequencyPath);
+		File f_area = new File(Constants.LUTsFFsPath);
 		
 		if(f_power.exists())
 		{
@@ -860,64 +845,64 @@ public class Test01 {
 
 	public static boolean createTCLScript(FPGAConfiguration fpgaconf)
 	{	
-		if(newFile(diamondTCLScritpPath) != 1) {
+		if(newFile(Constants.diamondTCLScritpPath) != 1) {
 			throw new RuntimeException("File can't be created");
 		}
 		
-		File f_template = new File(TCLscriptTemplatePath);
+		File f_template = new File(Constants.TCLscriptTemplatePath);
 		
 		if(!f_template.exists()) {
 			throw new RuntimeException("File TCLSCRIPT_TEMPLATE.tcl not found.");
 		}
 		String tmpString;
 		
-		try(BufferedReader in  = new BufferedReader(new FileReader(TCLscriptTemplatePath));
-			BufferedWriter out = new BufferedWriter(new FileWriter(diamondTCLScritpPath)))
+		try(BufferedReader in  = new BufferedReader(new FileReader(Constants.TCLscriptTemplatePath));
+			BufferedWriter out = new BufferedWriter(new FileWriter(Constants.diamondTCLScritpPath)))
 		{
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--DIAMOND PATH HERE--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("cd \"" + DiamondRoot + "\"");
+			out.write("cd \"" + Constants.DiamondRoot + "\"");
 			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--SOURCE HERE--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("file mkdir " + "\"" + diamondImplSourcePath + "\"\n");
+			out.write("file mkdir " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--VHDL HERE--[\\s|.]*"))
 			{
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\" "  +
-			           "\"" + diamondImplSourcePath + "\"\n");
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "BUFFER_DATA.vhd\" "  +
-			           "\"" + diamondImplSourcePath + "\"\n");
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + "constants.vhd\" "  +
-			           "\"" + diamondImplSourcePath + "\"\n");
+			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\" "  +
+			           "\"" + Constants.diamondImplSourcePath + "\"\n");
+			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + "BUFFER_DATA.vhd\" "  +
+			           "\"" + Constants.diamondImplSourcePath + "\"\n");
+			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + "constants.vhd\" "  +
+			           "\"" + Constants.diamondImplSourcePath + "\"\n");
 			
 			Map<String, List<MappedIP>> hmap = fpgaconf.getMappedIPs().stream().collect(Collectors.groupingBy((l -> l.getIpCore().getIdIP()), Collectors.toList()));
 			
 			for(String s : hmap.keySet())
 			{
-				out.write("file copy -force -- " + "\"" + JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
-						  "\" " + "\"" + diamondImplSourcePath + "\"\n");
+				out.write("file copy -force -- " + "\"" + Constants.JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
+						  "\" " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			}
 			
-			out.write("file copy -force -- " + "\"" + JavaProjectVHDLs + fpgaconf.getManager().getHdlSourcePath() +
-					 "\" " + "\"" + diamondImplSourcePath + "\"\n");
+			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + fpgaconf.getManager().getHdlSourcePath() +
+					 "\" " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			
-			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\"\n");
-			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "BUFFER_DATA.vhd\"\n");
-			out.write("prj_src add " + "\"" + JavaProjectVHDLs + "constants.vhd\"\n");
+			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\"\n");
+			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "BUFFER_DATA.vhd\"\n");
+			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "constants.vhd\"\n");
 			
 			for(String s : hmap.keySet())
 			{
-				out.write("prj_src add " + "\"" + JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
+				out.write("prj_src add " + "\"" + Constants.JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
 						  "\"\n");
 			}
 			
@@ -926,7 +911,7 @@ public class Test01 {
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("pwc_writereport html -file " + "\"" + diamondImplPath + "/report.html\"\n");
+			out.write("pwc_writereport html -file " + "\"" + Constants.diamondImplPath + "/report.html\"\n");
 			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*"))
 			{
@@ -945,7 +930,7 @@ public class Test01 {
 	public static boolean runSynthesis(FPGAConfiguration fpgaconf) throws InterruptedException, IOException
 	{	
 		try {
-			Process proc = Runtime.getRuntime().exec(prv);
+			Process proc = Runtime.getRuntime().exec(Constants.prv);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 			while ((reader.readLine()) != null) {}
 			proc.waitFor();
@@ -957,7 +942,7 @@ public class Test01 {
 			 return false;
 		}
 		
-		File f = new File(diamondBitstreamPath);
+		File f = new File(Constants.diamondBitstreamPath);
 		System.out.println("Looking for bitstream...");
 		if(f.exists()) //copy file
 		{
@@ -976,10 +961,10 @@ public class Test01 {
 	{
 		
 		
-		File f = new File(diamondBitstreamPath);
+		File f = new File(Constants.diamondBitstreamPath);
 		
 		FileInputStream in = new FileInputStream(f);
-		FileOutputStream out = new FileOutputStream(JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
+		FileOutputStream out = new FileOutputStream(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
 		
 		byte [] dati = new byte[in.available()];
 		in.read(dati);
@@ -987,7 +972,7 @@ public class Test01 {
 		in.close();
 		out.close();
 		
-		fpgaconf.setBitstreamPath(JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
+		fpgaconf.setBitstreamPath(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
 	}
 	
 	public static int newFile(String path) {
