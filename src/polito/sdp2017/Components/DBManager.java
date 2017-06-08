@@ -4,6 +4,9 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This interface is a description of a database manager regardless of the used DBMS. 
+ */
 public interface DBManager {
 	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException;
 	public void closeConnection() throws SQLException;

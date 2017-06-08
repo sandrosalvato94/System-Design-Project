@@ -182,4 +182,8 @@ public class ApplicationModel {
 	public void resetDatabase() {
 		database.resetDatabase();
 	}
+
+	public DBManager getDB() {
+		return database;
+	}
 }

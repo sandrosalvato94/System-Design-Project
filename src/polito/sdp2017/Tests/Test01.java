@@ -154,6 +154,8 @@ public class Test01 {
 		case 7:
 			FPGAConfiguration fpgaconf = addConf21(DBM);
 			FPGAConfiguration.createConfiguration(fpgaconf, DBM);
+			System.out.println(fpgaconf.toString());
+			System.out.println("finish everything");
 			break;
 		case 8:
 			
@@ -674,7 +676,6 @@ public class Test01 {
 		lip = DBM.searchIP(l);
 		
 		LinkedList<MappedIP> m = new LinkedList<MappedIP>();
-		m.add(new MappedIP("mapIP_0" , (IPCore)lip.get(0), 0, "00x00000"));
 		m.add(new MappedIP("mapIP_3" , (IPCore)lip.get(0), 23, "00x00004"));
 		m.add(new MappedIP("mapIP_17" , (IPCore)lip.get(0), 57, "00x00100"));
 		m.add(new MappedIP("mapIP_15" , (IPCore)lip.get(0), 7, "00x00110"));
@@ -700,13 +701,13 @@ public class Test01 {
 		l.add(nameAuthor); l.add(company);
 		
 		lip = DBM.searchIP(l);
+		m.add(new MappedIP("mapIP_1" , (IPCore)lip.get(0), 0, "00x00000"));
 		
 		
-		
-		FPGAConfiguration conf = new FPGAConfiguration("confTest22", "conf22",
+		FPGAConfiguration conf = new FPGAConfiguration("confTest23", "conf23",
 				m, manager, "", 
 				new HardwareProperties(-1, -1, -1, -1, -1, -1), 
-				new Author("cp22", "Mr. Dummy", "Lattice Semiconductor", "fabbro@live.it", "Tester"), 
+				new Author("cp23", "Mr. Montuschi", "Lattice Semiconductor", "fabbro@live.it", "Tester"), 
 				null);
 		
 		return conf;

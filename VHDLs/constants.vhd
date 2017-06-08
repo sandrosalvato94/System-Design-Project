@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 package CONSTANTS is
  	
-	constant NUM_IPS                : integer := 3; 	
+	constant NUM_IPS                : integer := 1; 	
 	
 	constant DATA_WIDTH				: integer := 16;
 	constant ADD_WIDTH				: integer := 6;

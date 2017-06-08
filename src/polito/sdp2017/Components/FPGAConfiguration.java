@@ -24,6 +24,13 @@ import java.util.stream.Collectors;
 
 import polito.sdp2017.Constants.Constants;
 
+/**
+ * This class describes all possible features and functionalities that a configuration, to be loaded
+ * into the FPGA of the SEcube board, should have. One FPGAConfiguration is characterized 
+ * by an unique id,  a name, the list of all IPcores (it's possible that two equal cores are mapped
+ * more than once),  the IPmanager, a bitstream (ABSOLUTE)path, a set of hardware properties, 
+ * one contact point (an author) and a path for additional driver source.
+ */
 public class FPGAConfiguration {
 	private String name;
 	private String idConf;
@@ -34,6 +41,17 @@ public class FPGAConfiguration {
 	private Author contactPoint;
 	private String additionalDriverSource;
 
+/**
+ * Constructor for the class FPGAConfiguration.
+ * @param name
+ * @param idConf
+ * @param mappedIPs
+ * @param manager
+ * @param bitstreamPath
+ * @param hwProperties
+ * @param contactPoint
+ * @param additionalDriverSource
+ */
 	public FPGAConfiguration(String name, String idConf, List<MappedIP> mappedIPs, IPManager manager, String bitstreamPath,
 			HardwareProperties hwProperties, Author contactPoint, String additionalDriverSource) {
 
@@ -47,6 +65,11 @@ public class FPGAConfiguration {
 		this.additionalDriverSource = additionalDriverSource;
 	}
 	
+	/**
+	 * This method creates the top level entity vhdl code considering all IPCores and the IPManager selected
+	 * by the user, considering also their priority. This method is invoked before running the synthesis.
+	 * @param conf
+	 */
 	public static void generateTopLevelEntity(FPGAConfiguration conf) {
 		Path pathTarget = Paths.get(Constants.VHDLTopLevelEntityToBeSynth);
 		Path pathTemplate = Paths.get(Constants.VHDLTopLevelEntityTemplatePath);
@@ -137,74 +160,142 @@ public class FPGAConfiguration {
 			throw new RuntimeException("Unable to write file");
 		}
 	}
-
+	
+	/**
+	 * Setter for name of FPGAConfiguration
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	/**
+	 * Getter for name of FPGAConfiguration
+	 * @return name, chosen by the user
+	 */
 	public String getName() {
 		return this.name;
 	}
-
+	
+	/**
+	 * Setter for idConf of FPGAConfiguration
+	 * @param idConf
+	 */
 	public void setIdConf(String idConf) {
 		this.idConf = idConf;
 	}
-
+	
+	/**
+	 * Getter for idConf of FPGAConfiguration
+	 * @return the id of the configuration. It's the primary key for the configuration table
+	 */
 	public String getIdConf() {
 		return idConf;
 	}
-
+	
+	/**
+	 * Setter for all mappedIPs of FPGAConfiguration. It's possible having same IPCores.
+	 * @param mappedIPs
+	 */
 	public void setMappedIPs(List<MappedIP> mappedIPs) {
 		this.mappedIPs = mappedIPs;
 	}
-
+	
+	/**
+	 * Getter for all mappedIPs of FPGAConfiguration.
+	 * @return the list of all mappedIPs
+	 */
 	public List<MappedIP> getMappedIPs() {
 		return this.mappedIPs;
 	}
-
+	
+	/**
+	 * This method allows the adding of one IPCore to be mapped in that configuration.
+	 * @param mIP
+	 */
 	public void addMappedIp(MappedIP mIP)
 	{
 		this.mappedIPs.add(mIP);
 	}
 	
+	/**
+	 * This method returns the current number of mappedIPs. The IPManager is not considered in the counting.
+	 * @return Size of List<MappedIP>
+	 */
 	public int getNumberMappedIPs()
 	{
 		return this.mappedIPs.size();
 	}
 	
+	/**
+	 * Setter of the manager for FPGAConfiguration
+	 * @param manager
+	 */
 	public void setManager(IPManager manager) {
 		this.manager = manager;
 	}
-
+	
+	/**
+	 * Getter of the IPManager for FPGAConfiguration
+	 * @return the object IPManager
+	 */
 	public IPManager getManager() {
 		return this.manager;
 	}
 	
+    /**
+     * Returns the contactPoint (class Author) of the current IPmanager for this configuration.
+     * @return The contactéoint of IPManager
+     */
 	public Author getContactPointIPManager()
 	{
 		return this.manager.getContactPoint();
 	}
 	
+	/**
+	 * Setter of bitstream path for FPGAConfiguration
+	 * @param bitstreamPath
+	 */
 	public void setBitstreamPath(String bitstreamPath) {
 		this.bitstreamPath = bitstreamPath;
 	}
-
+	
+	/**
+	 * Getter of bitstream path for FPGAConfiguration
+	 * @return The absolute path for the file containing the bitstream, got after the synthesis.
+	 */
 	public String getBitstreamPath() {
 		return this.bitstreamPath;
 	}
-
+	
+	/**
+	 * Setter of hardware properties for FPGAConfiguration. They are computed after the synthesis.
+	 * @param hwProperties
+	 */
 	public void setHwProperties(HardwareProperties hwProperties) {
 		this.hwProperties = hwProperties;
 	}
-
+	
+	/**
+	 * Getter of hardware properties for FPGAConfiguration.
+	 * @return the object HardwareProperties for that configuration.
+	 */
 	public HardwareProperties getHwProperties() {
 		return this.hwProperties;
 	}
-
+	
+	/**
+	 * Setter of the contactPoint for FPGAConfiguration
+	 * @param contactPoint
+	 */
 	public void setContactPoint(Author contactPoint) {
 		this.contactPoint = contactPoint;
 	}
-
+	
+	/**
+	 * Getter of the contactPoint for FPGAConfiguration
+	 * @return the contactPoint of who designed that configuration.
+	 */
 	public Author getContactPoint() {
 		return this.contactPoint;
 	}
@@ -212,11 +303,20 @@ public class FPGAConfiguration {
 	/*public void setAdditionalDriverSources(List additionalDriverSources) {
 
 	}*/
-
+	
+	/**
+	 * Getter of the additional driver source path for FPGAConfiguration
+	 * @return the path for further drivers to be used by the processors in order to realize some functionalities
+	 * considering that configuration.
+	 */
 	public String getAdditionalDriverSource() {
 		return this.additionalDriverSource;
 	}
 	
+	/**
+	 * Extracts all source paths from all mapped IPCores.
+	 * @return linkedlist of all source paths.
+	 */
 	public LinkedList<String> getAllSourcePaths()
 	{
 		LinkedList<String> l = new LinkedList<String>();
@@ -227,7 +327,11 @@ public class FPGAConfiguration {
 		
 		return l;
 	}
-
+	
+	/**
+	 * auto-generated by Eclipse
+	 * @return hash code of the object
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -242,7 +346,11 @@ public class FPGAConfiguration {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
+	
+	/**
+	 * auto-generated by Eclipse
+	 * @return  boolean indicating if the two objects are equal.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -294,7 +402,10 @@ public class FPGAConfiguration {
 			return false;
 		return true;
 	}
-
+	
+	/**
+	 * @return String representation of all information on the configuration.
+	 */
 	@Override
 	public String toString() {
 		return "FPGAConfiguration [name=" + name + ", idConf=" + idConf + ", mappedIPs=" + mappedIPs + ", manager="
@@ -302,6 +413,11 @@ public class FPGAConfiguration {
 				+ contactPoint + ", additionalDriverSource=" + additionalDriverSource + "]";
 	}
 	
+	/**
+	 * Create a new file in according to the path passed as parameter. If that file already exits it is overwritten.
+	 * @param path
+	 * @return 1 if the operation ended well, -1 if some problems occurred.
+	 */
 	public static int newFile(String path) {
 	 
 	    try {
@@ -333,6 +449,10 @@ public class FPGAConfiguration {
 	    }
 	}
 	
+	/**
+	 * It's a shorter version of toString() of FPGAConfiguration. 
+	 * @return main informations on that configuration: id, name and hardware properties.
+	 */
 	public String getBrief()
 	{
 		StringBuffer s = new StringBuffer();
@@ -344,12 +464,12 @@ public class FPGAConfiguration {
 		return s.toString();
 	}
 	
-	public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) 
-	{
-	    Map<Object, Boolean> map = new ConcurrentHashMap<>();
-	    return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
-	}
-	
+	/**
+	 * This method rewrites the content of the VHDL package constants.vhd, in according to the specified template,
+	 *  every time createConfiguration() is invoked. It is a necessary step before running the synthesis.
+	 * @param fpgaconf
+	 * @return true if everything ends well, otherwise false
+	 */
 	public static boolean setNumberIPCoresInConstantsVHDL(FPGAConfiguration fpgaconf)
 	{
 		File f_templ_constants = new File(Constants.VHDLConstantsTemplatePath);
@@ -387,6 +507,13 @@ public class FPGAConfiguration {
 		
 	}
 	
+	/**
+	 * This method generates dynamically the synthesis tcl script, in according to a template, 
+	 * listing all components to be added to the project. The script is generated inside the Lattice Diamond
+	 * file system. 
+	 * @param fpgaconf
+	 * @return true if everything ends well, otherwise false
+	 */
 	public static boolean createTCLScript(FPGAConfiguration fpgaconf)
 	{	
 		if(newFile(Constants.diamondTCLScritpPath) != 1) {
@@ -422,7 +549,7 @@ public class FPGAConfiguration {
 				out.write(tmpString + "\n");
 			}
 			
-			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\" "  +
+			out.write("file copy -force -- " + "\"" + Constants.JavaApplicationRoot + "Tmp/TopLevelEntity.vhd\" "  +
 			           "\"" + Constants.diamondImplSourcePath + "\"\n");
 			out.write("file copy -force -- " + "\"" + Constants.JavaProjectVHDLs + "BUFFER_DATA.vhd\" "  +
 			           "\"" + Constants.diamondImplSourcePath + "\"\n");
@@ -433,22 +560,21 @@ public class FPGAConfiguration {
 			
 			for(String s : hmap.keySet())
 			{
-				out.write("file copy -force -- " + "\"" + Constants.JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
+				out.write("file copy -force -- " + "\"" + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
 						  "\" " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			}
 			
-			out.write("file copy -force -- " + "\"" + Constants.JavaApplicationRoot + fpgaconf.getManager().getHdlSourcePath() +
+			out.write("file copy -force -- " + "\"" + fpgaconf.getManager().getHdlSourcePath() +
 					 "\" " + "\"" + Constants.diamondImplSourcePath + "\"");
 			
-			out.write("\nprj_src add " + "\"" + Constants.JavaProjectVHDLs + "Tmp/TopLevelEntity.vhd\"\n");
+			out.write("\nprj_src add " + "\"" + Constants.JavaApplicationRoot + "Tmp/TopLevelEntity.vhd\"\n");
 			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "BUFFER_DATA.vhd\"\n");
 			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "constants.vhd\"\n");
-			out.write("prj_src add " + "\"" + Constants.JavaApplicationRoot + fpgaconf.getManager().getHdlSourcePath() +"\"\n");
+			out.write("prj_src add " + "\"" + fpgaconf.getManager().getHdlSourcePath() +"\"\n");
 			
 			for(String s : hmap.keySet())
 			{
-				out.write("prj_src add " + "\"" + Constants.JavaApplicationRoot + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
-						  "\"\n");
+				out.write("prj_src add " + "\"" + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +"\"\n");
 			}
 			
 			while(!(tmpString = in.readLine()).matches("[\\s|.]*--REPORT HERE--[\\s|.]*"))

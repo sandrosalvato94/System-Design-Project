@@ -36,9 +36,6 @@ public class ScreenCreateConfigController implements ControlledScreen {
     Map<String,IP> map = new HashMap<String,IP>();
     int mappedIpCnt = 0;
     IP focusedIP;
-    
-    private final String diamondPath = "C:/lscc/diamond/3.9_x64/bin/nt64";
-    private final String tclScritpPath = "C:/lscc/diamond/3.9_x64/bin/nt64/scripts/myscript.tcl";
 
     @FXML private TextField IPIdentifier;
     @FXML private TextField IPName;
@@ -307,7 +304,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 				if (priority < 0 || phyAddress < 0) {
 					throw new NumberFormatException();
 				}
-				MappedIP mip = new MappedIP(String.valueOf(mappedIpCnt),(IPCore)focusedIP,
+				MappedIP mip = new MappedIP("mapIP_"+String.valueOf(mappedIpCnt),(IPCore)focusedIP,
 												priority,"0x"+physicalAddress.getText());
 				mappedIpCnt++;
 				applicationModel.addMappedIp(mip);
@@ -397,16 +394,17 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		String confContactMail = confEmail.getText();
 		String confContactCompany = confCompany.getText();
 		String confContactRole = confRole.getText();
-		String confUserName = confName.getText();
+		String confConfName = confName.getText();
 		
 		createConfLogArea.setText("reading configuration name...");
-		if (confUserName.trim().equals("")) {
+		if (confConfName.trim().equals("")) {
 			createConfLogArea.appendText(" [WARNING]\n\tconfiguration name set to unknown\n");
-			confUserName = "unknown";
+			confConfName = "unknown";
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(0.05);
+		fpgaConfiguration.setName(confConfName);
+		progressBar.setProgress(0.15);
 		
 		createConfLogArea.appendText("reading contact point id from fields...");
 		if (confContactId.trim().equals("")) {
@@ -415,7 +413,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(progressBar.getProgress()+0.01);
+		progressBar.setProgress(progressBar.getProgress()+0.05);
 		
 		createConfLogArea.appendText("reading contact point name from fields...");
 		if (confContactName.trim().equals("")) {
@@ -424,7 +422,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(progressBar.getProgress()+0.01);
+		progressBar.setProgress(progressBar.getProgress()+0.05);
 		
 		createConfLogArea.appendText("reading contact point mail from fields...");
 		if (confContactMail.trim().equals("")) {
@@ -433,7 +431,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(progressBar.getProgress()+0.01);
+		progressBar.setProgress(progressBar.getProgress()+0.05);
 		
 		createConfLogArea.appendText("reading contact point company from fields...");
 		if (confContactCompany.trim().equals("")) {
@@ -442,7 +440,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(progressBar.getProgress()+0.01);
+		progressBar.setProgress(progressBar.getProgress()+0.05);
 		
 		createConfLogArea.appendText("reading contact point role from fields...");
 		if (confContactRole.trim().equals("")) {
@@ -451,7 +449,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		} else {
 			createConfLogArea.appendText(" [OK]\n");
 		}
-		progressBar.setProgress(progressBar.getProgress()+0.01);
+		progressBar.setProgress(progressBar.getProgress()+0.05);
 		
 		contactPoint = new Author(confContactId, confContactName, confContactCompany,
 				confContactMail, confContactRole);
@@ -471,7 +469,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 		confId = dtf.format(localDate)+strb.toString();
 		fpgaConfiguration.setIdConf(confId);
 		createConfLogArea.appendText("configuration id created: "+confId+"... [OK]\n");
-		progressBar.setProgress(progressBar.getProgress()+0.05);
+		progressBar.setProgress(progressBar.getProgress()+0.2);
 		
 		createConfLogArea.appendText("retrieving IPs...");
 		if (applicationModel.getManager() == null || applicationModel.getMapped().isEmpty()) {
@@ -479,45 +477,37 @@ public class ScreenCreateConfigController implements ControlledScreen {
 			progressBar.setProgress(0);
 			return;
 		} else {
-			fpgaConfiguration.setManager(applicationModel.getManager());
-			fpgaConfiguration.setMappedIPs(applicationModel.getMapped());
+			int distinctAddresses = applicationModel.getMapped().stream()
+							 									.map(m -> m.getPhysicalAddress())
+							 									.distinct()
+							 									.collect(Collectors.toList())
+							 									.size();
+			if (distinctAddresses != applicationModel.getMapped().size()) {
+				createConfLogArea.appendText(" [ERROR]\n\tsome addresses may be repeated...\n");
+				return;
+			} else {
+				fpgaConfiguration.setManager(applicationModel.getManager());				
+				fpgaConfiguration.setMappedIPs(applicationModel.getMapped());	
+			}
 		}
 		createConfLogArea.appendText(" [OK]\n");
-		progressBar.setProgress(progressBar.getProgress()+0.1);
+		progressBar.setProgress(progressBar.getProgress()+0.2);
 
 		createConfLogArea.appendText("additional driver source is null... [WARNING]\n");
 
-		createConfLogArea.appendText("creating top level entity...");
-		try {
-			FPGAConfiguration.generateTopLevelEntity(fpgaConfiguration);
-			createConfLogArea.appendText(" [OK]\n");
-			progressBar.setProgress(progressBar.getProgress()+0.1);
-		} catch (RuntimeException rte) {
-			createConfLogArea.appendText(" [ERROR]\n\t"+rte.getMessage()+"\n");
-			progressBar.setProgress(0);
-			return;
-		}
-
 		createConfLogArea.appendText("retrieving HDL sources...\n");
-		List<String> listOfSources = fpgaConfiguration.getMappedIPs().stream()
+		fpgaConfiguration.getMappedIPs().stream()
 										.map(m -> m.getIpCore().getHdlSourcePath())
-										.collect(Collectors.toList());
-		listOfSources.stream()
-						.forEach(l -> createConfLogArea.appendText("\t"+l+" [OK]\n"));
+										.forEach(l -> createConfLogArea.appendText("\t"+l+" [OK]\n"));
 		
 		try {
-			Process proc = Runtime.getRuntime()
-					       .exec(diamondPath + "/pnmainc.exe " + tclScritpPath);
-		} catch (IOException e) {
-			 createConfLogArea.appendText(e.getMessage() + " [ERROR]\n");
+			FPGAConfiguration.createConfiguration(fpgaConfiguration,applicationModel.getDB());
+			createConfLogArea.appendText("finish... [OK]\n");
+		} catch (Exception e) {
+			createConfLogArea.appendText("error, unable to create configuration... [ERROR]\n");
 		}
-		// ------- END OF OUR TASKS !!!!!!
-		// spawn synth process
-		// wait
-		// retrieve infos hardware properties
-		// print ok!
-		
-		createConfLogArea.appendText("finish...\n");
+		progressBar.setProgress(1);
+
 		applicationModel.resetIPs();
 	}
 }

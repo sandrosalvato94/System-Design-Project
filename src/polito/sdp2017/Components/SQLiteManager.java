@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import polito.sdp2017.Constants.Constants;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,45 +59,6 @@ public class SQLiteManager implements DBManager {
 	public static final List<String> searchingParametersFPGAConf = Collections.unmodifiableList(Arrays.asList(
 		    "nIPs", "idConf", "name", "LUTs", "FFs", "Latency", "maxPowerConsuption",
 		    "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
-	
-	
-	public static final String SQLScriptCreate = "scriptCREATE_SQLite3.sql";
-	
-	/*public static void main(String[] args) throws FileNotFoundException, SQLException
-	{
-		List<String> l = new LinkedList<>();
-		StringBuilder s = new StringBuilder();
-		StringBuilder d = new StringBuilder();
-		StringBuilder s_fpga = new StringBuilder();
-		StringBuilder d_conf = new StringBuilder();
-		StringBuilder i_ip = new StringBuilder();
-		Author a = new Author("1367", "Alessandro Salvato", "Politecnico di Torino", 
-				"sandrosalvato94@live.it", "Chief");
-		IP ip = new IPCore("BellissimoIP", "VHD_IPcore47389", "Mia personalissima propriet� intellettuale", 
-				new HardwareProperties(4, 22, 2.2, 765, 12.4, 887.5), a, "C:\\ciao", "C:\\d");
-		
-		//importSQL(null, SQLScritpCreate);		//CREATE Database
-		
-		l.add("358"); l.add("idmanager4565"); l.add("Accumulator"); l.add("50"); l.add("20");
-		l.add("150"); l.add("$"); l.add("2.3"); l.add("2.2"); l.add("$");
-		l.add("0"); l.add("1.0"); l.add("$"); l.add("45.8"); l.add("$");
-		l.add("$"); l.add("ARM"); //INSERT one IPcore
-		
-		//buildQuerySelectIP(l, s);					//SELECT one IP
-		//System.out.println(s.toString());
-		
-		//buildQueryDeleteIP("PentiumAdder4", "idIP43878" , true, d);	//DELETE one IP
-		//System.out.println(d.toString());
-		
-		//buildQuerySelectFPGAConf(l, s_fpga);
-		//System.out.println(s_fpga.toString());
-		
-		//buildQueryDeleteConfiguration("PentiumAdder4", "idIP43878", d_conf);	//DELETE one IP
-		//System.out.println(d_conf.toString());
-		
-		//buildQueryInsertIP(ip, i_ip);
-		//System.out.println(i_ip);
-	}*/
 	
 	static public boolean isSQLite3 (String dbPath) {
 		final String SQLite3Signature = "SQLite format 3"+'\0';
@@ -163,7 +126,7 @@ public class SQLiteManager implements DBManager {
 	@Override
 	public void resetDatabase() {
 		try {
-			importSQL(DBConn, SQLScriptCreate);
+			importSQL(DBConn, Constants.SQLScriptCreate);
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
 		}
