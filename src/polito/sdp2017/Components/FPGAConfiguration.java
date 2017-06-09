@@ -468,7 +468,7 @@ public class FPGAConfiguration {
 	 * This method rewrites the content of the VHDL package constants.vhd, in according to the specified template,
 	 *  every time createConfiguration() is invoked. It is a necessary step before running the synthesis.
 	 * @param fpgaconf
-	 * @return true if everything ends well, otherwise false
+	 * @return true if everything ended well, otherwise false
 	 */
 	public static boolean setNumberIPCoresInConstantsVHDL(FPGAConfiguration fpgaconf)
 	{
@@ -512,7 +512,7 @@ public class FPGAConfiguration {
 	 * listing all components to be added to the project. The script is generated inside the Lattice Diamond
 	 * file system. 
 	 * @param fpgaconf
-	 * @return true if everything ends well, otherwise false
+	 * @return true if everything ended well, otherwise false
 	 */
 	public static boolean createTCLScript(FPGAConfiguration fpgaconf)
 	{	
@@ -598,6 +598,15 @@ public class FPGAConfiguration {
 		return true;
 	}
 	
+	/**
+	 * This method creates the process that performs the synthesis. That process invokes the Diamond TCL shell to which to call the
+	 * synthesis script, generated in the previous step. After that, if the bit stream exits, it is copied in the right folder and
+	 *  all reports are generated.
+	 * @param fpgaconf : The configuration to be synthesized.
+	 * @return true if everything ended well, otherwise false
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
 	public static boolean runSynthesis(FPGAConfiguration fpgaconf) throws InterruptedException, IOException
 	{	
 		try {
@@ -628,6 +637,12 @@ public class FPGAConfiguration {
 		}
 	}
 	
+	/**
+	 * This method is invoked internally runSynthesis. It performs the copy of the bit stream from the Lattic folders to the 
+	 * workspace one.
+	 * @param fpgaconf : the configuration to be synthesized
+	 * @throws IOException
+	 */
 	public static void copyBitstream(FPGAConfiguration fpgaconf) throws IOException
 	{
 		
@@ -649,6 +664,11 @@ public class FPGAConfiguration {
 		}
 	}
 	
+	/**
+	 * This method looks for all hardware information in some reports in Diamond folders, on the configuration just synthesized. 
+	 * @param pathDir : It's the absolute path referred to the folder ntXX in Diamond folders.
+	 * @return All the hardware properties as an unique object.
+	 */
 	public static HardwareProperties getHPFromLattice(String pathDir)
 	{
 		//LUTs
@@ -754,6 +774,10 @@ public class FPGAConfiguration {
 		return hp;
 	}
 	
+	/**
+	 * Deletes all files in the specified folder. If there are sub folders, their content is erased in a recursive way.
+	 * @param path: The path of the target folder.
+	 */
 	public static void deleteAllFiles(String path)
 	{
 		File directory = new File(path);
@@ -771,6 +795,21 @@ public class FPGAConfiguration {
 		}	
 	}
 	
+	/**
+	 * This method is the core of the configuration creation. Seven steps are performed.
+	 * 
+	 * 1 - Constans.vhd is dynamically generated taking into account the number of the IPCores for the current configuration
+	 * 2 - TopLevelEntity.vhd is dynamically generated taking into account the IPManager, all the selected IPCores and their priorities
+	 * 3 - The TCL script for the synthesis is dynamically generated taking into account the hdlSourcePaths
+	 * 4 - Runs the synthesis and save the bit stream
+	 * 5 - Looks for all hardware properties
+	 * 6 - Cancels all files generated running the synthesis
+	 * 7 - The new configuration is inserted into the database.
+	 * @param fpgaconf : configuration to be synthesized
+	 * @param DBM : database manager object
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public static void createConfiguration(FPGAConfiguration fpgaconf, DBManager DBM) throws IOException, InterruptedException
 	{	
 		FPGAConfiguration.setNumberIPCoresInConstantsVHDL(fpgaconf); //changes the value of N_IPS inside constants.vhd package
