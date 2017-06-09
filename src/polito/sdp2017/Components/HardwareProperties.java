@@ -1,7 +1,9 @@
 package polito.sdp2017.Components;
 
 /**
- *	
+ *	It's the class for modeling the hardware properties that both an IP and a FPGAConfiguration should have.
+ *  It's a sort of super-attribute characterized by the number of LUT, FF, memories and the maximum latency, power consuption
+ *  and clock frequency.
  */
 public class HardwareProperties {
 
@@ -12,6 +14,15 @@ public class HardwareProperties {
 	private double powerConsumption;
 	private double maxClkFreq;
 
+	/**
+	 * It's the constructor of this class. It accepts all possible attributes.
+	 * @param lUTs
+	 * @param fFs
+	 * @param latency
+	 * @param nMemories
+	 * @param powerConsumption
+	 * @param maxClkFreq
+	 */
 	public HardwareProperties(int lUTs, int fFs, double latency, int nMemories, double powerConsumption,
 			double maxClkFreq) {
 		this.LUTs = lUTs;
@@ -21,31 +32,59 @@ public class HardwareProperties {
 		this.powerConsumption = powerConsumption;
 		this.maxClkFreq = maxClkFreq;
 	}
-
+	
+	/**
+	 * Getter of the number of LUTs for HardwareProperites
+	 * @return the (positive) number of LUTs
+	 */
 	public int getLUTs() {
 		return LUTs;
 	}
-
+	
+	/**
+	 * Setter of the number of LUTs for HardwareProperites
+	 * @param lUTs
+	 */
 	public void setLUTs(int lUTs) {
 		LUTs = lUTs;
 	}
-
+	
+	/**
+	 * Getter of the number of FFs for HardwareProperites
+	 * @return the (positive) number of FFs
+	 */
 	public int getFFs() {
 		return FFs;
 	}
-
+	
+	/**
+	 * Setter of the number of FFs for HardwareProperites
+	 * @param fFs
+	 */
 	public void setFFs(int fFs) {
 		FFs = fFs;
 	}
-
+	
+	/**
+	 * Getter of the latency for HardwareProperites
+	 * @return the (positive) latency in micro seconds 
+	 */
 	public double getLatency() {
 		return latency;
 	}
-
+	
+	/**
+	 * Setter of the latency for HardwareProperites
+	 * @param latency
+	 */
 	public void setLatency(double latency) {
 		this.latency = latency;
 	}
-
+	
+	/**
+	 * Getter of the number of memories for HardwareProperites
+	 * @return the (positive number)
+	 */
 	public int getNMemories() {
 		return nMemories;
 	}
