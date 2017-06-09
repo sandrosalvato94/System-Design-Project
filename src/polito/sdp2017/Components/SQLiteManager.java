@@ -18,6 +18,11 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
 
+/**
+ * This class describes a database manager considering as DBMS SQLITE3. The interface between the database and the Java code
+ * is performed by JDBC. The SQLiteManager runs the queries. It is characterized by a connection, the (ABSOLUTE) path of the 
+ * database and its name.
+ */
 
 public class SQLiteManager implements DBManager {
 	private Connection DBConn;
@@ -60,6 +65,11 @@ public class SQLiteManager implements DBManager {
 		    "nIPs", "idConf", "name", "LUTs", "FFs", "Latency", "maxPowerConsuption",
 		    "maxClockFrequency", "idAuthor", "nameAuthor", "company"));
 	
+	/**
+	 * This method performs a preliminary check on the DBMS.
+	 * @param dbPath
+	 * @return true if the DBMS is SQLite3, false otherwise
+	 */
 	static public boolean isSQLite3 (String dbPath) {
 		final String SQLite3Signature = "SQLite format 3"+'\0';
 		byte[] buffer = new byte[16];
@@ -84,6 +94,9 @@ public class SQLiteManager implements DBManager {
 		return SQLite3Signature.equals(new String(buffer, StandardCharsets.UTF_8));
 	}
 	
+	/**
+	 * This method allows the user to open the session with SQLite3 DBMS.
+	 */
 	@Override
 	public void openConnection(String dbPath) throws ClassNotFoundException, SQLException {
 		if (!isSQLite3(dbPath)) {
@@ -103,26 +116,42 @@ public class SQLiteManager implements DBManager {
 		rs.close();
 	}
 	
+	/**
+	 * This method close the session.
+	 */
 	@Override
 	public void closeConnection() throws SQLException {
 		DBConn.close();
 	}
 	
+	/**
+	 * Getter of the database path for SQLiteManager
+	 */
 	@Override
 	public String getDBPath() {
 		return this.DBPath;
 	}
-
+	
+	/**
+	 * Setter of the name of the database for SQLiteManager
+	 */
 	@Override
 	public void setDBName(String DBName) {
 		this.DBName = DBName;
 	}
-
+	
+	/**
+	 * Getter of the name of the database for SQLiteManager
+	 */
 	@Override
 	public String getDBName() {
 		return this.DBName;
 	}
-
+	
+	/**
+	 * This method erases the whole content of the database, emptying all tables. This operation is described by an sql script,
+	 * which is imported by this method.
+	 */
 	@Override
 	public void resetDatabase() {
 		try {
@@ -131,7 +160,13 @@ public class SQLiteManager implements DBManager {
 			System.out.println("Error: " + e);
 		}
 	}
-
+	
+	/**
+	 * A SELECT query is executed in order to obtain all those IPs that satisfy a set of properties
+	 * listed in listOfParameters. The features inside listOfParameters could't be fixed, so the query structure is floating,
+	 * in order to accept different combinations of searching parameters. 
+	 * @return A linkedList of object IPs, filled by the ResultSet of the query.
+	 */
 	@Override
 	public LinkedList<IP> searchIP(LinkedList<String> listOfParameters) {
 		Statement state;
@@ -188,7 +223,12 @@ public class SQLiteManager implements DBManager {
 		System.out.println(" ");
 		return result;
 	}
-
+	
+	/**
+	 * An INSERT instruction is performed on the database.
+	 * @param ipToBeAdded is the filled IP, ready to be inserted
+	 * @throws SQLException
+	 */
 	@Override
 	public void addIP(IP ipToBeAdded) throws SQLException {
 		Statement state;
@@ -206,7 +246,16 @@ public class SQLiteManager implements DBManager {
 			System.out.println(query2.toString());
 			state.executeUpdate(query2.toString());
 	}
-
+	
+	/**
+	 * A REMOVE instruction is performed on the database. The three parameters could be accepted in any combination.
+	 * It's possible to pass only the name, only the id or both of them. It is necessary to specify whether the target 
+	 * is a Core or a Manager.
+	 * @param name: it's the name of the IP to be removed.
+	 * @param id: it's the id of the IP to be removed.
+	 * @param isCore: it's referred to the fact whether the IP is a Core or a Manager
+	 * @return true if everything ends well, otherwise false
+	 */
 	@Override
 	public boolean removeIP(String name, String id, boolean isCore) {
 		Statement state;
@@ -234,7 +283,14 @@ public class SQLiteManager implements DBManager {
 			return false;
 		}
 	}
-
+	
+	/**
+	 * A SELECT query is executed in order to obtain all those configurations that satisfy a set of properties
+	 * listed in listOfParameters. Those parameters could appear in any combination, due to the fact that the queries
+	 * can be built dynamically.
+	 * @param listOfParameters: list of parameters selected by the final user.
+	 * @return A linkedList of object FPGAConfigurations, filled by the ResultSet of the query.
+	 */
 	@Override
 	public LinkedList<FPGAConfiguration> searchConfiguration(List<String> listOfParameters) {
 		Statement state;
@@ -302,7 +358,11 @@ public class SQLiteManager implements DBManager {
 
 		return result;
 	}
-
+	
+	/**
+	 * An INSERT instruction is performed on the database for an FPGAConfiguration object.
+	 * @param conf is the filled configuration, ready to be inserted
+	 */
 	@Override
 	public void addConfiguration(FPGAConfiguration conf) {
 		//devo fare l'insert dell'autor, l'insert dei mapped IP, NO l'insert dell'IPManager
@@ -344,7 +404,15 @@ public class SQLiteManager implements DBManager {
 			System.out.println("Error: " + e);
 		}
 	}
-
+	
+	/**
+	 * A REMOVE instruction is performed on the database for an FPGAConfiguration object.
+	 * The two parameters could be accepted in any combination.
+	 * It's possible to pass only the name, only the id or both of them.
+	 * @param name: it's the name of the configuration to be removed.
+	 * @param id: it's the id of the configuration to be removed.
+	 * @return true if everything ends well, otherwise false
+	 */
 	@Override
 	public boolean removeConfiguration(String name, String id) {
 		Statement state;
@@ -371,6 +439,17 @@ public class SQLiteManager implements DBManager {
 		return false;
 	}
 	
+	/**
+	 * This method is invoked by addConfiguration(), it creates the three necessary SQL queries.
+	 * 
+	 * 1 - The first query is needed for adding the contact point for the configuration.
+	 * 2 - The second query is needed for adding all the mapped IPCores. 
+	 * 3 - The third query is needed for adding the object configuration itself.
+	 * @param conf
+	 * @param query1
+	 * @param query2
+	 * @param query3
+	 */
 	private static void buildQueryInsertConfiguration(FPGAConfiguration conf, StringBuilder query1, StringBuilder query2, StringBuilder query3)
 	{
 		//INSERT per Autore Configurazione
@@ -416,6 +495,16 @@ public class SQLiteManager implements DBManager {
 		              "'" + conf.getAdditionalDriverSource() + "');");
 	}
 	
+	/**
+	 * This method is invoked by addIP(), it creates the three necessary SQL queries. Before that, a preliminary check is performed
+	 * on the type of the IP, whether it is a Core or a Manager.
+	 * 
+	 * 1 - The first query is needed for adding the contact point for tha IP.
+	 * 2 - The second query is needed for adding the object IP itself.
+	 * @param ip
+	 * @param query1
+	 * @param query2
+	 */
 	private static void buildQueryInsertIP(IP ip, StringBuilder query1, StringBuilder query2)
 	{
 		if(ip.getClass().getName().equals("polito.sdp2017.Components.IPCore"))
@@ -466,6 +555,13 @@ public class SQLiteManager implements DBManager {
 		}
 	}
 	
+	/**
+	 * This method is invoked by searchIP(), it creates the necessary SQL query. Before that, a preliminary check is
+	 * performed on the type of the IP, whether it is a Core or a Manager. Due to the fact that listOfParameters could contain
+	 * any possible combination of parameters, the size of the final query is not fixed.
+	 * @param listOfParameters
+	 * @param query
+	 */
 	private static void buildQuerySelectIP(LinkedList<String> listOfParameters, StringBuilder query)
 	{
 		String libIP;
@@ -518,6 +614,14 @@ public class SQLiteManager implements DBManager {
 		query.append("\nORDER BY " + libIP + ".name ASC;");
 	}
 	
+	/**
+	 * This method is invoked by removeIP(), it creates the necessary SQL instruction. Before that, a preliminary check is
+	 * performed on the type of the IP, whether it is a Core or a Manager. 
+	 * @param name
+	 * @param id
+	 * @param isCore
+	 * @param query
+	 */
 	private static void buildQueryDeleteIP(String name, String id, boolean isCore, StringBuilder query)
 	{
 		
@@ -563,6 +667,12 @@ public class SQLiteManager implements DBManager {
 		
 	}
 	
+	/**
+	 * This method is invoked by removeConfiguration(), it creates the necessary SQL instruction.
+	 * @param name
+	 * @param id
+	 * @param query
+	 */
 	private static void buildQueryDeleteConfiguration(String name, String id, StringBuilder query)
 	{
 		
@@ -594,6 +704,13 @@ public class SQLiteManager implements DBManager {
 		
 	}
 	
+	/**
+	 * This method allows to call and execute external SQL script, specifying its (ABSOLUTE) path.   
+	 * @param conn
+	 * @param in
+	 * @throws SQLException
+	 * @throws FileNotFoundException
+	 */
 	private static void importSQL(Connection conn, String in) throws SQLException, FileNotFoundException
 	{
 		InputStream inputstream = new FileInputStream(in);
@@ -627,6 +744,11 @@ public class SQLiteManager implements DBManager {
 	    s.close();
 	}
 	
+	/**
+	 * This method is invoked by searchConfiguration(), it creates the necessary SQL instruction.
+	 * @param listOfParameters
+	 * @param query
+	 */
 	private static void buildQuerySelectFPGAConf(List<String> listOfParameters, StringBuilder query)
 	{
 		query.append("SELECT A1.name AS name_authorConf, " +

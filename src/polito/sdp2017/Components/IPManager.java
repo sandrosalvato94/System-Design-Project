@@ -8,8 +8,17 @@ import java.util.TreeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/**
+ * This class is the derived one from IP. An IPManager has all the attributes of IP. Its task is to manage several IPCores
+ * inside the FPGA.
+ */
 public class IPManager extends IP {
-
+	
+	/**
+	 * This method is invoked during the parsing of the xml file when an IPManager is met.
+	 * @param coreNodes
+	 * @return a list of parsed object IPManagers.
+	 */
 	static List<IP> getFromDomNodeList (NodeList managerNodes) {
 		List<IP> listOfManagers = new LinkedList<IP>();
 		Map<String,String> ipAttr = new TreeMap<String,String>();
@@ -93,12 +102,24 @@ public class IPManager extends IP {
 		return listOfManagers;
 	}
 	
+	/**
+	 * Constructor of the class IPCManager. It simply invokes the super constructor from IP.
+	 * @param name
+	 * @param idIP
+	 * @param description
+	 * @param hwProperties
+	 * @param author
+	 * @param hdlSourcePath
+	 */
 	public IPManager(String name, String idIP, String description, HardwareProperties hwProperties,
 						Author author, String hdlSourcePath) {
 		super(name, idIP, description, hwProperties, author, hdlSourcePath);
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Customized toString() for the class IPManager
+	 */
 	@Override
 	public String toString() {
 		return "MANAGER:\n"+super.toString();
