@@ -160,7 +160,7 @@ public class ScreenCreateConfigController implements ControlledScreen {
 				}
 				pars.add(s);
 			} catch (NumberFormatException nfe) {
-				logArea.appendText("[ERROR] field max LUTs is not valid, ignored...\n");
+				logArea.appendText("[ERROR] field max FFs is not valid, ignored...\n");
 				pars.add("$");
 			}
 		}
