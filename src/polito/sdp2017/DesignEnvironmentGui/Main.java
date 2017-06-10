@@ -40,7 +40,7 @@ public class Main extends Application {
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Design environment for LATTICE based FPGA boards");
+        primaryStage.setTitle("FPGA designs generator for LATTICE");
         primaryStage.show();
     }
 
