@@ -15,9 +15,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -43,14 +40,14 @@ public class FPGAConfiguration {
 
 /**
  * Constructor for the class FPGAConfiguration.
- * @param name
- * @param idConf
- * @param mappedIPs
- * @param manager
- * @param bitstreamPath
- * @param hwProperties
- * @param contactPoint
- * @param additionalDriverSource
+ * @param name                   : configuration name
+ * @param idConf                 : configuration identifier
+ * @param mappedIPs              : list of cores mapped on the configuration
+ * @param manager                : manager for the configuration
+ * @param bitstreamPath          : path of the file containing the bitstream of the configuration
+ * @param hwProperties           : hardware properties of the configuration
+ * @param contactPoint           : contact point responsible for the configuration
+ * @param additionalDriverSource : additional driver sources used for running the configuration
  */
 	public FPGAConfiguration(String name, String idConf, List<MappedIP> mappedIPs, IPManager manager, String bitstreamPath,
 			HardwareProperties hwProperties, Author contactPoint, String additionalDriverSource) {
@@ -68,7 +65,7 @@ public class FPGAConfiguration {
 	/**
 	 * This method creates the top level entity vhdl code considering all IPCores and the IPManager selected
 	 * by the user, considering also their priority. This method is invoked before running the synthesis.
-	 * @param conf
+	 * @param conf : target configuration
 	 */
 	public static void generateTopLevelEntity(FPGAConfiguration conf) {
 		Path pathTarget = Paths.get(Constants.VHDLTopLevelEntityToBeSynth);
@@ -84,15 +81,12 @@ public class FPGAConfiguration {
 			throw new RuntimeException("File TOPENT_TEMPLATE.vhd not found.");
 		}
 		
-		StringBuffer strb = new StringBuffer("");
 		String tmpString;
 		
 		try(BufferedReader in  = new BufferedReader(new FileReader(pathTemplate.toString()));
-			BufferedWriter out = new BufferedWriter(new FileWriter(pathTarget.toString())))
-		{
+			BufferedWriter out = new BufferedWriter(new FileWriter(pathTarget.toString()))) {
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--COMPONENTS HERE--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--COMPONENTS HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
@@ -100,27 +94,21 @@ public class FPGAConfiguration {
 				
 			Map<String, List<MappedIP>> hmap = conf.mappedIPs.stream().collect(Collectors.groupingBy((l -> l.getIpCore().getIdIP()), Collectors.toList()));
 			
-			for(String s : hmap.keySet())
-			{
+			for(String s : hmap.keySet()) {
 				out.write("\n");
 				out.write(hmap.get(s).get(0).getIpCore().getHwInterface().toStringInstantiation());
 				out.write("\n");
 			}
 			
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE MANAGER--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE MANAGER--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE IPs--[\\s|.]*"))
-			{
-				if(tmpString.contains("ip_man: IP_MANAGER"))
-				{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--HERE IPs--[\\s|.]*")) {
+				if(tmpString.contains("ip_man: IP_MANAGER")) {
 					out.write("ip_man: " + conf.getManager().getHwInterface().getEntityName() + "\n");
-				}
-				else
-				{
+				} else {
 					out.write(tmpString + "\n");
 				}
 			}
@@ -132,8 +120,7 @@ public class FPGAConfiguration {
 			
 			int cnt = 0;
 			
-			for(MappedIP m : tmplist)
-			{
+			for(MappedIP m : tmplist) {
 				out.write("\n");
 				out.write( m.getIdMappedIP() + ": " + m.getIpCore().getName() + "\n");
 				out.write("\tPORT MAP(\n");
@@ -151,19 +138,15 @@ public class FPGAConfiguration {
 				out.write("\n");
 				cnt++;
 			}
-			
 			out.write("end architecture;");
-			
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			throw new RuntimeException("Unable to write file");
 		}
 	}
 	
 	/**
 	 * Setter for name of FPGAConfiguration
-	 * @param name
+	 * @param name : name to be assigned to the configuration
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -179,7 +162,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Setter for idConf of FPGAConfiguration
-	 * @param idConf
+	 * @param idConf : identifier to be assigned to the configuration
 	 */
 	public void setIdConf(String idConf) {
 		this.idConf = idConf;
@@ -195,7 +178,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Setter for all mappedIPs of FPGAConfiguration. It's possible having same IPCores.
-	 * @param mappedIPs
+	 * @param mappedIPs : list of cores mapped on this configuration
 	 */
 	public void setMappedIPs(List<MappedIP> mappedIPs) {
 		this.mappedIPs = mappedIPs;
@@ -211,7 +194,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * This method allows the adding of one IPCore to be mapped in that configuration.
-	 * @param mIP
+	 * @param mIP : new core to be mapped on the configuration
 	 */
 	public void addMappedIp(MappedIP mIP)
 	{
@@ -220,7 +203,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * This method returns the current number of mappedIPs. The IPManager is not considered in the counting.
-	 * @return Size of List<MappedIP>
+	 * @return Size of list of MappedIP
 	 */
 	public int getNumberMappedIPs()
 	{
@@ -229,7 +212,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Setter of the manager for FPGAConfiguration
-	 * @param manager
+	 * @param manager : manager for the configuration
 	 */
 	public void setManager(IPManager manager) {
 		this.manager = manager;
@@ -245,16 +228,15 @@ public class FPGAConfiguration {
 	
     /**
      * Returns the contactPoint (class Author) of the current IPmanager for this configuration.
-     * @return The contactéoint of IPManager
+     * @return The contact point of IPManager
      */
-	public Author getContactPointIPManager()
-	{
+	public Author getContactPointIPManager() {
 		return this.manager.getContactPoint();
 	}
 	
 	/**
 	 * Setter of bitstream path for FPGAConfiguration
-	 * @param bitstreamPath
+	 * @param bitstreamPath : path of the bitstream file
 	 */
 	public void setBitstreamPath(String bitstreamPath) {
 		this.bitstreamPath = bitstreamPath;
@@ -270,7 +252,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Setter of hardware properties for FPGAConfiguration. They are computed after the synthesis.
-	 * @param hwProperties
+	 * @param hwProperties : hardware properties of the configuration
 	 */
 	public void setHwProperties(HardwareProperties hwProperties) {
 		this.hwProperties = hwProperties;
@@ -286,7 +268,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Setter of the contactPoint for FPGAConfiguration
-	 * @param contactPoint
+	 * @param contactPoint : contact point of the configuration
 	 */
 	public void setContactPoint(Author contactPoint) {
 		this.contactPoint = contactPoint;
@@ -294,20 +276,25 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Getter of the contactPoint for FPGAConfiguration
-	 * @return the contactPoint of who designed that configuration.
+	 * @return the contactPoint of who designed that configuration
 	 */
 	public Author getContactPoint() {
 		return this.contactPoint;
 	}
 
-	/*public void setAdditionalDriverSources(List additionalDriverSources) {
+	/**
+	 * Set additional sources neede for make the configuration works
+	 * @param additionalDriverSources : additional sources to be added
+	 * @todo still to be implemented
+	 */
+	public void setAdditionalDriverSources(List<String> additionalDriverSources) {
 
-	}*/
+	}
 	
 	/**
 	 * Getter of the additional driver source path for FPGAConfiguration
 	 * @return the path for further drivers to be used by the processors in order to realize some functionalities
-	 * considering that configuration.
+	 * 		   considering that configuration.
 	 */
 	public String getAdditionalDriverSource() {
 		return this.additionalDriverSource;
@@ -317,14 +304,11 @@ public class FPGAConfiguration {
 	 * Extracts all source paths from all mapped IPCores.
 	 * @return linkedlist of all source paths.
 	 */
-	public LinkedList<String> getAllSourcePaths()
-	{
+	public LinkedList<String> getAllSourcePaths() {
 		LinkedList<String> l = new LinkedList<String>();
-		for(MappedIP m : this.mappedIPs)
-		{
+		for(MappedIP m : this.mappedIPs) {
 			l.add(m.getIpCore().getHdlSourcePath());
 		}
-		
 		return l;
 	}
 	
@@ -404,6 +388,7 @@ public class FPGAConfiguration {
 	}
 	
 	/**
+	 * String representation of the FPGAConfiguration object
 	 * @return String representation of all information on the configuration.
 	 */
 	@Override
@@ -415,7 +400,7 @@ public class FPGAConfiguration {
 	
 	/**
 	 * Create a new file in according to the path passed as parameter. If that file already exits it is overwritten.
-	 * @param path
+	 * @param path : path of the file to be created
 	 * @return 1 if the operation ended well, -1 if some problems occurred.
 	 */
 	public static int newFile(String path) {
@@ -423,26 +408,19 @@ public class FPGAConfiguration {
 	    try {
 	        File file = new File(path);
 	         
-	        if (file.exists())
-	        {
+	        if (file.exists()) {
 	            System.out.println("Il file " + path + " esiste gia'. Sovrascritto");
 	            file.createNewFile();
 	            return 1;
-	        }
-	        else 
-	        {	if (file.createNewFile())
-	        	{
+	        } else {
+	        	if (file.createNewFile()) {
 	            	System.out.println("Il file " + path + " e' stato creato");
 	            	return 1;
-	        	}
-	        	else
-	        	{
+	        	} else {
 	        		System.out.println("Il file " + path + " non puo' essere creato");
 	        		return -1;
 	        	}
 	        }
-	        
-	     
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	        return -1;
@@ -453,8 +431,7 @@ public class FPGAConfiguration {
 	 * It's a shorter version of toString() of FPGAConfiguration. 
 	 * @return main informations on that configuration: id, name and hardware properties.
 	 */
-	public String getBrief()
-	{
+	public String getBrief() {
 		StringBuffer s = new StringBuffer();
 		
 		s.append("ID configuration: \t" + this.getIdConf() + "\n");
@@ -466,56 +443,42 @@ public class FPGAConfiguration {
 	
 	/**
 	 * This method rewrites the content of the VHDL package constants.vhd, in according to the specified template,
-	 *  every time createConfiguration() is invoked. It is a necessary step before running the synthesis.
-	 * @param fpgaconf
+	 * every time createConfiguration() is invoked. It is a necessary step before running the synthesis.
+	 * @param fpgaconf : fpga configuration object
 	 * @return true if everything ended well, otherwise false
 	 */
-	public static boolean setNumberIPCoresInConstantsVHDL(FPGAConfiguration fpgaconf)
-	{
-		File f_templ_constants = new File(Constants.VHDLConstantsTemplatePath);
-		File f_constants = new File(Constants.JavaProjectVHDLs + "/constants.vhd");
-		
-		if(newFile(Constants.JavaProjectVHDLs + "/constants.vhd") != 1)
-		{
+	public static boolean setNumberIPCoresInConstantsVHDL(FPGAConfiguration fpgaconf) {		
+		if(newFile(Constants.JavaProjectVHDLs + "/constants.vhd") != 1) {
 			return false;
 		}
 		
 		String tmpString = new String();
 		
 		try(BufferedReader in  = new BufferedReader(new FileReader(Constants.VHDLConstantsTemplatePath));
-				BufferedWriter out = new BufferedWriter(new FileWriter(Constants.JavaProjectVHDLs + "/constants.vhd")))
-			{
-				while(!(tmpString = in.readLine()).matches("[\\s|.]*--IMPORTANT: Choose the number of IP cores[\\s|.]*"))
-				{
+				BufferedWriter out = new BufferedWriter(new FileWriter(Constants.JavaProjectVHDLs + "/constants.vhd"))) {
+				while(!(tmpString = in.readLine()).matches("[\\s|.]*--IMPORTANT: Choose the number of IP cores[\\s|.]*")) {
 					out.write(tmpString + "\n");
 				}
-				
 				
 				out.write("	constant NUM_IPS                : integer := " + fpgaconf.getNumberMappedIPs() + "; ");
 				
-				while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*"))
-				{
+				while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*")) {
 					out.write(tmpString + "\n");
 				}
-				
 				return true;
-			}
-			catch(Exception e)
-			{
+			} catch(Exception e) {
 				throw new RuntimeException("Unable to write file");
 			}
-		
 	}
 	
 	/**
 	 * This method generates dynamically the synthesis tcl script, in according to a template, 
 	 * listing all components to be added to the project. The script is generated inside the Lattice Diamond
 	 * file system. 
-	 * @param fpgaconf
+	 * @param fpgaconf : fpga configuration object
 	 * @return true if everything ended well, otherwise false
 	 */
-	public static boolean createTCLScript(FPGAConfiguration fpgaconf)
-	{	
+	public static boolean createTCLScript(FPGAConfiguration fpgaconf) {	
 		if(newFile(Constants.diamondTCLScritpPath) != 1) {
 			throw new RuntimeException("File can't be created");
 		}
@@ -528,24 +491,20 @@ public class FPGAConfiguration {
 		String tmpString;
 		
 		try(BufferedReader in  = new BufferedReader(new FileReader(Constants.TCLscriptTemplatePath));
-			BufferedWriter out = new BufferedWriter(new FileWriter(Constants.diamondTCLScritpPath)))
-		{
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--DIAMOND PATH HERE--[\\s|.]*"))
-			{
+			BufferedWriter out = new BufferedWriter(new FileWriter(Constants.diamondTCLScritpPath))) {
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--DIAMOND PATH HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
 			out.write("cd \"" + Constants.DiamondRoot + "\"\n");
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--SOURCE HERE--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--SOURCE HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
 			out.write("file mkdir " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--VHDL HERE--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--VHDL HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
@@ -558,8 +517,7 @@ public class FPGAConfiguration {
 			
 			Map<String, List<MappedIP>> hmap = fpgaconf.getMappedIPs().stream().collect(Collectors.groupingBy((l -> l.getIpCore().getIdIP()), Collectors.toList()));
 			
-			for(String s : hmap.keySet())
-			{
+			for(String s : hmap.keySet()) {
 				out.write("file copy -force -- " + "\"" + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +
 						  "\" " + "\"" + Constants.diamondImplSourcePath + "\"\n");
 			}
@@ -572,26 +530,21 @@ public class FPGAConfiguration {
 			out.write("prj_src add " + "\"" + Constants.JavaProjectVHDLs + "constants.vhd\"\n");
 			out.write("prj_src add " + "\"" + fpgaconf.getManager().getHdlSourcePath() +"\"\n");
 			
-			for(String s : hmap.keySet())
-			{
+			for(String s : hmap.keySet()) {
 				out.write("prj_src add " + "\"" + hmap.get(s).get(0).getIpCore().getHdlSourcePath() +"\"\n");
 			}
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--REPORT HERE--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--REPORT HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
 			out.write("pwc_writereport html -file " + "\"" + Constants.diamondImplPath + "/report.html\"\n");
 			
-			while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*"))
-			{
+			while(!(tmpString = in.readLine()).matches("[\\s|.]*--END HERE--[\\s|.]*")) {
 				out.write(tmpString + "\n");
 			}
 			
-		}
-		catch(Exception e)
-		{
+		} catch(Exception e) {
 			throw new RuntimeException("Unable to write file");
 		}
 		
@@ -607,8 +560,7 @@ public class FPGAConfiguration {
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
-	public static boolean runSynthesis(FPGAConfiguration fpgaconf) throws InterruptedException, IOException
-	{	
+	public static boolean runSynthesis(FPGAConfiguration fpgaconf) throws InterruptedException, IOException {	
 		try {
 			Process proc = Runtime.getRuntime().exec(Constants.prv);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
@@ -616,7 +568,6 @@ public class FPGAConfiguration {
 			proc.waitFor();
 			proc.destroy();
 			System.out.println("Synthesis ended.");
-
 		} catch (IOException e) {
 			 System.out.println(e.getMessage() + " [ERROR]\n");
 			 return false;
@@ -624,14 +575,11 @@ public class FPGAConfiguration {
 		
 		File f = new File(Constants.diamondBitstreamPath);
 		System.out.println("Looking for bitstream...");
-		if(f.exists()) //copy file
-		{
+		if(f.exists()) {	//	copy file
 			System.out.println("Bitstream found!");
 			copyBitstream(fpgaconf);
 			return true;
-		}
-		else
-		{
+		} else {
 			System.out.println("ERROR: bitstream not found");
 			return false;
 		}
@@ -643,14 +591,10 @@ public class FPGAConfiguration {
 	 * @param fpgaconf : the configuration to be synthesized
 	 * @throws IOException
 	 */
-	public static void copyBitstream(FPGAConfiguration fpgaconf) throws IOException
-	{
-		
-		
+	public static void copyBitstream(FPGAConfiguration fpgaconf) throws IOException {
 		File f = new File(Constants.diamondBitstreamPath);
 		//File z = new File(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
-		if(newFile(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit") != -1)
-		{
+		if(newFile(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit") != -1) {
 			FileInputStream in = new FileInputStream(f);
 			FileOutputStream out = new FileOutputStream(Constants.JavaProjectBitstreams + fpgaconf.getIdConf() + ".bit");
 			
@@ -669,8 +613,7 @@ public class FPGAConfiguration {
 	 * @param pathDir : It's the absolute path referred to the folder ntXX in Diamond folders.
 	 * @return All the hardware properties as an unique object.
 	 */
-	public static HardwareProperties getHPFromLattice(String pathDir)
-	{
+	public static HardwareProperties getHPFromLattice(String pathDir) {
 		//LUTs
 		//FFs
 		//latency
@@ -685,12 +628,9 @@ public class FPGAConfiguration {
 		File f_freq = new File(Constants.frequencyPath);
 		File f_area = new File(Constants.LUTsFFsPath);
 		
-		if(f_power.exists())
-		{
-			try(BufferedReader in  = new BufferedReader(new FileReader(f_power)))
-				{
-					while(!in.readLine().matches("<td width=250><font class=\"table\">Total Power Est. Design </font></td>"))
-					{
+		if(f_power.exists()) {
+			try(BufferedReader in  = new BufferedReader(new FileReader(f_power))) {
+					while(!in.readLine().matches("<td width=250><font class=\"table\">Total Power Est. Design </font></td>")) {
 						
 					}
 					StringBuffer tmp = new StringBuffer(in.readLine());
@@ -700,20 +640,15 @@ public class FPGAConfiguration {
 					maxPowerConsuption = Double.parseDouble(m.group(1));
 					
 					in.close();
+				} catch(Exception e) {
+					//throw new RuntimeException("Unable to find file");
 				}
-				catch(Exception e)
-				{
-					//throw new RuntimeException("Unable to fi file");
-				}
-		}
-		else
-		{
+		} else {
 			System.out.println("ERROR: power report not found.\nMax Power Consuption = 0");
 		}
-		if(f_freq.exists())
-		{
-			try(BufferedReader in  = new BufferedReader(new FileReader(f_freq)))
-			{
+		
+		if(f_freq.exists()) {
+			try(BufferedReader in  = new BufferedReader(new FileReader(f_freq))) {
 				String tmp = new String();
 				while(!(tmp = in.readLine()).matches("\\|.*MCCLK_FREQ.*"));
 				
@@ -729,20 +664,15 @@ public class FPGAConfiguration {
 			    latency = Math.ceil((1/maxClockFrequency) * temp) / temp;
 				
 				in.close();
-			}
-			catch(Exception e)
-			{
+			} catch(Exception e) {
 				throw new RuntimeException("Unable to write file");
 			}
-		}
-		else
-		{
+		} else {
 			System.out.println("ERROR: timing report not found.\nMax Clock Frequency = 0\nLatency = 0");
 		}
-		if(f_area.exists())
-		{
-			try(BufferedReader in  = new BufferedReader(new FileReader(f_area)))
-			{
+		
+		if(f_area.exists()) {
+			try(BufferedReader in  = new BufferedReader(new FileReader(f_area))) {
 				String tmp = new String();
 				while(!(tmp = in.readLine()).matches("LUTS_used.*"));
 				
@@ -759,14 +689,10 @@ public class FPGAConfiguration {
 				FFs = Integer.valueOf(m1.group(1));
 				
 				in.close();
-			}
-			catch(Exception e)
-			{
+			} catch(Exception e) {
 				System.out.println(e.getMessage());
 			}
-		}
-		else
-		{
+		} else {
 			System.out.println("ERROR: area report not found.\nLUTs = 0\nFFs = 0");
 		}
 		
@@ -778,18 +704,14 @@ public class FPGAConfiguration {
 	 * Deletes all files in the specified folder. If there are sub folders, their content is erased in a recursive way.
 	 * @param path: The path of the target folder.
 	 */
-	public static void deleteAllFiles(String path)
-	{
+	public static void deleteAllFiles(String path) {
 		File directory = new File(path);
 		File[] files = directory.listFiles();
 		for (File f : files) {
-			if(f.isDirectory())
-			{
+			if(f.isDirectory()) {
 				System.out.println(f.getAbsolutePath());
 				deleteAllFiles(f.getAbsolutePath());
-			}
-			else
-			{
+			} else {
 				f.delete();
 			}
 		}	
@@ -806,25 +728,18 @@ public class FPGAConfiguration {
 	 * 6 - Cancels all files generated running the synthesis
 	 * 7 - The new configuration is inserted into the database.
 	 * @param fpgaconf : configuration to be synthesized
-	 * @param DBM : database manager object
+	 * @param DBM      : database manager object
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public static void createConfiguration(FPGAConfiguration fpgaconf, DBManager DBM) throws IOException, InterruptedException
-	{	
-		FPGAConfiguration.setNumberIPCoresInConstantsVHDL(fpgaconf); //changes the value of N_IPS inside constants.vhd package
-		
-		FPGAConfiguration.generateTopLevelEntity(fpgaconf); //generation of the top level entity
-		
-		FPGAConfiguration.createTCLScript(fpgaconf); //creates new TCL script
-		
-		FPGAConfiguration.runSynthesis(fpgaconf);	//runs synthesis (and copy bitstream)
+	public static void createConfiguration(FPGAConfiguration fpgaconf, DBManager DBM) throws IOException, InterruptedException {	
+		FPGAConfiguration.setNumberIPCoresInConstantsVHDL(fpgaconf);	//	changes the value of N_IPS inside constants.vhd package
+		FPGAConfiguration.generateTopLevelEntity(fpgaconf); 			//	generation of the top level entity
+		FPGAConfiguration.createTCLScript(fpgaconf); 					//	creates new TCL script	
+		FPGAConfiguration.runSynthesis(fpgaconf);						//	runs synthesis (and copy bitstream)
 
-		fpgaconf.setHwProperties(FPGAConfiguration.getHPFromLattice(Constants.diamondImplPath)); //set HWProperties
-		
-		FPGAConfiguration.deleteAllFiles(Constants.diamondImplPath); //erases every files inside Diamond folder
-		
+		fpgaconf.setHwProperties(FPGAConfiguration.getHPFromLattice(Constants.diamondImplPath));
+		FPGAConfiguration.deleteAllFiles(Constants.diamondImplPath); 	//	erases every files inside Diamond folder
 		DBM.addConfiguration(fpgaconf);
 	}
-
 }
