@@ -12,10 +12,10 @@ public class MappedIP {
 	
 	/**
 	 * Constructor for the class MappedIp
-	 * @param idMappedIP
-	 * @param ipCore
-	 * @param priority
-	 * @param physicalAddress
+	 * @param idMappedIP      : MappedIP identifier
+	 * @param ipCore          : MappedIP core
+	 * @param priority        : MappedIP priority
+	 * @param physicalAddress : MappedIP physical address
 	 */
 	public MappedIP(String idMappedIP, IPCore ipCore, int priority, String physicalAddress) {
 		this.idMappedIP = idMappedIP;
@@ -34,7 +34,7 @@ public class MappedIP {
 	
 	/**
 	 * Setter of the id of the IPCore in the mapping
-	 * @param idMappedIP
+	 * @param idMappedIP : MappedIP identifier
 	 */
 	public void setIdMappedIP(String idMappedIP) {
 		this.idMappedIP = idMappedIP;
@@ -50,7 +50,7 @@ public class MappedIP {
 	
 	/**
 	 * Setter of the IPCore for MappedIP
-	 * @param ipCore
+	 * @param ipCore : MappedIP core
 	 */
 	public void setIpCore(IPCore ipCore) {
 		this.ipCore = ipCore;
@@ -66,7 +66,7 @@ public class MappedIP {
 	
 	/**
 	 * Setter of the priority for MappedIP
-	 * @param priority
+	 * @param priority : MappedIP priority
 	 */
 	public void setPriority(int priority) {
 		this.priority = priority;
@@ -82,7 +82,7 @@ public class MappedIP {
 	
 	/**
 	 * Setter of the physical address for MappedIp
-	 * @param physicalAddress
+	 * @param physicalAddress : MappedIP physical address
 	 */
 	public void setPhysicalAddress(String physicalAddress) {
 		this.physicalAddress = physicalAddress;

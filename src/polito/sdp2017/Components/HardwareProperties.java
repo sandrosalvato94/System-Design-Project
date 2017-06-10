@@ -43,10 +43,10 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the number of LUTs for HardwareProperites
-	 * @param lUTs
+	 * @param LUTs : number of lookup tables
 	 */
-	public void setLUTs(int lUTs) {
-		LUTs = lUTs;
+	public void setLUTs(int LUTs) {
+		this.LUTs = LUTs;
 	}
 	
 	/**
@@ -59,10 +59,10 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the number of FFs for HardwareProperites
-	 * @param fFs
+	 * @param FFs : number of flip-flops
 	 */
-	public void setFFs(int fFs) {
-		FFs = fFs;
+	public void setFFs(int FFs) {
+		this.FFs = FFs;
 	}
 	
 	/**
@@ -75,7 +75,7 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the latency for HardwareProperites
-	 * @param latency
+	 * @param latency : circuit latency
 	 */
 	public void setLatency(double latency) {
 		this.latency = latency;
@@ -91,7 +91,7 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the number of memories for HardwareProperites
-	 * @param nMemories
+	 * @param nMemories : number of memory elements in the circuit
 	 */
 	public void setNMemories(int nMemories) {
 		this.nMemories = nMemories;
@@ -107,7 +107,7 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the power consumption at the nominal clock frequency for HardwareProperites
-	 * @param powerConsumption
+	 * @param powerConsumption : power consumption of the circuit
 	 */
 	public void setPowerConsumption(double powerConsumption) {
 		this.powerConsumption = powerConsumption;
@@ -123,7 +123,7 @@ public class HardwareProperties {
 	
 	/**
 	 * Setter of the maximum clock frequency for HardwareProperites
-	 * @param maxClkFreq
+	 * @param maxClkFreq : max clock frequency at which the circuit can run
 	 */
 	public void setMaxClkFreq(double maxClkFreq) {
 		this.maxClkFreq = maxClkFreq;

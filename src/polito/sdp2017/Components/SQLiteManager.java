@@ -67,7 +67,7 @@ public class SQLiteManager implements DBManager {
 	
 	/**
 	 * This method performs a preliminary check on the DBMS.
-	 * @param dbPath
+	 * @param dbPath : database path
 	 * @return true if the DBMS is SQLite3, false otherwise
 	 */
 	static public boolean isSQLite3 (String dbPath) {
@@ -259,26 +259,19 @@ public class SQLiteManager implements DBManager {
 	@Override
 	public boolean removeIP(String name, String id, boolean isCore) {
 		Statement state;
-		ResultSet RS;
 		StringBuilder query = new StringBuilder();
 		buildQueryDeleteIP(name, id, isCore, query);
 		
-		try
-		{
+		try	{
 			state = DBConn.createStatement();
 			state.execute("PRAGMA foreign_keys = ON;");
 			state.execute("PRAGMA foreign_keys;");
-			if(state.executeUpdate(query.toString()) == 0)
-			{
+			if(state.executeUpdate(query.toString()) == 0) {
 				return false;
-			}
-			else
-			{
+			} else {
 				return true;
 			}
-		}
-		catch(SQLException e)
-		{
+		} catch(SQLException e) {
 			System.out.println(e);
 			return false;
 		}
@@ -624,7 +617,6 @@ public class SQLiteManager implements DBManager {
 	 */
 	private static void buildQueryDeleteIP(String name, String id, boolean isCore, StringBuilder query)
 	{
-		
 		String libIP;
 		String libAuthorIP;
 		

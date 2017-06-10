@@ -15,9 +15,9 @@ public class VhdlPinWidth {
 	/**
 	 * Constructor for VhdlPinWidth, which simply copies the parameter passed to it, without
 	 * performing any check on them.
-	 * @param left : left bound
+	 * @param left      : left bound
 	 * @param direction : direction, it is supposed to be "to" or "downto"
-	 * @param right : right bound
+	 * @param right     : right bound
 	 */
 	public VhdlPinWidth(String left, String direction, String right) {
 		this.left = left;
@@ -34,7 +34,7 @@ public class VhdlPinWidth {
 
 	/**
 	 * Set the left bound of the bus
-	 * @param left
+	 * @param left : left side of the pin wifth
 	 */
 	public void setLeft(String left) {
 		this.left = left;
@@ -49,7 +49,7 @@ public class VhdlPinWidth {
 
 	/**
 	 * Set the right bound of the bus
-	 * @param right
+	 * @param right : right side of the pin width
 	 */
 	public void setRight(String right) {
 		this.right = right;

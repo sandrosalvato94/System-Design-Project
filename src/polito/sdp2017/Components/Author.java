@@ -12,11 +12,11 @@ public class Author {
 	
 	/**
 	 * Constructor for class Author. Parameters are passed without performing any kind of check
-	 * @param idAuthor
-	 * @param name
-	 * @param company
-	 * @param email
-	 * @param role
+	 * @param idAuthor : author identifier
+	 * @param name     : author name
+	 * @param company  : author company
+	 * @param email    : author email
+	 * @param role     : author role
 	 */
 	public Author(String idAuthor, String name, String company, String email, String role) {
 		this.idAuthor = idAuthor;
@@ -28,7 +28,7 @@ public class Author {
 	
 	/**
 	 * Setter for idAuthor
-	 * @param idAuthor
+	 * @param idAuthor : author identifier
 	 */
 	public void setIdAuthor(String idAuthor) {
 		this.idAuthor = idAuthor;
@@ -44,7 +44,7 @@ public class Author {
 	
 	/**
 	 * Setter for name of Author
-	 * @param name
+	 * @param name : author name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -60,7 +60,7 @@ public class Author {
 	
 	/**
 	 * Setter for company of Author
-	 * @param company
+	 * @param company : author company
 	 */
 	public void setCompany(String company) {
 		this.company = company;
@@ -76,12 +76,11 @@ public class Author {
 	
 	/**
 	 * Setter for email of Author
-	 * @param email
+	 * @param email : author email
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 	/**
 	 * Getter for email of Author
@@ -93,7 +92,7 @@ public class Author {
 	
 	/**
 	 * Setter for role of Author
-	 * @param role
+	 * @param role : author role
 	 */
 	public void setRole(String role) {
 		this.role = role;

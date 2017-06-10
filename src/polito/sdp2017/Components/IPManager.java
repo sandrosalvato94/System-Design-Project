@@ -16,7 +16,7 @@ public class IPManager extends IP {
 	
 	/**
 	 * This method is invoked during the parsing of the xml file when an IPManager is met.
-	 * @param coreNodes
+	 * @param coreNodes : managers inside the DOM parser
 	 * @return a list of parsed object IPManagers.
 	 */
 	static List<IP> getFromDomNodeList (NodeList managerNodes) {
@@ -72,16 +72,13 @@ public class IPManager extends IP {
     		
     		String tmp = ipAttr.get("IPHdlSourcePath");
     		String[] splitted = tmp.split("\\.");
-    		if(splitted[1].equals("vhd") || splitted.equals("vhdl"))
-    		{
+    		if(splitted[1].equals("vhd") || splitted.equals("vhdl")) {
     			tmp = "VHDL";
     		}
-    		if(splitted[1].equals("v") || splitted.equals("verilog"))
-    		{
+    		if(splitted[1].equals("v") || splitted.equals("verilog")) {
     			tmp = "VRLG";
     		}
-    		if(splitted[1].equals("cpp"))
-    		{
+    		if(splitted[1].equals("cpp")) {
     			tmp = "SYSC";
     		}
     		
@@ -94,22 +91,18 @@ public class IPManager extends IP {
     									ipAttr.get("IPHdlSourcePath"));
 
     		listOfManagers.add(core);
-    		System.out.println(contactPoint.toString());
-    		System.out.println(hwProperties.toString());
-    		System.out.println(core.toString());
-		}
-		
+		}	
 		return listOfManagers;
 	}
 	
 	/**
 	 * Constructor of the class IPCManager. It simply invokes the super constructor from IP.
-	 * @param name
-	 * @param idIP
-	 * @param description
-	 * @param hwProperties
-	 * @param author
-	 * @param hdlSourcePath
+	 * @param name          : Manager name
+	 * @param idIP          : Manager identifier
+	 * @param description   : Manager description
+	 * @param hwProperties  : Manager hardware properties
+	 * @param author        : Manager contact point
+	 * @param hdlSourcePath : Manager hdl source path
 	 */
 	public IPManager(String name, String idIP, String description, HardwareProperties hwProperties,
 						Author author, String hdlSourcePath) {

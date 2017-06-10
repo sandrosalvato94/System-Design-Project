@@ -17,7 +17,7 @@ public class IPCore extends IP {
     
 	/**
 	 * This method is invoked during the parsing of the xml file when an IPCore is met.
-	 * @param coreNodes
+	 * @param coreNodes : list of cores in the DOM parser
 	 * @return a list of parsed object IPCores.
 	 */
 	static List<IP> getFromDomNodeList (NodeList coreNodes) {
@@ -73,16 +73,13 @@ public class IPCore extends IP {
     		
     		String tmp = ipAttr.get("IPHdlSourcePath");
     		String[] splitted = tmp.split("\\.");
-    		if(splitted[1].equals("vhd") || splitted[1].equals("vhdl"))
-    		{
+    		if(splitted[1].equals("vhd") || splitted[1].equals("vhdl")) {
     			tmp = "VHDL";
     		}
-    		if(splitted[1].equals("v") || splitted[1].equals("verilog"))
-    		{
+    		if(splitted[1].equals("v") || splitted[1].equals("verilog")) {
     			tmp = "VRLG";
     		}
-    		if(splitted[1].equals("cpp"))
-    		{
+    		if(splitted[1].equals("cpp")) {
     			tmp = "SYSC";
     		}
     		
@@ -96,23 +93,19 @@ public class IPCore extends IP {
     									ipAttr.get("IPDriverPath"));
 
     		listOfCores.add(core);
-    		//System.out.println(contactPoint.toString());
-    		//System.out.println(hwProperties.toString());
-    		//System.out.println(core.toString());
 		}
-		
 		return listOfCores;
 	}
 	
 	/**
 	 * Constructor of the class IPCore. Inside, it calls the super constructor.
-	 * @param name
-	 * @param idIP
-	 * @param description
-	 * @param hwProperties
-	 * @param contactPoint
-	 * @param hdlSourcePath
-	 * @param driverPath
+	 * @param name          : Core name
+	 * @param idIP          : Core identifier
+	 * @param description   : Core description
+	 * @param hwProperties  : Core hardware properties
+	 * @param contactPoint  : Core contact point
+	 * @param hdlSourcePath : Core hdl source path
+	 * @param driverPath    : Core driver path
 	 */
 	public IPCore(String name, String idIP, String description, HardwareProperties hwProperties, Author contactPoint, String hdlSourcePath, String driverPath) {
 		super(name, idIP, description, hwProperties, contactPoint, hdlSourcePath);
@@ -129,7 +122,7 @@ public class IPCore extends IP {
 	
 	/**
 	 * Setter of the driver path field for IPCore
-	 * @param driverPath
+	 * @param driverPath : Core driver path
 	 */
 	public void setDriverPath(String driverPath) {
 		this.driverPath = driverPath;

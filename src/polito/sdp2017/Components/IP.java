@@ -40,7 +40,7 @@ public class IP {
 	 * This method creates a list of object IPs, parsing an XML file containing their description. This file lists all the main
 	 * properties, such as whether the object is a Cora or a Manager, the name, the id, the description, all data on the contact point,
 	 * all the hardware properties.
-	 * @param xmlPath The absolute path of the xml file
+	 * @param xmlPath : The absolute path of the xml file
 	 * @return the list of parsed IP. This list can contain both Cores and Manager at the same time.
 	 * @throws SAXException
 	 * @throws ParserConfigurationException
@@ -84,12 +84,12 @@ public class IP {
 	
 	/**
 	 * Constructor of the class IP
-	 * @param name
-	 * @param idIP
-	 * @param description
-	 * @param hwProperties
-	 * @param contactPoint
-	 * @param hdlSourcePath
+	 * @param name          : IP name
+	 * @param idIP          : IP identifier
+	 * @param description   : IP description
+	 * @param hwProperties  : IP hardware properties
+	 * @param contactPoint  : IP contact point
+	 * @param hdlSourcePath : IP hdl source path
 	 */
 	public IP(String name, String idIP, String description, HardwareProperties hwProperties,
 			Author contactPoint, String hdlSourcePath) {		
@@ -134,7 +134,7 @@ public class IP {
 	
 	/**
 	 *  Setter of the name for IP
-	 * @param name
+	 * @param name : IP name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -150,7 +150,7 @@ public class IP {
 	
 	/**
 	 * Setter of the id for IP
-	 * @param idIP
+	 * @param idIP : IP identifier
 	 */
 	public void setIdIP(String idIP) {
 		this.idIP = idIP;
@@ -166,7 +166,7 @@ public class IP {
 	
 	/**
 	 * Setter of the description for IP
-	 * @param description
+	 * @param description : IP description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -182,7 +182,7 @@ public class IP {
 	
 	/**
 	 * Setter of the hardware properites for IP
-	 * @param hwProperties
+	 * @param hwProperties : IP hardware properties
 	 */
 	public void setHwProperties(HardwareProperties hwProperties) {
 		this.hwProperties = hwProperties;
@@ -198,7 +198,7 @@ public class IP {
 	
 	/**
 	 * Setter of the contact point for IP
-	 * @param author
+	 * @param author : IP contact point
 	 */
 	public void setContactPoint(Author author) {
 		this.contactPoint = author;
@@ -214,7 +214,7 @@ public class IP {
 	
 	/**
 	 * Setter of the hdl source path for IP
-	 * @param hdlSourcePath
+	 * @param hdlSourcePath : IP hdl source path
 	 */
 	public void setHdlSourcePath(String hdlSourcePath) {
 		this.hdlSourcePath = hdlSourcePath;
@@ -230,7 +230,7 @@ public class IP {
 	
 	/**
 	 * Setter of the hardware interface for IP
-	 * @param hwInterface
+	 * @param hwInterface : IP hardware interface
 	 */
 	public void setHwInterface(HardwareInterface hwInterface) {
 		this.hwInterface = hwInterface;

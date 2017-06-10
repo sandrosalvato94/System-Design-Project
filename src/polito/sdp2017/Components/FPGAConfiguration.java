@@ -285,10 +285,9 @@ public class FPGAConfiguration {
 	/**
 	 * Set additional sources neede for make the configuration works
 	 * @param additionalDriverSources : additional sources to be added
-	 * @todo still to be implemented
 	 */
 	public void setAdditionalDriverSources(List<String> additionalDriverSources) {
-
+		// TODO still to implement
 	}
 	
 	/**
